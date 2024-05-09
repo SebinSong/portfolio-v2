@@ -1,0 +1,28 @@
+.app-layout {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "l-toolbar"
+    "l-page";
+}
+
+.l-toolbar {
+  grid-area: l-toolbar;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: $toolbar-height;
+  overflow: hidden;
+}
+
+.l-page {
+  grid-area: l-page;
+  position: relative;
+  height: max-content;
+  min-height: calc(100% - var(--toolbar-height));
+}

@@ -26,4 +26,7 @@ $large-phone: 768px;
 $tablet: 992px;
 $desktop: 1200px;
 
+// miscellaneous sass-variables
+$toolbar-height: var(--toolbar-height);
+
 @import "mixins";
