@@ -1,0 +1,32 @@
+@font-face {
+  src: url("/fonts/Manrope.woff2") format("woff2");
+  font-family: "Manrope";
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  font-size: 10px;
+
+  // adjustable font-variables
+  --size-0: 6.4rem;
+  --size-1: 3.2rem;
+  --size-2: 2.4rem;
+  --size-3: 2rem;
+  --size-4: 1.8rem;
+  --size-5: 1.6rem;
+  --size-6: 1.4rem; // default body-text size
+  --size-7: 1.2rem;
+  --size-8: 1rem;
+}
+
+body {
+  font-family: "Manrope", "Helvetica Neue", "sans-serif";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.5;
+  color: $text-0;
+  font-size: $size-6;
+}

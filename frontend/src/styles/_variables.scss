@@ -1,0 +1,29 @@
+
+// colour-related sass-variables
+$white: var(--c-white);
+$grey: var(--c-grey);
+$dark-grey: var(--c-dark-grey);
+$light-black: var(--c-light-black);
+$black: var(--c-black);
+
+$text-0: var(--text-0);
+$background-0: var(--background-0);
+
+// font-size related sass-variables
+$size-0: var(--size-0);
+$size-1: var(--size-1);
+$size-2: var(--size-2);
+$size-3: var(--size-3);
+$size-4: var(--size-4);
+$size-5: var(--size-5);
+$size-6: var(--size-6);
+$size-7: var(--size-7);
+$size-8: var(--size-8);
+
+// media-queries related sass-variables
+$small-phone: 576px;
+$large-phone: 768px;
+$tablet: 992px;
+$desktop: 1200px;
+
+@import "mixins";

@@ -1,0 +1,51 @@
+@mixin overflow-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin placeholder {
+  $prefixes: ":-moz" ":-webkit-input" "-moz" "-ms-input";
+  @each $prefix in $prefixes {
+    &:#{$prefix}-placeholder {
+      @content;
+    }
+  }
+}
+
+/*
+  possible pre-defined sass-variables for below util mixins:
+
+  $small-phone: 576px;
+  $large-phone: 768px;
+  $tablet: 992px;
+  $desktop: 1200px;
+*/
+
+@mixin from ($bp) {
+  @media screen and (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin until ($bp) {
+  @media screen and (max-width: $bp - 1px) {
+    @content;
+  }
+}
+
+@mixin fromUntil ($bp1, $bp2) {
+  @media screen and (min-width: $bp1) and (max-width: $bp2 - 1px) {
+    @content;
+  }
+}
+
+@mixin from-v ($bp) {
+  @media screen and (min-height: $bp) {
+    @content;
+  }
+}
+
+@mixin until-v ($bp) {
+  @media screen and (max-height: $bp - 1px) {
+    @content;
+  }
+}

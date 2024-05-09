@@ -1,0 +1,31 @@
+$themeVars: (
+  text-0: (#0D0D0D, #0D0D0D),
+  background-0: (#F2F2F2, #F2F2F2),
+);
+
+:root {
+  // Theme-independant custom colour variables for the project
+  --c-white: #F2F2F2;
+  --c-grey: #8C8C8C;
+  --c-dark-grey: #595959;
+  --c-light-black: #262626;
+  --c-black: #0D0D0D;
+
+  // light-theme colour declarations
+
+  @each $name, $list in $themeVars {
+    $light_val: nth($list, 1);
+
+    --#{$name}: #{$light_val};
+  }
+}
+
+:root[data-theme='dark'] {
+  // dark-theme colour declarations
+
+  @each $name, $list in $themeVars {
+    $dark_val: nth($list, 2);
+
+    --#{$name}: #{$dark_val};
+  }
+}

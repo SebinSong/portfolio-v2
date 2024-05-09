@@ -1,0 +1,80 @@
+.is-unstyled {
+  background: none;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  min-height: auto;
+  color: inherit;
+  text-align: inherit;
+  padding: 0;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    border: none;
+    color: inherit;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+// Screen reader only
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.hide-desktop {
+  @include from ($tablet) {
+    display: none !important;
+  }
+}
+
+.hide-non-desktop {
+  @include until ($tablet) {
+    display: none !important;
+  }
+}
+
+.hide-phone {
+  @include until ($large-phone) {
+    display: none !important;
+  }
+}
+
+// reference: https://ferie.medium.com/detect-a-touch-device-with-only-css-9f8e30fa1134
+.hide-touch-device {
+  @media (hover: none) and (pointer: coarse) {
+    display: none !important;
+  }
+}
+
+.hide-hoverable-device {
+  @media (hover: hover) and (pointer: fine) {
+    display: none !important;
+  }
+}
+
+// various padding/margin related utility classes.
+
+$spacing-nums: 0, 2, 4, 10, 20, 30, 40, 50, 60, 70, 80;
+@each $n in $spacing-nums {
+
+  .mt-#{$n} { margin-top: #{$n}px !important; }
+  .mb-#{$n} { margin-bottom: #{$n}px !important; }
+  .pt-#{$n} { padding-top: #{$n}px !important; }
+  .pb-#{$n} { padding-bottom: #{$n}px !important; }
+}
+
+.is-inline-block { display: inline-block; }
+.is-inline-flex { display: inline-flex; }
