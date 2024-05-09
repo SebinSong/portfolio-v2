@@ -10,6 +10,9 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "imports": {
+    "~/*": "./frontend/src/*"
+  },
   "dependencies": {
     "colors": "^1.4.0",
     "express": "^4.19.2",
@@ -18,8 +21,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.12.8",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",

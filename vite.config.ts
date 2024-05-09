@@ -20,5 +20,12 @@ export default defineConfig({
         additionalData: '@import "variables";'
       }
     }
+  },
+  resolve: {
+    alias: {
+      '~': appSrc,
+      '@components': resolvePath('components'),
+      '@pages': resolvePath('pages')
+    }
   }
 })

@@ -1,12 +1,15 @@
 import './App.scss'
 
+// child components
+import Toolbar from '~/components/toolbar/Toolbar.jsx'
+import HomePage from '~/pages/home/Home.jsx'
+
 function App() {
   return (
-    <div className='example'>
-      <span>Home page</span>
-      <i className='icon-copy'></i>
-      <i className='icon-cog'></i>
-    </div>
+    <>
+      <Toolbar />
+      <HomePage />
+    </>
   )
 }
 
