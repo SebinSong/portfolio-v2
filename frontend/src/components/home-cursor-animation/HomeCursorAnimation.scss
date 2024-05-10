@@ -1,0 +1,15 @@
+.home-cursor-animation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  border: 2px solid $black;
+  pointer-events: none;
+
+  svg.animation-svg {
+    color: $light-black-hex;
+  }
+}
