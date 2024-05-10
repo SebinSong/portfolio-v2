@@ -51,7 +51,7 @@ export default function HomeCursorAnimation () {
       y: pointer.y - position.y
     }
     const diffDiagonal = Math.sqrt(diff.x*diff.x + diff.y*diff.y)
-    const cursorSpeed = diffDiagonal > 30 ? 0.3 : 0.15
+    const cursorSpeed = diffDiagonal > 30 ? 0.285 : 0.185
     position.x += diff.x * cursorSpeed
     position.y += diff.y * cursorSpeed
   }

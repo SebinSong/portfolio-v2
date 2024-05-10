@@ -1,8 +1,7 @@
 'use strict'
 
-const tinyRadius = 4
-const bigRadius = 16
-export const cursorSpeed = 0.4
+const tinyRadius = 3
+const bigRadius = 20
 
 export function diagonalWindow (): number {
   const w = window.innerWidth
@@ -17,7 +16,7 @@ export function drawCursor (pos: any): string {
   return `
   <g className='custom-cursor-group'>
     <circle className='big-circle' r='${bigRadius}' cx='${posX}' cy='${posY}'
-      fill='none' stroke='currentColor' stroke-opacity='0.65' stroke-width='1'></circle>
+      fill='none' stroke='currentColor' stroke-opacity='0.425' stroke-width='1'></circle>
     <circle className='tiny-circle' r='${tinyRadius}' cx='${posX}' cy='${posY}'
       stroke='none' fill='currentColor' fill-opacity='0.875'></circle>
   </g>
