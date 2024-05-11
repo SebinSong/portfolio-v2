@@ -12,4 +12,10 @@
   svg.animation-svg {
     color: $light-black-hex;
   }
+
+  .particles circle {
+    transition-property: cx, cy;
+    transition-timing-function: linear;
+    transition-duration: 20ms;
+  }
 }

@@ -1,7 +1,5 @@
-import React from 'react'
-
 // child components
-import CursorAnimation from '~/components/home-cursor-animation/HomeCursorAnimation'
+import CursorAnimation from '~/components/home-cursor-animation/HomeCursorAnimation.tsx'
 
 import './Home.scss'
 

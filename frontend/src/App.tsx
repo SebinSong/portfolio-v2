@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import './App.scss'
 
 // child components
-import Toolbar from '~/components/toolbar/Toolbar.jsx'
-import HomePage from '~/pages/home/Home.jsx'
+import Toolbar from '~/components/toolbar/Toolbar.tsx'
+import HomePage from '~/pages/home/Home.tsx'
 
 function App() {
   // methods

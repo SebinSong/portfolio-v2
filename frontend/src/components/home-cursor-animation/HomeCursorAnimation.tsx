@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 // utils
 import { isTouchDevice } from '~/view-utils.ts'
-import { drawCursor } from './animation-utils.ts'
+import { paintSvg, moveComponents } from './animation-utils.ts'
+import type { Point } from './animation-utils.ts'
+
 
 const pointerEventName = isTouchDevice ? 'touchmove' : 'mousemove'
-const defaultPos = () => ({ x: 0, y: 0 })
-const position = { x: 0, y: 0 } // position of the custom cursor
-const pointer = { x: 0, y: 0 } // position of the actual device pointer (e.g. mouse, touch-finger)
-let aniRequestId = null
+const position: Point = { x: 0, y: 0 } // position of the custom cursor
+const pointer: Point = { x: 0, y: 0 } // position of the actual device pointer (e.g. mouse, touch-finger)
+let aniRequestId: any = null
 
 // import scss
 import './HomeCursorAnimation.scss'
@@ -23,9 +24,11 @@ export default function HomeCursorAnimation () {
       width: innerWidth,
       height: innerHeight
     })
+
+    initSvg()
   }
 
-  const updateCoordinates = (e) => {
+  const updateCoordinates = (e: any) => {
     const isTouch = e.type.includes('touch')
 
     if (isTouch) {
@@ -37,12 +40,9 @@ export default function HomeCursorAnimation () {
     }
   }
 
-  const paintSvg = () => {
-    const canvasEl = svgEl.current
-
-    canvasEl.innerHTML = `
-      ${drawCursor(position)}
-    `
+  const initSvg = () => {
+    const canvasEl = (svgEl.current as unknown) as HTMLElement
+    paintSvg(canvasEl, position)
   }
 
   const updatePosition = () => {
@@ -59,7 +59,7 @@ export default function HomeCursorAnimation () {
   const animate = () => {
     // update the position of the custom cursor drawn on the svg canvas.
     updatePosition()
-    paintSvg()
+    moveComponents(position)
 
     aniRequestId = window.requestAnimationFrame(animate)
   }
@@ -74,11 +74,11 @@ export default function HomeCursorAnimation () {
   useEffect(() => {
     window.addEventListener('resize', resizeHandler)
     window.addEventListener(pointerEventName, updateCoordinates)
-    animate()
+    initSvg()
+    setTimeout(() => animate(), 20)
 
     return () => {
       // Free up the resources that the animation is using when no need.
-
       window.removeEventListener('resize', resizeHandler)
       window.removeEventListener(pointerEventName, updateCoordinates)
       stopAnimation()
