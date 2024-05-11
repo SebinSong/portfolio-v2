@@ -11,6 +11,10 @@
   }
 }
 
+@mixin height-100vh {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 /*
   possible pre-defined sass-variables for below util mixins:
 
@@ -18,6 +22,7 @@
   $large-phone: 768px;
   $tablet: 992px;
   $desktop: 1200px;
+  $desktop-large: 1600px;
 */
 
 @mixin from ($bp) {

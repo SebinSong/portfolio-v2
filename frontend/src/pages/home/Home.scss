@@ -1,3 +1,115 @@
 .page-home {
   position: relative;
+
+  .home-main-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 100 - var(--toolbar-height));
+    overflow: hidden;
+  }
+
+  .intro-block {
+    position: absolute;
+    top: 42.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    max-width: 80vw;
+
+    .iam {
+      position: relative;
+      display: inline-block;
+      width: max-content;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-1);
+      z-index: 0;
+
+      .text {
+        position: relative;
+        z-index: 1;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 8.6rem;
+        height: 8.6rem;
+        border-radius: 50%;
+        background-color: var(--highlight);
+        opacity: 0.675;
+        z-index: 0;
+      }
+
+      @include from ($tablet) {
+        font-size: 1vw;
+
+        &::before {
+          width: 12rem;
+          height: 12rem;
+        }
+      }
+
+      @include from ($desktop-large) {
+        font-size: 2rem;
+
+        &::before {
+          width: 6vw;
+          height: 6vw;
+        }
+      }
+    }
+
+    h1.my-name {
+      font-weight: 900;
+      font-size: 18vw;
+      line-height: 1;
+      z-index: 1;
+      margin-bottom: 3rem;
+
+      @include from ($small-phone) {
+        font-size: 14vw;
+      }
+
+      @include from ($large-phone) {
+        font-size: 10vw;
+        margin-bottom: 2rem;
+        font-size: 8.25vw;
+      }
+    }
+
+    .intro-para {
+      position: relative;
+      padding-left: 1rem;
+      font-size: $size-4;
+      color: var(--text-1);
+      font-weight: 300;
+      line-height: 2;
+
+      .emphasis {
+        display: inline-block;
+        line-height: 1;
+        color: $text-1;
+        font-weight: 600;
+        padding: 0.15em;
+        border: 1px solid var(--text-2);
+      }
+
+      @include from ($desktop) {
+        font-size: 1.6vw;
+      }
+    }
+  }
 }

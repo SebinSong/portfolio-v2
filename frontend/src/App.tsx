@@ -13,12 +13,19 @@ function App() {
     rootEl.style.setProperty('--vh', `${vh}px`)
   }
 
+  const onWindowResize = () => {
+    setVhDevice()
+  }
+
   // effects
   useEffect(() => {
     // various tasks for app initialisation
-    window.addEventListener('resize', () => {
-      setVhDevice()
-    })
+    setVhDevice()
+    window.addEventListener('resize', onWindowResize)
+
+    return () => {
+      window.removeEventListener('resize', onWindowResize)
+    }
   }, [])
 
   return (

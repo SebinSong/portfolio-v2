@@ -30,3 +30,17 @@ body {
   color: $text-0;
   font-size: $size-6;
 }
+
+.has-color-text-1 {
+  color: $text-1;
+}
+
+.has-text-0-as-bg {
+  background-color: $text-0;
+  color: $background-0;
+}
+
+.has-text-1-as-bg {
+  background-color: $text-1;
+  color: $background-0;
+}

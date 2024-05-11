@@ -11,9 +11,12 @@ $grey-hex: #8C8C8C;
 $dark-grey-hex: #595959;
 $light-black-hex: #262626;
 $black-hex: #0D0D0D;
+$highlight-green-hex: #D4FFB8;
 
 $text-0: var(--text-0);
+$text-1: var(--text-1);
 $background-0: var(--background-0);
+$highlight: var(--highlight);
 
 // font-size related sass-variables
 $size-0: var(--size-0);
@@ -31,6 +34,7 @@ $small-phone: 576px;
 $large-phone: 768px;
 $tablet: 992px;
 $desktop: 1200px;
+$desktop-large: 1600px;
 
 // miscellaneous sass-variables
 $toolbar-height: var(--toolbar-height);

@@ -5,9 +5,16 @@ import './Home.scss'
 
 export default function Home () {
   return (
-    <div className='l-page page-home'>
+    <div className='page-home'>
       <CursorAnimation />
-      Home page content
+
+      <section className='home-main-section'>
+        <div className='intro-block'>
+          <span className='iam'><span className='text'>I'm</span></span>
+          <h1 className='my-name'>Sebin Song</h1>
+          <p className='intro-para'>A <span className='emphasis'>frontend</span> developer with the <span className='emphasis'>backend</span> capability.</p>
+        </div>
+      </section>
     </div>
   )
 }

@@ -1,6 +1,9 @@
 $themeVars: (
   text-0: (#0D0D0D, #0D0D0D),
+  text-1: (#595959, #595959),
+  text-2: (#8C8C8C, #8C8C8C),
   background-0: (#F2F2F2, #F2F2F2),
+  highlight: (#D4FFB8, #D4FFB8)
 );
 
 :root {
@@ -10,6 +13,7 @@ $themeVars: (
   --c-dark-grey: #595959;
   --c-light-black: #262626;
   --c-black: #0D0D0D;
+  --c-highlight-green: #D4FFB8;
 
   // light-theme colour declarations
 
