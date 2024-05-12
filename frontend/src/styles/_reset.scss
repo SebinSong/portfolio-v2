@@ -50,3 +50,33 @@ td,
 th {
   padding: 0;
 }
+
+button {
+  // normalize the button style by removing all platform-variant styles.
+
+  border: none;
+  border-radius: 0;
+  width: auto;
+  overflow: visible;
+  min-height: auto;
+  background: rgba(0, 0, 0, 0);
+  appearance: none;
+  cursor: pointer;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Remove excess padding and border in Firefox 4+ */
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}

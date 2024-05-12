@@ -1,0 +1,64 @@
+.scroll-indicator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  gap: 1.6rem;
+  user-select: none;
+
+  .indicator-track {
+    position: relative;
+    width: 1px;
+    height: 2rem;
+    overflow: hidden;
+    outline-offset: 0.4rem;
+    outline: 1px solid $text-2;
+    background-color: rgba(0, 0, 0, 0);
+
+    .indicator-mover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background-color: $text-0;
+      animation: indicator-mover-ani 2s ease-in infinite;
+    }
+  }
+
+  .indicator-text {
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  @keyframes indicator-mover-ani {
+    0% {
+      top: 0;
+      height: 0%;
+    }
+
+    30% {
+      top: 0;
+      height: 100%;
+    }
+
+    45% {
+      top: 0;
+      height: 100%;
+    }
+
+    75% {
+      top: 100%;
+      height: 100%;
+    }
+
+    100% {
+      top: 100%;
+      height: 100%;
+    }
+  }
+}

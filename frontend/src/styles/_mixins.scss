@@ -54,3 +54,9 @@
     @content;
   }
 }
+
+@mixin tall-screen {
+  @media screen and (min-height: 1000px) {
+    @content;
+  }
+}

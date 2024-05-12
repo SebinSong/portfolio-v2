@@ -16,7 +16,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  height: $toolbar-height;
+  height: var(--toolbar-height);
   overflow: hidden;
 }
 

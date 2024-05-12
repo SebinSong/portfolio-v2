@@ -1,6 +1,6 @@
 // child components
 import CursorAnimation from '~/components/home-cursor-animation/HomeCursorAnimation.tsx'
-
+import ScrollIndicator from '~/components/scroll-indicator/ScrollIndicator.tsx'
 import './Home.scss'
 
 export default function Home () {
@@ -14,6 +14,8 @@ export default function Home () {
           <h1 className='my-name'>Sebin Song</h1>
           <p className='intro-para'>A <span className='emphasis'>frontend</span> developer with the <span className='emphasis'>backend</span> capability.</p>
         </div>
+
+        <ScrollIndicator classes='home-scroll-indicator' />
       </section>
     </div>
   )

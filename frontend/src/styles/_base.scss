@@ -1,9 +1,13 @@
-html {
+:root {
   min-width: 300px;
   overflow: hidden;
   background-color: $background-0;
 
-  --toolbar-height: 80px;
+  --toolbar-height: 60px;
+
+  @include tall-screen {
+    --toolbar-height: 100px;
+  }
 }
 
 html,

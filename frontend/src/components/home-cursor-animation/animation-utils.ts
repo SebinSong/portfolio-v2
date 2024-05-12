@@ -12,8 +12,8 @@ const bigRadius = 16
 const radiusStart = 36
 const transitionDuration = isTouchDevice ? 14 : 10
 const particleColors: any = {
-  light: 'rgba(140, 140, 140, 0.2)',
-  dark: 'rgba(140, 140, 140, 0.2)'
+  light: 'rgba(140, 140, 140, 0.4)',
+  dark: 'rgba(140, 140, 140, 0.4)'
 }
 let bigCursor, tinyCursor, particleEls
 
@@ -30,7 +30,8 @@ export function drawCursor (pos: Point): string {
   return `
   <g class='custom-cursor-group'>
     <circle class='big-circle' r='${bigRadius}' cx='${posX}' cy='${posY}'
-      fill='var(--highlight)' stroke='currentColor' stroke-opacity='0.425' stroke-width='1'></circle>
+      fill='var(--highlight)' fill-opacity='0.425' stroke='currentColor'
+        stroke-opacity='0.2' stroke-width='1' stroke-dasharray='6 8'></circle>
     <circle class='tiny-circle' r='${tinyRadius}' cx='${posX}' cy='${posY}'
       stroke='none' fill='currentColor' fill-opacity='0.875'></circle>
   </g>
@@ -64,6 +65,7 @@ export function drawParticles (pos: Point, theme: string = 'light'): string {
               fill='none' 
               stroke='${particleColor}'
               stroke-width='1'
+              stroke-dasharray='12'
               style='transition-duration: ${30 + transitionDuration * index}ms;'></circle>
           `
         }).join('')

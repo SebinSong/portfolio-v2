@@ -1,3 +1,90 @@
 .toolbar-container {
-  font-size: inherit;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 10;
+
+  .toolbar-nav-list {
+    position: relative;
+    display: flex;
+    width: max-content;
+    height: auto;
+    align-items: center;
+    column-gap: 1.8rem;
+    font-size: var(--size-7);
+
+    @include from ($tablet) {
+      column-gap: 3.2rem;
+      font-size: var(--size-6);
+    }
+
+    @include from ($desktop-large) {
+      column-gap: 4rem;
+      font-size: var(--size-3);
+    }
+  }
+
+  button.toolbar-nav-btn {
+    position: relative;
+    font-size: inherit;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+
+    @include from ($large-phone) {
+      padding-bottom: 0.6rem;
+    }
+    
+    .text {
+      position: relative;
+      z-index: 1;
+      font-weight: 400;
+      padding-bottom: 1px;
+      border-bottom: 1px solid $text-2;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 0;
+    }
+
+
+    &::before {
+      // little highlight circle
+      width: 2em;
+      height: 2em;
+      border-radius: 2em;
+      background-color: var(--highlight);
+      border: 1px solid $text-2;
+      top: -0.6em;
+      left: -0.7em;
+      z-index: 0;
+      transform: scale(0);
+      transition: transform 250ms ease-out;
+    }
+
+    &::after {
+      // second buttom-line
+      width: 0%;
+      height: 1px;
+      border-bottom: 1px solid $text-2;
+      bottom: 0;
+      left: 0;
+      transition: width 250ms ease-out;
+    }
+
+    &:focus,
+    &:hover,
+    &.is-active {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &.is-active::before {
+      transform: scale(1);
+    }
+  }
 }
