@@ -1,6 +1,33 @@
 @font-face {
-  src: url("/fonts/Manrope.woff2") format("woff2");
-  font-family: "Manrope";
+  font-family: 'monument_extended';
+  src: url('./fonts/monumentextended-black-webfont.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'monument_extended';
+  src: url('./fonts/monumentextended-bold-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'monument_extended';
+  src: url('./fonts/monumentextended-regular-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'monument_extended';
+  src: url('./fonts/monumentextended-ultralight-webfont.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 html {
@@ -23,13 +50,27 @@ html {
 }
 
 body {
-  font-family: "Manrope", "Helvetica Neue", "sans-serif";
+  font-family: "monument_extended", "Helvetica Neue", "sans-serif";
   font-style: normal;
-  font-weight: normal;
+  font-weight: lighter;
   line-height: 1.5;
   color: $text-0;
   font-size: $size-6;
 }
+
+// Text selection highlight styles
+
+::-moz-selection { /* Code for Firefox */
+  color: $highlight;
+  background: $text-0;
+}
+
+::selection {
+  color: $highlight;
+  background: $text-0;
+}
+
+// various colour-related util classes
 
 .has-color-text-1 {
   color: $text-1;

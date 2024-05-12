@@ -30,7 +30,7 @@ export function drawCursor (pos: Point): string {
   return `
   <g class='custom-cursor-group'>
     <circle class='big-circle' r='${bigRadius}' cx='${posX}' cy='${posY}'
-      fill='none' stroke='currentColor' stroke-opacity='0.425' stroke-width='1'></circle>
+      fill='var(--highlight)' stroke='currentColor' stroke-opacity='0.425' stroke-width='1'></circle>
     <circle class='tiny-circle' r='${tinyRadius}' cx='${posX}' cy='${posY}'
       stroke='none' fill='currentColor' fill-opacity='0.875'></circle>
   </g>

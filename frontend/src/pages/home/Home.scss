@@ -25,19 +25,21 @@
     max-width: 80vw;
 
     .iam {
+      --bg-side: 10rem;
       position: relative;
       display: inline-block;
       width: max-content;
       font-size: 1.4rem;
-      font-weight: 600;
       color: var(--text-1);
       z-index: 0;
+      margin-bottom: 1rem;
 
       .text {
         position: relative;
-        z-index: 1;
+        z-index: 2;
       }
 
+      &::after,
       &::before {
         content: '';
         position: absolute;
@@ -45,55 +47,63 @@
         left: 50%;
         transform: translate(-50%, -50%);
         display: block;
-        width: 8.6rem;
-        height: 8.6rem;
+        width: var(--bg-side);
+        height: var(--bg-side);
         border-radius: 50%;
+      }
+
+      &::before {
+        width: var(--bg-side);
+        height: var(--bg-side);
+        transform: translate(-50%, -50%);
+        border: 1px solid currentColor;
+        z-index: 1;
+      }
+
+      &::after {
+        width: calc(var(--bg-side) * 1.0175);
+        height: calc(var(--bg-side) * 1.0175);
+        transform: translate(-58%, -42%);
         background-color: var(--highlight);
-        opacity: 0.675;
         z-index: 0;
       }
 
       @include from ($tablet) {
+        --bg-side: 16rem;
         font-size: 1vw;
-
-        &::before {
-          width: 12rem;
-          height: 12rem;
-        }
+        margin-bottom: 3rem;
       }
 
       @include from ($desktop-large) {
-        font-size: 2rem;
-
-        &::before {
-          width: 6vw;
-          height: 6vw;
-        }
+        --bg-side: 11vw;
       }
     }
 
     h1.my-name {
       font-weight: 900;
-      font-size: 18vw;
+      font-size: 14vw;
       line-height: 1;
       z-index: 1;
       margin-bottom: 3rem;
 
       @include from ($small-phone) {
-        font-size: 14vw;
+        font-size: 12vw;
       }
 
       @include from ($large-phone) {
-        font-size: 10vw;
         margin-bottom: 2rem;
         font-size: 8.25vw;
+      }
+
+      @include from ($desktop) {
+        font-size: 6.85vw;
       }
     }
 
     .intro-para {
       position: relative;
       padding-left: 1rem;
-      font-size: $size-4;
+      font-size: $size-5;
       color: var(--text-1);
       font-weight: 300;
       line-height: 2;
@@ -102,13 +112,13 @@
         display: inline-block;
         line-height: 1;
         color: $text-1;
-        font-weight: 600;
-        padding: 0.15em;
+        font-weight: 400;
+        padding: 0.2em;
         border: 1px solid var(--text-2);
       }
 
       @include from ($desktop) {
-        font-size: 1.6vw;
+        font-size: 1.35vw;
       }
     }
   }
