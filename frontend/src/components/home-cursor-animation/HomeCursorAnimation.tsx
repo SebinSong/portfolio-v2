@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from 'react'
 // utils
 import { isTouchDevice } from '~/view-utils.ts'
 import { paintSvg, moveComponents } from './animation-utils.ts'
-import type { Point } from './animation-utils.ts'
+import type { Point } from '~/types/common'
 
-// define types
+// declare local types
 type CanvasArea = {
   width: number,
   height: number

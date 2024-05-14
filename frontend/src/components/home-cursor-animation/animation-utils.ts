@@ -1,21 +1,17 @@
 'use strict'
 
 import { linearScale, genArrayFromNumber, isTouchDevice } from '~/view-utils'
-
-export interface Point {
-  x: number,
-  y: number
-}
+import type { Theme, Point } from '~/types/common'
 
 const tinyRadius = 4
 const bigRadius = 16
 const radiusStart = 36
 const transitionDuration = isTouchDevice ? 14 : 10
-const particleColors: any = {
-  light: 'rgba(140, 140, 140, 0.4)',
-  dark: 'rgba(140, 140, 140, 0.4)'
+const particleColors: { light: string, dark: string }  = {
+  light: 'rgba(140, 140, 140, 0.275)',
+  dark: 'rgba(140, 140, 140, 0.275)'
 }
-let bigCursor, tinyCursor, particleEls
+let bigCursor: any, tinyCursor: any, particleEls: any[]
 
 export function diagonalWindow (): number {
   const w = window.innerWidth
@@ -31,7 +27,7 @@ export function drawCursor (pos: Point): string {
   <g class='custom-cursor-group'>
     <circle class='big-circle' r='${bigRadius}' cx='${posX}' cy='${posY}'
       fill='var(--highlight)' fill-opacity='0.425' stroke='currentColor'
-        stroke-opacity='0.2' stroke-width='1' stroke-dasharray='6 8'></circle>
+        stroke-opacity='0.5' stroke-width='1' stroke-dasharray='4 6'></circle>
     <circle class='tiny-circle' r='${tinyRadius}' cx='${posX}' cy='${posY}'
       stroke='none' fill='currentColor' fill-opacity='0.875'></circle>
   </g>
@@ -48,7 +44,7 @@ function calcRadiusDiff (): number {
   return linearScale([200, 2000], [40, 100])(diagonal)
 }
 
-export function drawParticles (pos: Point, theme: string = 'light'): string {
+export function drawParticles (pos: Point, theme: Theme = 'light'): string {
   const particleNums = calcParticleNumbers()
   const radiusDiff = calcRadiusDiff()
   const particleColor = particleColors[theme]
@@ -65,7 +61,6 @@ export function drawParticles (pos: Point, theme: string = 'light'): string {
               fill='none' 
               stroke='${particleColor}'
               stroke-width='1'
-              stroke-dasharray='12'
               style='transition-duration: ${30 + transitionDuration * index}ms;'></circle>
           `
         }).join('')
@@ -86,7 +81,7 @@ export function paintSvg (svgEl: HTMLElement, position: Point) {
 }
 
 export function moveComponents (position: Point) {
-  const els = [bigCursor, tinyCursor, ...particleEls]
+  const els: any[] = [bigCursor, tinyCursor, ...particleEls]
 
   els.forEach((el: any) => {
     el.setAttributeNS(null, 'cx', position.x)

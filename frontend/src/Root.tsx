@@ -1,11 +1,10 @@
 import { useEffect } from 'react'
-import './App.scss'
+import { Outlet } from "react-router-dom"
 
 // child components
 import Toolbar from '~/components/toolbar/Toolbar.tsx'
-import HomePage from '~/pages/home/Home.tsx'
 
-function App () {
+function Root () {
   // methods
   const setVhDevice = (): void => {
     const vh = window.innerHeight * 0.01 as number
@@ -31,9 +30,9 @@ function App () {
   return (
     <>
       <Toolbar />
-      <HomePage />
+      <Outlet />
     </>
   )
 }
 
-export default App
+export default Root
