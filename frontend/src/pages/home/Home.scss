@@ -106,14 +106,14 @@
       padding-left: 1rem;
       font-size: $size-5;
       color: var(--text-1);
-      font-weight: 300;
+      font-weight: lighter;
       line-height: 2;
 
       .emphasis {
         display: inline-block;
         line-height: 1;
         color: $text-1;
-        font-weight: 400;
+        font-weight: 700;
         padding: 0.2em;
         border: 1px solid var(--text-2);
       }

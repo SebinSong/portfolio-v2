@@ -5,6 +5,11 @@ import { isTouchDevice } from '~/view-utils.ts'
 import { paintSvg, moveComponents } from './animation-utils.ts'
 import type { Point } from './animation-utils.ts'
 
+// define types
+type CanvasArea = {
+  width: number,
+  height: number
+}
 
 const pointerEventName = isTouchDevice ? 'touchmove' : 'mousemove'
 const position: Point = { x: 0, y: 0 } // position of the custom cursor
@@ -16,8 +21,9 @@ import './HomeCursorAnimation.scss'
 
 export default function HomeCursorAnimation () {
   // local-state
-  const [canvasArea, setCanvasArea] = useState({width: innerWidth, height: innerHeight })
-  const svgEl = useRef(null)
+  const [canvasArea, setCanvasArea] = useState<CanvasArea>({width: innerWidth, height: innerHeight })
+  const svgEl = useRef<HTMLElement>(null)
+
   // methods
   const resizeHandler = () => {
     setCanvasArea({

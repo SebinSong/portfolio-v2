@@ -1,11 +1,12 @@
 // child components
+import PageTemplate from '../PageTemplate'
 import CursorAnimation from '~/components/home-cursor-animation/HomeCursorAnimation.tsx'
 import ScrollIndicator from '~/components/scroll-indicator/ScrollIndicator.tsx'
 import './Home.scss'
 
 export default function Home () {
   return (
-    <div className='page-home'>
+    <PageTemplate classes='page-home'>
       <CursorAnimation />
 
       <section className='home-main-section'>
@@ -17,6 +18,6 @@ export default function Home () {
 
         <ScrollIndicator classes='home-scroll-indicator' />
       </section>
-    </div>
+    </PageTemplate>
   )
 }

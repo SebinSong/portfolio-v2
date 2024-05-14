@@ -17,7 +17,7 @@ function Toolbar () {
   const [selectedId, setSelectedId] = useState('home')
 
   // methods
-  const onMenuClick = (id) => {
+  const onMenuClick = (id: string) => {
     console.log('clicked item id - : ', id)
     setSelectedId(id)
   }

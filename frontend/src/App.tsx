@@ -5,15 +5,15 @@ import './App.scss'
 import Toolbar from '~/components/toolbar/Toolbar.tsx'
 import HomePage from '~/pages/home/Home.tsx'
 
-function App() {
+function App () {
   // methods
-  const setVhDevice = () => {
+  const setVhDevice = (): void => {
     const vh = window.innerHeight * 0.01 as number
     const rootEl = document.documentElement as HTMLElement
     rootEl.style.setProperty('--vh', `${vh}px`)
   }
 
-  const onWindowResize = () => {
+  const onWindowResize = (): void => {
     setVhDevice()
   }
 

@@ -8,7 +8,8 @@ export const isTouchDevice = browser.os === "Android OS" || browser.os === "iOS"
 export function genArrayFromNumber (num: number, startValue: number = 0): number[] {
   return Array(num).fill(0).map((_,i) => startValue + i)
 }
-export function linearScale ([d1, d2]: number[], [r1, r2]: number[]): Function {
+
+export function linearScale ([d1, d2]: [number, number], [r1, r2]: [number, number]): Function {
   // generate a function that takes a value between d1 and d2 and then
   // returns a linearly-scaled output whose min and max values are r1 and r2 respectively.
   const [dSpan, rSpan] = [d2 - d1, r2 - r1]

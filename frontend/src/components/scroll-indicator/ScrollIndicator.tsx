@@ -5,10 +5,15 @@ import { classNames as cn } from '~/view-utils'
 
 import './ScrollIndicator.scss'
 
+interface Props {
+  classes?: string,
+  verticalText?: boolean
+}
+
 function ScrollIndicator ({
   classes = '',
   verticalText = false
-}) {
+}: Props) {
   return (
     <div className={cn('scroll-indicator-container', classes)}>
       <span className='indicator-track'>
