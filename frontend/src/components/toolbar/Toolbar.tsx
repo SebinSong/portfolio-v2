@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 interface ToolbarMenu {
   id: string,
@@ -21,14 +21,10 @@ const toolbarMenuList: Array<ToolbarMenu> = [
 
 function Toolbar () {
   const navigate = useNavigate()
-
-  // local-state
-  const [selectedId, setSelectedId] = useState('home')
+  const location = useLocation()
 
   // methods
   const onMenuClick = (item: ToolbarMenu) => {
-    setSelectedId(item.id)
-
     if (item.routeTo) {
       navigate(item.routeTo)
     }
@@ -39,7 +35,7 @@ function Toolbar () {
       <div className='toolbar-nav-list'>
         {
           toolbarMenuList.map(entry => (
-            <button className={cn('toolbar-nav-btn', { 'is-active': selectedId === entry.id })}
+            <button className={cn('toolbar-nav-btn', { 'is-active': location.pathname === entry.routeTo })}
               key={entry.id}
               onClick={() => onMenuClick(entry)}>
               <span className='text'>{ entry.name }</span>

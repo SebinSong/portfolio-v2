@@ -4,8 +4,9 @@ type ContractType = 'Part-time' | 'Full-time'
 type TextOrTextWithLink = string | { text: string, link: string }
 type DescriptionUnit = TextOrTextWithLink | TextOrTextWithLink[]
 
-interface ResumeEntry {
-  companyName: string,
+export interface ResumeEntry {
+  id: string,
+  name: string,
   location: string,
   roles: string[],
   contractType: ContractType,
@@ -18,7 +19,8 @@ interface ResumeEntry {
 
 const resumeData: Array<ResumeEntry> = [
   {
-    companyName: 'Ilwol Haedalbyul',
+    id: 'ilwol',
+    name: 'Ilwol Haedalbyul',
     location: 'Bundang, Kyung-ki province, South Korea',
     roles: ['Full stack engineer', 'Design'],
     contractType: 'Part-time',
@@ -40,14 +42,15 @@ const resumeData: Array<ResumeEntry> = [
     ]
   },
   {
-    companyName: 'okTurtles Foundation Inc.',
+    id: 'okturtles',
+    name: 'okTurtles Foundation Inc.',
     location: 'Miami, Florida, the United States',
     roles: ['Front-end web developer'],
     contractType: 'Part-time',
     workType: 'Remote',
     link: 'https://okturtles.org',
     period: { from: '06-2022' },
-    stacks: ['HTML & SCSS', 'Javascript', 'Typescript', 'Vue 2', 'Vue 3', 'AstroJS', 'PWA', 'Web-Sockets'],
+    stacks: ['HTML & SCSS', 'Javascript', 'Typescript', 'VueJS 2 & 3', 'React', 'AstroJS', 'PWA', 'Web-Sockets'],
     descriptions: [
       'Build front-end of high-quality websites & web-application of the company',
       {
@@ -59,5 +62,23 @@ const resumeData: Array<ResumeEntry> = [
         link: 'https://github.com/okTurtles/group-income/pulls?q=is%3Aclosed+is%3Apr+assignee%3A%40me'
       }
     ]
+  },
+  {
+    id: 'heartland',
+    name: 'Heartland bank Ltd.',
+    location: 'Auckland, New Zealand',
+    roles: ['Front-end developer'],
+    contractType: 'Full-time',
+    workType: 'Remote / On-site',
+    link: 'https://www.heartland.co.nz/',
+    period: { from: '04-2020' },
+    stacks: ['HTML & SCSS', 'Javascript', 'Typescript', 'Vue 2 & 3', 'CapacitorJS'],
+    descriptions: [
+      'Maintained two hybrid mobile-apps and websites of the company using modern javascript technologies like VueJS and CapacitorJS',
+      'Implement design-system, build various reusable UI components of the app and integrate the Restful APIs the back-end team delivers',
+      'Closely communitcate and collobrate with other teams such as, Design, UX, Back-end and QA'
+    ]
   }
 ]
+
+export default resumeData

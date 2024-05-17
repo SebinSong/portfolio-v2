@@ -4,7 +4,14 @@ $themeVars: (
   text-2: (#8C8C8C, #8C8C8C),
   background-0: (#F2F2F2, #F2F2F2),
   background-0_1: (#E1E1E1, #E1E1E1),
-  highlight: (#c9faa8, #c9faa8)
+  background-0_2: (#B6B6B6, #B6B6B6),
+  highlight: (#c9faa8, #c9faa8),
+
+  // tab-menus
+  tab-menu-text-color: (#8C8C8C, #8C8C8C),
+  tab-menu-border-color: (#8C8C8C, #8C8C8C),
+  tab-menu-text-color_active: (#0D0D0D, #0D0D0D),
+  tab-menu-border-color_active: (#0D0D0D, #0D0D0D)
 );
 
 :root {

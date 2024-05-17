@@ -1,3 +1,30 @@
 .page-resume {
   position: relative;
+
+  .resume-details {
+    position: relative;
+    margin-top: 8rem;
+    max-width: 86rem;
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid $text-0;
+
+    &-content {
+      position: relative;
+      font-weight: lighter;
+      padding: 4rem 1.5rem;
+      color: $text-1;
+      font-size: $size-6;
+
+      .resume-content-label {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 1rem;
+        color: $text-0;
+      }
+    }
+  }
 }
