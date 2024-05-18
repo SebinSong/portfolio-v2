@@ -1,4 +1,3 @@
-type StrOrArrayOfStr = string | string[]
 type WorkType = 'Remote' | 'On-site' | 'Remote / On-site'
 type ContractType = 'Part-time' | 'Full-time'
 type TextOrTextWithLink = string | { text: string, link: string }
@@ -6,6 +5,7 @@ type DescriptionUnit = TextOrTextWithLink | TextOrTextWithLink[]
 
 export interface ResumeEntry {
   id: string,
+  index: string,
   name: string,
   location: string,
   roles: string[],
@@ -20,13 +20,14 @@ export interface ResumeEntry {
 const resumeData: Array<ResumeEntry> = [
   {
     id: 'ilwol',
+    index: '01',
     name: 'Ilwol Haedalbyul',
     location: 'Bundang, Kyung-ki province, South Korea',
-    roles: ['Full stack engineer', 'Design'],
+    roles: ['Full-stack engineer', 'Design'],
     contractType: 'Part-time',
     workType: 'Remote',
     link: 'https://www.ilwolbooking.com/',
-    period: { from: '2023-08', to: '2024-02' },
+    period: { from: 'Aug, 2023', to: 'Feb, 2024' },
     stacks: ['HTML & SCSS', 'Javascript', 'React', 'Redux', 'Node.js', 'Express', 'MongoDB', 'Google API'],
     descriptions: [
       'Build and maintain a booking website for fortune-telling service using MERN stacks.',
@@ -43,14 +44,15 @@ const resumeData: Array<ResumeEntry> = [
   },
   {
     id: 'okturtles',
+    index: '02',
     name: 'okTurtles Foundation Inc.',
     location: 'Miami, Florida, the United States',
     roles: ['Front-end web developer'],
     contractType: 'Part-time',
     workType: 'Remote',
     link: 'https://okturtles.org',
-    period: { from: '06-2022' },
-    stacks: ['HTML & SCSS', 'Javascript', 'Typescript', 'VueJS 2 & 3', 'React', 'AstroJS', 'PWA', 'Web-Sockets'],
+    period: { from: 'Jun, 2022' },
+    stacks: ['HTML & SCSS', 'Javascript', 'Typescript', 'Vue 2', 'Vue 3', 'React', 'AstroJS', 'PWA', 'Web-Sockets'],
     descriptions: [
       'Build front-end of high-quality websites & web-application of the company',
       {
@@ -65,14 +67,15 @@ const resumeData: Array<ResumeEntry> = [
   },
   {
     id: 'heartland',
+    index: '03',
     name: 'Heartland bank Ltd.',
     location: 'Auckland, New Zealand',
     roles: ['Front-end developer'],
     contractType: 'Full-time',
     workType: 'Remote / On-site',
     link: 'https://www.heartland.co.nz/',
-    period: { from: '04-2020' },
-    stacks: ['HTML & SCSS', 'Javascript', 'Typescript', 'Vue 2 & 3', 'CapacitorJS'],
+    period: { from: 'Apr, 2020' },
+    stacks: ['HTML & SCSS', 'Javascript', 'Typescript', 'Vue 2', 'Vue 3', 'CapacitorJS'],
     descriptions: [
       'Maintained two hybrid mobile-apps and websites of the company using modern javascript technologies like VueJS and CapacitorJS',
       'Implement design-system, build various reusable UI components of the app and integrate the Restful APIs the back-end team delivers',

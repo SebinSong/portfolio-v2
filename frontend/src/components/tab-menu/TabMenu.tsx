@@ -5,29 +5,31 @@ import './TabMenu.scss'
 
 type TabMenuEntry = {
   id: string,
-  name: string
+  name: string,
+  index: string
 }
 
 interface TabMenuProps {
   classes?: string,
   list: Array<TabMenuEntry>,
   initId?: string,
+  showIndex?: boolean,
   onSelect?: (selectedId: string) => any
 }
+
 
 function TabMenu ({
   classes = '',
   list,
   initId,
+  showIndex = false,
   onSelect
 }: TabMenuProps) {
   // local-state
   const [selectedId, setSelectedId] = useState<TabMenuEntry['id']>('')
 
   // computed state
-  const styleObj: React.CSSProperties = {
-    gridTemplateColumns: `repeat(${Math.max(list.length, 2)}, 1fr)`
-  }
+  const styleObj = { '--menu-number': list.length } as React.CSSProperties
 
   // methods
   const selectAction = (id: TabMenuEntry['id']) => {
@@ -55,12 +57,13 @@ function TabMenu ({
     <div className={cn('tab-menu-container', classes)}
       style={styleObj}>
       {
-        list.map(entry => (
+        list.map((entry) => (
           <div className={cn('tab-menu-item', selectedId === entry.id && 'is-active')}
             tabIndex={0}
             key={entry.id}
             onClick={(e) => clickHandler(e, entry.id)}
             onKeyUp={(e) => keyupHandler(e, entry.id)}>
+            {showIndex && <span className='menu-index'>{`${entry.index}.`}</span>}
             {entry.name}
           </div>
         ))

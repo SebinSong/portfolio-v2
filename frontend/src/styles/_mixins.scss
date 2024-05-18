@@ -15,6 +15,12 @@
   height: calc(var(--vh, 1vh) * 100);
 }
 
+@mixin grid-bg($len: 6px) {
+  background:
+    repeating-linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) #{$len}, var(--background-0_1) #{$len}, var(--background-0_1) #{$len + 1px}),
+    repeating-linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) #{$len}, var(--background-0_1) #{$len}, var(--background-0_1) #{$len + 1px});
+}
+
 /*
   possible pre-defined sass-variables for below util mixins:
 

@@ -1,0 +1,50 @@
+.page-common {
+  .page-title {
+    --circle-side: 3.6rem;
+    position: relative;
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    padding-bottom: 1.4rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 4rem;
+      height: 1px;
+      background-color: currentColor;
+    }
+
+    .text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .circle-deco {
+      position: absolute;
+      width: var(--circle-side);
+      height: var(--circle-side);
+      border-radius: var(--circle-side);
+      top: 0;
+      left: 0;
+      transform: translate(-35%, -32%);
+      background-color: $highlight;
+      border: 1px $text-2;
+      z-index: 0;
+
+      &::after {
+        content: '';
+        display: block;
+        position: relative;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        border: 1px dashed $text-2;
+        transform: translate(17.5%, -10.5%);
+      }
+    }
+  }
+}

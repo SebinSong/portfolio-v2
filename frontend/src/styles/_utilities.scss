@@ -69,11 +69,18 @@
 
 $spacing-nums: 0, 2, 4, 10, 20, 30, 40, 50, 60, 70, 80;
 @each $n in $spacing-nums {
-
   .mt-#{$n} { margin-top: #{$n}px !important; }
   .mb-#{$n} { margin-bottom: #{$n}px !important; }
   .pt-#{$n} { padding-top: #{$n}px !important; }
   .pb-#{$n} { padding-bottom: #{$n}px !important; }
+}
+
+$side-spacing-nums: 0, 2, 4, 10;
+@each $n in $spacing-nums {
+  .ml-#{$n} { margin-left: #{$n}px !important; }
+  .mr-#{$n} { margin-right: #{$n}px !important; }
+  .pl-#{$n} { padding-left: #{$n}px !important; }
+  .pr-#{$n} { padding-right: #{$n}px !important; }
 }
 
 .is-inline-block { display: inline-block; }
