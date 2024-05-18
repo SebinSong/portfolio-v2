@@ -1,0 +1,11 @@
+.resume-page-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  color: var(--background-0_2);
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 interface ToolbarMenu {
@@ -23,15 +23,37 @@ function Toolbar () {
   const navigate = useNavigate()
   const location = useLocation()
 
+  // local-state
+  const [hasBg, setHasBg] = useState<boolean>(false)
+
   // methods
   const onMenuClick = (item: ToolbarMenu) => {
     if (item.routeTo) {
       navigate(item.routeTo)
     }
   }
+  const scrollHandler = (): void => {
+    const bodyEl = document.body as HTMLBodyElement
+
+    if (bodyEl.scrollHeight && bodyEl.scrollTop > 20) {
+      setHasBg(true)
+    } else {
+      setHasBg(false)
+    }
+  }
+
+  // effects
+  useEffect(() => {
+    scrollHandler()
+    document.body.addEventListener('scroll', scrollHandler)
+
+    return () => {
+      document.body.removeEventListener('scroll', scrollHandler)
+    }
+  }, [])
 
   return (
-    <div className='l-toolbar toolbar-container'>
+    <div className={cn('l-toolbar toolbar-container', hasBg && 'has-bg')}>
       <div className='toolbar-nav-list'>
         {
           toolbarMenuList.map(entry => (

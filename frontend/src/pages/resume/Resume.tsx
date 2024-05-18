@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback, ReactNode } from "react"
 // child components
 import PageTemplate from "../PageTemplate"
 import TabMenu from "~/components/tab-menu/TabMenu"
+import ResumePageAnimation from "./resume-page-animation/ResumePageAnimation"
 
 // utils
 import resumeData from '~/view-data/resume-data.ts'
@@ -65,6 +66,8 @@ export default function Resume () {
 
   return (
     <PageTemplate classes='page-resume'>
+      <ResumePageAnimation />
+
       <div className='resume-details'>
         <h1 className='page-title'>
           <span className='text'>Work experiences</span>

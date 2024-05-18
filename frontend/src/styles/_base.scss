@@ -3,10 +3,14 @@
   overflow: hidden;
   background-color: $background-0;
 
-  --toolbar-height: 60px;
+  --toolbar-height: 70px;
+
+  @include from ($small-phone) {
+    --toolbar-height: 80px;
+  }
 
   @include tall-screen {
-    --toolbar-height: 100px;
+    --toolbar-height: 120px;
   }
 }
 
