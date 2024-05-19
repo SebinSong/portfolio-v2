@@ -124,5 +124,9 @@
 
   .resume-desc-item .item-value {
     flex-grow: 1;
+
+    .is-link {
+      margin-left: 4px;
+    }
   }
 }

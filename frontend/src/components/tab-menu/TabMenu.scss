@@ -8,6 +8,10 @@
   column-gap: 1.2rem;
   width: 100%;
 
+  @include until ($small-phone) {
+    column-gap: 0px;
+  }
+
   .tab-menu-item {
     position: relative;
     display: inline-flex;
@@ -25,6 +29,11 @@
       color 150ms linear,
       border-color 100ms linear;
     font-weight: 700;
+
+    @include until ($small-phone) {
+      font-size: $size-8;
+      padding: 2rem 0.8rem;
+    }
 
     .menu-index {
       font-size: 0.9em;

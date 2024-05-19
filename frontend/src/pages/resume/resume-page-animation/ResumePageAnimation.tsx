@@ -1,9 +1,11 @@
-import { memo } from 'react'
+import { memo, useRef, useEffect } from 'react'
 
 // utils
 import { classNames as cn } from '~/view-utils'
 
 import './ResumePageAnimation.scss'
+
+const svgAspectRatio = 1.78
 
 interface ComponentProps {
   classes?: string
@@ -12,11 +14,45 @@ interface ComponentProps {
 function ResumePageAnimation ({
   classes = ''
 }: ComponentProps) {
+  const svgEl = useRef(null) as any
+
+  // methods
+  const adjustCanvas = () => {
+    if (!svgEl.current) { return }
+
+    let widthVal: number = innerWidth
+    let heightVal: number = innerWidth / svgAspectRatio
+
+    if (heightVal < innerHeight) {
+      heightVal = innerWidth
+      widthVal = heightVal * svgAspectRatio
+
+      svgEl.current.classList.add('is-rotated')
+    } else {
+      svgEl.current.classList.remove('is-rotated')
+    }
+
+    svgEl.current.setAttributeNS(null, 'width', widthVal)
+    svgEl.current.setAttributeNS(null, 'height', heightVal)
+  }
+
+  // effects
+  useEffect(() => {
+    adjustCanvas()
+    window.addEventListener('resize', adjustCanvas)
+
+    return () => {
+      window.removeEventListener('resize', adjustCanvas)
+    }
+  }, [])
+
   return (
     <div className={cn('resume-page-animation', classes)}>
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-        viewBox="0 0 1422 800" id="qqquad" opacity='0.325'>
-        <g shapeRendering="crispEdges" strokeLinejoin="round" fill="none" strokeWidth="1" stroke="currentColor">
+      <svg className='svg' ref={svgEl} xmlns="http://www.w3.org/2000/svg" version="1.1"
+        viewBox="0 0 1422 800" opacity='0.675'
+        strokeWidth="0.8" stroke="currentColor" strokeDasharray='20 10 4 10'
+        strokeLinejoin="round" fill="none">
+        <g shapeRendering="crispEdges">
           <polygon points="1422,200 1066.5,0 1422,0"></polygon>
           <polygon points="1066.5,0 1066.5,200 711,0"></polygon>
           <polygon points="1066.5,200 711,400 1066.5,400"></polygon>

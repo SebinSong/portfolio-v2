@@ -42,7 +42,7 @@ const getDescContent = (descItem: any, itemIndex: any): ReactNode => {
         <i className='icon-angle-double-right item-arrow'></i>
         <span className='item-value'>
           {descItem.text}
-          <a className='is-link' target='_blank' href={descItem.link}>link</a>
+          <a className='is-link has-icon' target='_blank' href={descItem.link}>link</a>
         </span>
       </div>
     )

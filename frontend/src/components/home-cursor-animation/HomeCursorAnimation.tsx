@@ -22,7 +22,7 @@ import './HomeCursorAnimation.scss'
 export default function HomeCursorAnimation () {
   // local-state
   const [canvasArea, setCanvasArea] = useState<CanvasArea>({width: innerWidth, height: innerHeight })
-  const svgEl = useRef<HTMLElement>(null)
+  const svgEl = useRef(null)
 
   // methods
   const resizeHandler = () => {

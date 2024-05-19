@@ -70,6 +70,41 @@ body {
   background: $text-0;
 }
 
+// link styles
+.is-link {
+  display: inline-block;
+  font-weight: 300;
+  color: var(--text-2);
+  text-decoration: none;
+  margin-left: 1px;
+  margin-right: 1px;
+  line-height: 1.15;
+  border-bottom: 1px solid currentColor;
+  outline: none;
+  transition: color 200ms linear;
+
+  &:focus,
+  &:hover {
+    color: $background-0_2;
+  }
+
+  &:active {
+    background-color: $background-0_1;
+  }
+
+  &.has-icon::before {
+    display: inline-block;
+    margin-right: 1px;
+    font-size: 1.05em;
+    content: "\e62d";
+    font-family: "Project Icons";
+    font-weight: 700;
+    text-rendering: auto;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
 // various colour-related util classes
 
 .has-color-text-1 {

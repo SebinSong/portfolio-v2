@@ -2,14 +2,14 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 1rem;
+  padding-bottom: 1.4rem;
   z-index: 10;
   border: 1px solid rgba(0, 0, 0, 0);
   transition: border-color 200ms linear;
 
   &.has-bg {
     background-color: $background-0;
-    border-bottom-color: $background-0_1;
+    border-bottom-color: $background-0_2;
   }
 
   .toolbar-nav-list {
@@ -19,7 +19,7 @@
     height: auto;
     align-items: center;
     column-gap: 1.8rem;
-    font-size: var(--size-7);
+    font-size: var(--size-8);
 
     @include from ($tablet) {
       column-gap: 3.2rem;
