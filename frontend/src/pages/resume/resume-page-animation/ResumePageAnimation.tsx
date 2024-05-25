@@ -2,19 +2,25 @@ import { memo, useRef, useEffect } from 'react'
 
 // utils
 import { classNames as cn } from '~/view-utils'
+import type { Point } from '~/types/common'
+import usePointer from '~/hooks/usePointer.ts'
 
 import './ResumePageAnimation.scss'
 
+const tinyRadius = 4
+const bigRadius = 16
 const svgAspectRatio = 1.78
 
-interface ComponentProps {
-  classes?: string
-}
 
 function ResumePageAnimation ({
   classes = ''
 }: ComponentProps) {
-  const svgEl = useRef(null) as any
+  const svgEl = useRef<any>(null)
+  const bigCircleEl = useRef<any>(null)
+  const tinyCircleEl = useRef<any>(null)
+
+  // custom hooks
+  usePointer(onCursorUpdate)
 
   // methods
   const adjustCanvas = () => {
@@ -34,6 +40,14 @@ function ResumePageAnimation ({
 
     svgEl.current.setAttributeNS(null, 'width', widthVal)
     svgEl.current.setAttributeNS(null, 'height', heightVal)
+  }
+
+  function onCursorUpdate (cursor: Point) {
+    const els: any[] = [bigCircleEl, tinyCircleEl]
+    els.forEach((el: any) => {
+      el.current.setAttributeNS(null, 'cx', cursor.x)
+      el.current.setAttributeNS(null, 'cy', cursor.y)
+    })
   }
 
   // effects
@@ -72,6 +86,14 @@ function ResumePageAnimation ({
           <polygon points="1066.5,400 711,600 711,400"></polygon>
           <polygon points="1066.5,600 1066.5,800 711,600"></polygon>
           <polygon points="1066.5,800 1422,600 1422,800"></polygon>
+        </g>
+
+        <g className='custom-cursor-group'>
+          <circle ref={bigCircleEl} className='big-circle' r={bigRadius}
+            cx='0' cy='0' fill='var(--highlight)' fillOpacity='0.425' stroke='currentColor'
+            strokeOpacity='0.5' strokeWidth='1' strokeDasharray='4 6'></circle>
+          <circle ref={tinyCircleEl} className='tiny-circle' r={tinyRadius}
+            cx='0' cy='0' stroke='none' fill='currentColor' fillOpacity='0.875'></circle>
         </g>
       </svg>
     </div>
