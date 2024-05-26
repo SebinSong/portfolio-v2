@@ -3,13 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 // utils
 import { isTouchDevice } from '~/view-utils.ts'
 import { paintSvg, moveComponents } from './animation-utils.ts'
-import type { Point } from '~/types/common'
-
-// declare local types
-type CanvasArea = {
-  width: number,
-  height: number
-}
+import type { Point, CanvasArea } from '~/types/common'
 
 const pointerEventName = isTouchDevice ? 'touchmove' : 'mousemove'
 const position: Point = { x: 0, y: 0 } // position of the custom cursor

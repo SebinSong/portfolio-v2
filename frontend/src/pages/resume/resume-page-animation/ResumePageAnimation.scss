@@ -15,9 +15,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: update-dashoffset 2.5s linear infinite;
 
     &.is-rotated {
       transform: translate(-50%, -50%) rotate(90deg);
     }
+  }
+
+  @keyframes update-dashoffset {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 48; }
   }
 }

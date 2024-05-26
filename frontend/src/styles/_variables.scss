@@ -39,6 +39,12 @@ $tablet: 992px;
 $desktop: 1200px;
 $desktop-large: 1600px;
 
+// z-indexes
+$zindex-tooltip: 10;
+$zindex-toolbar: 20;
+$zindex-popup: 30;
+$zindex-cursor: 40;
+
 // miscellaneous sass-variables
 $toolbar-height: var(--toolbar-height);
 

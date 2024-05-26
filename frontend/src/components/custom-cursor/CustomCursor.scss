@@ -1,0 +1,12 @@
+.custom-cursor-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  pointer-events: none;
+  color: $light-black-hex;
+  z-index: $zindex-cursor;
+}

@@ -53,7 +53,7 @@ export default function usePointer (
         window.cancelAnimationFrame(cursorRequestId)
       }
     }
-  })
+  }, [])
 
   return {
     pointer,

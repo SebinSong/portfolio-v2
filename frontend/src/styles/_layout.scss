@@ -18,6 +18,7 @@
   width: 100%;
   height: var(--toolbar-height);
   overflow: hidden;
+  z-index: $zindex-toolbar;
 }
 
 .l-page {
