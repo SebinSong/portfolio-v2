@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 // page components
 import Resume from '~/pages/resume/Resume.tsx'
 import Home from '~/pages/home/Home.tsx'
+import Skills from '~/pages/skills/Skills.tsx'
 
 // import global styles
 import './styles/main.scss'
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: '/resume',
         element: <Resume />
+      },
+      {
+        path: '/skills',
+        element: <Skills />
       }
     ]
   }

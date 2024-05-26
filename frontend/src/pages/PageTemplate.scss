@@ -8,6 +8,15 @@
     margin-bottom: 4rem;
     padding-bottom: 1.4rem;
 
+    @include from ($desktop) {
+      font-size: 2.4rem;
+    }
+
+    @include from ($desktop-large) {
+      font-size: 2.8rem;
+      margin-bottom: 6rem;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -45,6 +54,19 @@
         border: 1px dashed $text-2;
         transform: translate(17.5%, -10.5%);
       }
+    }
+  }
+
+  .page-content-wrapper {
+    position: relative;
+    margin-top: 4rem;
+    max-width: 86rem;
+    padding: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include from ($desktop-large) {
+      max-width: 110rem;
     }
   }
 }

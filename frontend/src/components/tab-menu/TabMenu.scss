@@ -35,6 +35,11 @@
       padding: 2rem 0.8rem;
     }
 
+    @include from ($desktop-large) {
+      font-size: $size-6;
+      padding: 2.8rem 2.4rem;
+    }
+
     .menu-index {
       font-size: 0.9em;
     }

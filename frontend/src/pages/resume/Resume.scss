@@ -1,20 +1,15 @@
 .page-resume {
   position: relative;
 
-  .resume-details {
+  .resume-content-container {
     position: relative;
-    margin-top: 4rem;
-    max-width: 82rem;
-    padding: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
+    font-weight: lighter;
+    padding: 4rem 1.5rem;
+    color: $text-0;
+    font-size: var(--size-7);
 
-    .resume-content-container {
-      position: relative;
-      font-weight: lighter;
-      padding: 4rem 1.5rem;
-      color: $text-0;
-      font-size: 1.2rem;
+    @include from ($desktop-large) {
+      font-size: var(--size-6);
     }
   }
 

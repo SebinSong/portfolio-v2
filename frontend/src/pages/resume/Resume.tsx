@@ -68,7 +68,7 @@ export default function Resume () {
     <PageTemplate classes='page-resume'>
       <ResumePageAnimation />
 
-      <div className='resume-details'>
+      <div className='page-content-wrapper'>
         <h1 className='page-title'>
           <span className='text'>Work experiences</span>
           <span className='circle-deco'></span>
