@@ -6,6 +6,9 @@ const express = require('express')
 // importing .env file
 dotenv.config({ path: path.resolve(__dirname, '../.env') })
 
+// routers
+const configRouter = require('./routes/configRoutes')
+
 // middlewares
 const { globalErrorHandler, notFound } = require('./middlewares/errorMiddlewares')
 
@@ -16,12 +19,21 @@ const { API_PORT, NODE_ENV } = process.env
 // Create a server instance
 const app = express()
 
+// global middlewares
+// TODO - add a logger here
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+// attach routes
+app.use('/api/config', configRouter)
+
 // static server setup
 app.use(express.static(API_CLIENT_PATH))
 app.get('*', (req, res) => {
   // any route that is not api will be redirected to the front-end index.html
   res.sendFile(path.join(API_CLIENT_PATH, 'index.html'))
 })
+
 
 // error handling
 app.use(notFound)
