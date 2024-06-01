@@ -13,6 +13,24 @@
     }
   }
 
+  .resume-download-container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    column-gap: 1rem;
+    row-gap: 0.8rem;
+    font-size: $size-8;
+    padding-right: 0.4rem;
+    margin-bottom: 1.2rem;
+
+    p {
+      margin-bottom: 0.2rem;
+      color: $text-0;
+      border-bottom: 1px solid $text-2;
+    }
+  }
+
   .resume-content {
     &-line {
       position: relative;
@@ -122,6 +140,17 @@
 
     .is-link {
       margin-left: 4px;
+    }
+  }
+
+  button.pdf-download-btn {
+    i {
+      font-size: 0.85em;
+    }
+
+    @include until ($small-phone) {
+      padding: 1rem 1.4rem !important;
+      font-size: 0.8rem !important;
     }
   }
 }

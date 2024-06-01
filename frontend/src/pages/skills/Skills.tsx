@@ -15,7 +15,11 @@ export default function Skills () {
           <span className='circle-deco'></span>
         </h1>
 
-        <p>Skills content</p>
+        <p>
+          <button className="is-custom-border">
+            <span className="text">Long button text</span>
+          </button>
+        </p>
       </div>
     </PageTemplate>
   )

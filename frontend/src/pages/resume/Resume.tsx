@@ -74,6 +74,16 @@ export default function Resume () {
           <span className='circle-deco'></span>
         </h1>
 
+        <div className='resume-download-container'>
+          <p>Resume as PDF :</p>
+          <button className='is-custom-border is-solid-style is-small pdf-download-btn'>
+            <span className="text">
+              <i className="icon-download is-prefix"></i>
+              Download
+            </span>
+          </button>
+        </div>
+
         <TabMenu classes='resume-tab-menu'
           list={resumeData}
           initId={initTabId}
