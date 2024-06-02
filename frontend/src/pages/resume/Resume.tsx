@@ -8,6 +8,7 @@ import ResumePageAnimation from "./resume-page-animation/ResumePageAnimation"
 import resumeData from '~/view-data/resume-data.ts'
 import type { ResumeEntry } from '~/view-data/resume-data.ts'
 import { classNames as cn } from '~/view-utils'
+import { downloadResume } from '~/apis'
 
 // helpers
 const initTabId: ResumeEntry['id'] = resumeData[0].id
@@ -63,6 +64,14 @@ export default function Resume () {
 
   // methods
   const onTabSelect = useCallback(setSelectedTabId, [])
+  const onDowloadClick = async () => {
+    try {
+      const resumeData = await downloadResume()
+      console.log('!@# resumeData: ', resumeData)
+    } catch (err) {
+      console.error('!@# error downloading the resume: ', err)
+    }
+  }
 
   return (
     <PageTemplate classes='page-resume'>
@@ -76,7 +85,8 @@ export default function Resume () {
 
         <div className='resume-download-container'>
           <p>Resume as PDF :</p>
-          <button className='is-custom-border is-solid-style is-small pdf-download-btn'>
+          <button className='is-custom-border is-solid-style is-small pdf-download-btn'
+            onClick={onDowloadClick}>
             <span className="text">
               <i className="icon-download is-prefix"></i>
               Download

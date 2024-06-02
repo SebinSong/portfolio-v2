@@ -7,17 +7,21 @@ const RESUME_ABS_PATH = relToFixtures('resume.pdf')
 
 const downloadHandler = asyncHandler(async (req, res, next) => {
   const { resource } = req.query
+  const download = (filePath, name) => {
+    return res.status(200).download(filePath, name)
+  }
 
   switch (resource) {
     case 'resume': {
-      res.status(200).download(RESUME_ABS_PATH, 'resume_SebinSong.pdf')
-      break
+      if (await checkFileExists(RESUME_ABS_PATH)) {
+        return download(RESUME_ABS_PATH, 'resume_SebinSong.pdf')
+      }
     }
-    default {
+    default: {
       const resourcePath = relToFixtures(resource)
 
       if (await checkFileExists(resourcePath)) {
-        res.status(200).download(resourcePath, resource)
+        return download(resourcePath, resource)
       }
     }
   }

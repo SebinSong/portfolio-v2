@@ -3,6 +3,11 @@
 import { detect } from 'detect-browser'
 const browser: any = detect()
 
+export const MINS_MILLIS = 60000
+export const HOURS_MILLIS = 60 * MINS_MILLIS
+export const DAYS_MILLIS = 24 * HOURS_MILLIS
+export const MONTHS_MILLIS = 30 * DAYS_MILLIS
+
 export const isTouchDevice = browser.os === "Android OS" || browser.os === "iOS"
 
 export function genArrayFromNumber (num: number, startValue: number = 0): number[] {
