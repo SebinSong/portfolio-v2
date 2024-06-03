@@ -1,0 +1,172 @@
+.project-card {
+  position: relative;
+  padding: 3rem 2.4rem;
+  border: 1px solid $text-2;
+  max-width: 40rem;
+  outline: none;
+  cursor: pointer;
+
+  .icons-and-links {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .card-icon {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $size-5;
+      color: $text-0;
+      width: 4.2rem;
+      height: 4.2rem;
+      border-radius: 4.2rem;
+      color: $text-0;
+      border: 1px solid $text-1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 5rem;
+        height: 5rem;
+        border-radius: 5rem;
+        border: 1px dashed $background-0_2;
+      }
+    }
+
+    .project-links-container {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      width: 8.6rem;
+      border-left: 1px solid $background-0_2;
+
+      .project-link-icon {
+        display: inline-flex;
+        align-items: flex-end;
+        column-gap: 0.6rem;
+        font-size: $size-8;
+        color: $text-0;
+
+        i {
+          font-size: 1.2em;
+        }
+
+        &:focus,
+        &:hover {
+          .link-text {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .project-name {
+    position: relative;
+    padding-bottom: 1.6rem;
+    margin-bottom: 2.4rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 4rem;
+      border-top: 1px solid $text-2;
+    }
+  }
+
+  .project-details {
+    margin-bottom: 2rem;
+  }
+
+  .project-details-item {
+    display: flex;
+    align-items: baseline;
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: inline-block;
+      font-size: $size-8;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      width: 7.2rem;
+      flex-shrink: 0;
+      color: $text-0;
+    }
+
+    .details-value {
+      display: inline-block;
+      flex-grow: 1;
+      font-size: $size-7;
+      color: $text-1;
+    }
+  }
+
+  .work-types-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+
+    .work-type-tag,
+    .is-collab {
+      font-weight: 400;
+      flex-shrink: 0;
+      padding: 0.2em 0.6em;
+      font-size: 0.9rem;
+      padding: 0.2em 0.6em;
+      border: 1px solid $text-1;
+      display: inline-block;
+      letter-spacing: 0.5px;
+    }
+
+    .work-type-tag {
+      &.is-company-work { background-color: $highlight-2; }
+      &.is-personal { background-color: $highlight; }
+    }
+  
+    .is-collab {
+      &.no { background-color: $background-0_1; }
+    }
+  }
+
+  .project-desc {
+    position: relative;
+    font-size: $size-7;
+    color: $text-1;
+
+    p {
+      margin: 0 0 0.6rem;
+    }
+  }
+
+  .project-skillset {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2.4rem;
+
+    .skill-item {
+      display: inline-block;
+      font-size: 1.1rem;
+      padding: 0.2em 0.8em;
+      border-radius: 0.8em;
+      background-color: $text-0;
+      color: $background-0_1;
+    }
+  }
+}

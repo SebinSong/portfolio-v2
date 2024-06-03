@@ -1,21 +1,9 @@
 .page-common {
-  .page-title {
-    --circle-side: 3.6rem;
+  .page-title-container {
     position: relative;
-    display: block;
-    font-size: 2.2rem;
-    font-weight: 800;
+    width: 100%;
     margin-bottom: 4rem;
-    padding-bottom: 1.4rem;
-
-    @include from ($desktop) {
-      font-size: 2.4rem;
-    }
-
-    @include from ($desktop-large) {
-      font-size: 2.8rem;
-      margin-bottom: 6rem;
-    }
+    padding-bottom: 2.6rem;
 
     &::after {
       content: '';
@@ -25,6 +13,23 @@
       width: 4rem;
       height: 1px;
       background-color: currentColor;
+    }
+  }
+
+  .page-title {
+    --circle-side: 3.6rem;
+    position: relative;
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    
+    @include from ($desktop) {
+      font-size: 2.4rem;
+    }
+
+    @include from ($desktop-large) {
+      font-size: 2.8rem;
+      margin-bottom: 6rem;
     }
 
     .text {
@@ -54,6 +59,25 @@
         border: 1px dashed $text-2;
         transform: translate(17.5%, -10.5%);
       }
+    }
+  }
+
+  .page-desc {
+    position: relative;
+    font-size: $size-7;
+    color: $text-1;
+    font-weight: 300;
+    margin: 1rem 0 0 0;
+    padding-left: 2rem;
+
+    @include has-icon;
+
+    &::before {
+      content: '\e717';
+      position: absolute;
+      top: 1px;
+      left: 2px;
+      font-size: 1.025em;
     }
   }
 

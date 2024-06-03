@@ -49,3 +49,10 @@ export function classNames (...args: any[]): string {
       }
     }).join(' ')
 }
+
+export function stringToKebabCase (str: string): string {
+  const splitted: string[] = str.split(/\s/g)
+  return splitted.length > 1
+    ? splitted.map(seg => seg.toLowerCase()).join('-')
+    : str.toLowerCase()
+}

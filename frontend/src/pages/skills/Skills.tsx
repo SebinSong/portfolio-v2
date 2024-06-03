@@ -1,6 +1,10 @@
 // child components
 import PageTemplate from "../PageTemplate"
 import CustomCursor from '~/components/custom-cursor/CustomCursor'
+import ProjectCard from "./project-card/ProjectCard"
+
+// utils 
+import projectData from '~/view-data/project-data'
 
 import './Skills.scss'
 
@@ -10,16 +14,22 @@ export default function Skills () {
       <CustomCursor />
 
       <div className='page-content-wrapper'>
-        <h1 className='page-title'>
-          <span className='text'>Skills</span>
-          <span className='circle-deco'></span>
-        </h1>
+        <div className='page-title-container'>
+          <h1 className='page-title'>
+            <span className='text'>Skills & Demos</span>
+            <span className='circle-deco'></span>
+          </h1>
 
-        <p>
-          <button className="is-custom-border">
-            <span className="text">Long button text</span>
-          </button>
-        </p>
+          <p className='page-desc'>
+            See what skills I have as a web engineer and check out the websites or demos that are the proofs.
+          </p>
+        </div>
+
+        <div className='skills-and-demos-container'>
+          <ul className='projects-grid'>
+            <ProjectCard data={projectData[0]} />
+          </ul>
+        </div>
       </div>
     </PageTemplate>
   )

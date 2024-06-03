@@ -2,6 +2,7 @@ export interface ProjectItem {
   id: string,
   name: string,
   description: string,
+  years: number | { from: number, to: number },
   projectType: 'personal' | 'company-work', 
   links?: { [key: string]: string },
   skillset: string[],
@@ -13,10 +14,11 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'ilwol-booking',
     name: 'Ilwol booking website',
+    years: { from: 2023, to: 2024 },
     projectType: 'company-work',
-    description: 'An online booking website for a small business in South Korea. ' +
-      'Customers can make a booking & modify the schedule by themselves and ' +
-      'the owner can do various jobs on the reservations. (e.g. confirming & cancelling a reservation, sending a web SMS to the customers)',
+    description: "It's an online booking website for a fontune-telling & mental care business in South Korea. " +
+      'It allows customers tio make a booking / modify the schedule by themselves and ' +
+      'provides the owner with the admin pages to manage the reservations.<br>(e.g. confirm/cancel reservations, send web SMS to the customers, update Google calendar)',
     links: {
       app: 'https://ilwolbooking.com',
       github: 'https://github.com/SebinSong/ilwol-booking'
@@ -28,6 +30,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'portfolio-v2',
     name: 'Personal website V2.0',
+    years: 2024,
     projectType: 'personal',
     description: 'Brand-new personal website built with React, Typescript and Express and hosted via Render',
     links: {
@@ -40,6 +43,7 @@ const projectData: Array<ProjectItem> = [
     id: 'portfolio-v1',
     projectType: 'personal',
     name: 'Personal website V1.0',
+    years: 2018,
     description: 'A dev-portfolio website built with Vue and GSAP which has various creative Canvas and SVG animations.',
     links: {
       app: 'https://sebinsong.github.io/',
@@ -51,6 +55,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'designer-portfolio',
     name: 'A design student portfolio',
+    years: 2021,
     projectType: 'personal',
     description: 'Helped building the portfolio website of a design graduate using Vue and GSAP. ' +
       'The designer was very happy with the creative UI interactions & animations I came up with for the project.',
@@ -64,6 +69,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'chelonia-dashboard',
     name: 'Chelonia Dashboard Demo',
+    years: 2022,
     projectType: 'company-work',
     description: "Built the front-end demo of the web dashboard for the company's app product named Chelonia." +
       'The task was to build the front-end pages presenting the dummy data and there was no design-system created & provided for this project. ' +
@@ -79,6 +85,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'confetti-animation',
     name: 'Confetti animation',
+    years: 2020,
     projectType: 'company-work',
     description: 'The web-app GroupIncome needed a confetti animation on a certain page and I created three candidates of SVG animation' +
       'for the designer and the project manager to choose from. The option 2 there was selected and used in the app with additional modifications.',
@@ -93,6 +100,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'groupincome-org-v2',
     name: 'Groupincome.org V2.0',
+    years: { from: 2023, to: 2024 },
     projectType: 'company-work',
     description: "Worked on building a re-designed website of the company's web-app named 'Group Income'.",
     links: {
@@ -105,6 +113,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'shelter-protocol',
     name: 'Shelter-protocol.net',
+    years: { from: 2022, to: 2023 },
     projectType: 'company-work',
     description: "It is a documentation website for a company's web-app named 'Shelter-protocol'. " +
       "Worked on converting the entire theme of the web-site to Astro star-light style. " +
@@ -119,6 +128,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'groupincome',
     name: 'Group Income',
+    years: { from: 2019, to: 2024 },
     projectType: 'company-work',
     description: "GroupIncome is a VueJS web accounting-tool at the company. " +
       "Implemented various UI designs and front-end functionalities in the project. " +
@@ -134,6 +144,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'okturtles-org',
     name: 'okTurtles.org',
+    years: { from: 2023, to: 2024 },
     projectType: 'company-work',
     description: "The project is the main company introduction website of okTutles Foundation Inc. " +
       "The project used to be a static website with very outdated source-code, " +
@@ -149,6 +160,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'nz-mobile-app',
     name: 'Heartland NZ Mobile-app',
+    years: { from: 2020, to: 2024 },
     projectType: 'company-work',
     description: "It's a hybrid mobile-app built by VueJS and Capacitor, meaning a single Javascript code-base serves both the web-app and the mobile-app. " +
       "The maintenance tasks are mainly implementing the design or adding new features or user-flows with the REST API integration." +
@@ -162,6 +174,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'heartland-finance-app',
     name: 'Heartland Finance Mobile-app',
+    years: 2023,
     projectType: 'company-work',
     description: "A hybrid mobile-app project built with Vue3/Typescript and Capacitor." +
       "Worked on adding a user-flow to the app which invloved implementing the design as well as integrating the REST APIs.",
@@ -174,6 +187,7 @@ const projectData: Array<ProjectItem> = [
   {
     id: 'heartland-design-system',
     name: 'Heartland NZ Mobile-app Component Library',
+    years: { from: 2020, to: 2024 },
     projectType: 'company-work',
     description: 'This is a component library page of Heartland NZ Mobile-app project, which I designed & created on my own. ' +
       'NZ mobile-app is a huge project and I decided to build this page so that all developers can easily understand the design-system of the project ' +

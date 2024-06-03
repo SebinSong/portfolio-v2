@@ -78,17 +78,24 @@ export default function Resume () {
       <ResumePageAnimation />
 
       <div className='page-content-wrapper'>
-        <h1 className='page-title'>
-          <span className='text'>Work experiences</span>
-          <span className='circle-deco'></span>
-        </h1>
+        <div className='page-title-container'>
+          <h1 className='page-title'>
+            <span className='text'>Work experiences</span>
+            <span className='circle-deco'></span>
+          </h1>
+
+          <p className='page-desc'>
+            I started my web developer career in April, 2020.
+            See the summary of my professional work experiences since then below.
+          </p>
+        </div>
 
         <div className='resume-download-container'>
-          <p>Resume as PDF :</p>
+          <p>* Resume as PDF :</p>
           <button className='is-custom-border is-solid-style is-small pdf-download-btn'
             onClick={onDowloadClick}>
             <span className="text">
-              <i className="icon-download is-prefix"></i>
+              <i className="icon-import is-prefix"></i>
               Download
             </span>
           </button>
