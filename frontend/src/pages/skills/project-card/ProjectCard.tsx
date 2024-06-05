@@ -35,15 +35,25 @@ function ProjectCard ({
   data
 }: ProjectCardProps) {
   // computed state/props
-  const projectLinks = Object.entries(data.links || {})
   const {
     projectType, isIndividuaWork, years, madeAt = '',
-    description, skillset
+    description, skillset, links = {}
   } = data
+  const projectLinks = Object.entries(links)
   const isYearsNumber = typeof years === 'number'
 
+  // methods
+  const onCardClick = () => {
+    const urls = Object.values(links)
+
+    if (urls.length) {
+      window.open(urls[0])
+    }
+  }
+
   return (
-    <li className={cn('project-card', classes)}>
+    <li tabIndex={0} className={cn('project-card', classes)}
+      onClick={onCardClick}>
       <div className='icons-and-links mb-30'>
         <i className='icon-folder card-icon'></i>
 
@@ -61,13 +71,13 @@ function ProjectCard ({
         </span>
 
         <span className={cn('is-collab', isIndividuaWork ? 'no' : 'yes')}>
-          { isIndividuaWork ? 'Independently' : 'Collaborated'}
+          { isIndividuaWork ? 'Independent work' : 'Collaborated'}
         </span>
       </div>
 
       <h3 className='project-name'>{data.name}</h3>
 
-      <div className='project-details'>
+      <div className={cn('project-details', isYearsNumber && 'no-from-to')}>
         <div className='project-details-item'>
           <label>{isYearsNumber ? 'In:' : 'FromTo:'}</label>
           <span className='details-value'>

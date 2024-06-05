@@ -17,8 +17,8 @@ const projectData: Array<ProjectItem> = [
     years: { from: 2023, to: 2024 },
     projectType: 'company-work',
     description: "It's an online booking website for a fontune-telling & mental care business in South Korea. " +
-      'It allows customers tio make a booking / modify the schedule by themselves and ' +
-      'provides the owner with the admin pages to manage the reservations.<br>(e.g. confirm/cancel reservations, send web SMS to the customers, update Google calendar)',
+      'Customers can make a booking / modify the schedule by themselves and ' +
+      ' the owner can manage the reservations in the admin pages. (e.g. confirm/cancel reservations, send web SMS to the customers, update Google calendar)',
     links: {
       app: 'https://ilwolbooking.com',
       github: 'https://github.com/SebinSong/ilwol-booking'
@@ -32,7 +32,7 @@ const projectData: Array<ProjectItem> = [
     name: 'Personal website V2.0',
     years: 2024,
     projectType: 'personal',
-    description: 'Brand-new personal website built with React, Typescript and Express and hosted via Render',
+    description: 'Brand-new personal website of mine that is built with React, Typescript and ExpressJS. hosted via Render.',
     links: {
       github: 'https://github.com/SebinSong/portfolio-v2'
     },
@@ -44,7 +44,7 @@ const projectData: Array<ProjectItem> = [
     projectType: 'personal',
     name: 'Personal website V1.0',
     years: 2018,
-    description: 'A dev-portfolio website built with Vue and GSAP which has various creative Canvas and SVG animations.',
+    description: 'My very first dev-portfolio website built with VueJS and GSAP which has various creative HTML5 Canvas and SVG animations.',
     links: {
       app: 'https://sebinsong.github.io/',
       github: 'https://github.com/SebinSong/VueJS-Portfolio-Website'
@@ -71,14 +71,14 @@ const projectData: Array<ProjectItem> = [
     name: 'Chelonia Dashboard Demo',
     years: 2022,
     projectType: 'company-work',
-    description: "Built the front-end demo of the web dashboard for the company's app product named Chelonia." +
-      'The task was to build the front-end pages presenting the dummy data and there was no design-system created & provided for this project. ' +
-      'So I researched and created the design by myself while implementing various front-end UIs and functionalities.',
+    description: "A demo web dashboard for a company's product named 'Chelonia'.<br>" +
+      "It's built with dummy data. There was no design provided. " +
+      'So I researched and created the design system of the project on my own.',
     links: {
       app: 'https://sebinsong.github.io/chelonia-dashboard-preview/',
       github: 'https://github.com/okTurtles/group-income/pull/1483'
     },
-    skillset: ['HTML', 'SCSS', 'Design', 'Javascript', 'Vue 2'],
+    skillset: ['HTML', 'SCSS', 'Design', 'Javascript', 'Vue 2' , 'Creative Animation', 'ThreeJS'],
     madeAt: 'okTurtles',
     isIndividuaWork: true
   },
@@ -88,7 +88,7 @@ const projectData: Array<ProjectItem> = [
     years: 2020,
     projectType: 'company-work',
     description: 'The web-app GroupIncome needed a confetti animation on a certain page and I created three candidates of SVG animation' +
-      'for the designer and the project manager to choose from. The option 2 there was selected and used in the app with additional modifications.',
+      'for the designer and the project manager to choose from. (The option 2 there was selected)',
     links: {
       app: 'https://sebinsong.github.io/confetti-animation/',
       github: 'https://github.com/SebinSong/confetti-animation'
@@ -102,7 +102,7 @@ const projectData: Array<ProjectItem> = [
     name: 'Groupincome.org V2.0',
     years: { from: 2023, to: 2024 },
     projectType: 'company-work',
-    description: "Worked on building a re-designed website of the company's web-app named 'Group Income'.",
+    description: "Worked on building a re-designed website for the company's web-app named 'Group Income'.",
     links: {
       app: 'https://okturtles.github.io/groupincome.org/',
       github: 'https://github.com/okTurtles/groupincome.org/pulls?q=is%3Apr+assignee%3A%40me'
@@ -115,9 +115,8 @@ const projectData: Array<ProjectItem> = [
     name: 'Shelter-protocol.net',
     years: { from: 2022, to: 2023 },
     projectType: 'company-work',
-    description: "It is a documentation website for a company's web-app named 'Shelter-protocol'. " +
-      "Worked on converting the entire theme of the web-site to Astro star-light style. " +
-      "Also, worked on maintaining some react UI components of the project.",
+    description: "A documentation website for a company's project named 'Shelter-protocol'. " +
+      "Worked on converting the entire theme of the web-site to Astro star-light style.",
     links: {
       app: 'https://shelterprotocol.net/',
       github: 'https://github.com/okTurtles/shelterprotocol.net/pull/1'
@@ -130,10 +129,10 @@ const projectData: Array<ProjectItem> = [
     name: 'Group Income',
     years: { from: 2019, to: 2024 },
     projectType: 'company-work',
-    description: "GroupIncome is a VueJS web accounting-tool at the company. " +
-      "Implemented various UI designs and front-end functionalities in the project. " +
-      "The company has back-end team but I've worked on updating the backend too as part of my tasks (e.g. creating a PWA of the app). " +
-      "Wrote and updated the cypress E2E test-suites for various features and user-flows of the app.",
+    description: "The largest VueJS project (web accounting tool) at the company." +
+      "Implemented various UI designs and front-end functionalities. " +
+      "Also worked on the backend as part of some complex tasks (e.g. creating a PWA of the app). " +
+      "Wrote and updated the cypress end-to-end test-suites.",
     links: {
       app: 'https://groupincome.org/',
       github: 'https://github.com/okTurtles/group-income/pulls?q=is%3Apr+assignee%3A%40me'
@@ -146,10 +145,8 @@ const projectData: Array<ProjectItem> = [
     name: 'okTurtles.org',
     years: { from: 2023, to: 2024 },
     projectType: 'company-work',
-    description: "The project is the main company introduction website of okTutles Foundation Inc. " +
-      "The project used to be a static website with very outdated source-code, " +
-      "So I converted the entire project into a modern AstroJS driven multi-page application at the company owner's request." +
-      "Also worked on various design updates and bug-fixes.",
+    description: "The main company website of okTutles Foundation Inc. " +
+      "Worked on converting the outdated static website to a modern AstroJS driven multi-page application.",
     links: {
       app: 'https://okturtles.org/',
       github: 'https://github.com/okTurtles/okturtles.org/pulls?q=is%3Apr+assignee%3A%40me'
@@ -162,9 +159,10 @@ const projectData: Array<ProjectItem> = [
     name: 'Heartland NZ Mobile-app',
     years: { from: 2020, to: 2024 },
     projectType: 'company-work',
-    description: "It's a hybrid mobile-app built by VueJS and Capacitor, meaning a single Javascript code-base serves both the web-app and the mobile-app. " +
-      "The maintenance tasks are mainly implementing the design or adding new features or user-flows with the REST API integration." +
-      "Was assigned to and successfully delivered the design-refresh of the entire project two times (V2.0.0 in 2021 and V4.0.0 in 2024).",
+    description: "A hybrid mobile-app built with VueJS and Capacitor (A single JS code-base serves both the web-app and the mobile-app). " +
+      "Implemented various user application flows with the REST API integration." +
+      "Constantly worked on building reusable UI components. " +
+      "Successfully delivered the design-refresh of the entire app two times (V2.0.0 in 2021 and V4.0.0 in 2024).",
     links: {
       app: 'https://play.google.com/store/apps/details?id=nz.co.heartland.mobileapp.android'
     },
@@ -177,7 +175,7 @@ const projectData: Array<ProjectItem> = [
     years: 2023,
     projectType: 'company-work',
     description: "A hybrid mobile-app project built with Vue3/Typescript and Capacitor." +
-      "Worked on adding a user-flow to the app which invloved implementing the design as well as integrating the REST APIs.",
+      "Worked on adding a loan application flow to the app which invloved the REST API integration as well as building resuable UI components.",
     links: {
       app: 'https://play.google.com/store/apps/details?id=au.com.heartlandfinance.mobileapp'
     },
@@ -189,10 +187,9 @@ const projectData: Array<ProjectItem> = [
     name: 'Heartland NZ Mobile-app Component Library',
     years: { from: 2020, to: 2024 },
     projectType: 'company-work',
-    description: 'This is a component library page of Heartland NZ Mobile-app project, which I designed & created on my own. ' +
-      'NZ mobile-app is a huge project and I decided to build this page so that all developers can easily understand the design-system of the project ' +
-      'and can also see various reusable Vue components in one place and quickly figure out how to use them. ' +
-      'This work have received good feedbacks from the fellow front-end developers and the project manager.',
+    description: 'A component library page of Heartland NZ Mobile-app project. I designed & created it by myself. ' +
+      'I decided to build a page where developers can see all reusable UI components of the project in one place. ' +
+      'Has received great feedbacks from designers, front-end developers and project managers at the company.',
     links: {
       app: 'https://digital.heartland.co.nz/#/design-system'
     },

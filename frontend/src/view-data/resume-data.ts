@@ -48,7 +48,7 @@ const resumeData: Array<ResumeEntry> = [
     workType: 'Remote',
     link: 'https://okturtles.org',
     period: { from: 'Jun, 2022' },
-    stacks: ['HTML & SCSS', 'Javascript', 'Typescript', 'Vue 2', 'Vue 3', 'React', 'Cypress', 'AstroJS', 'Grunt', 'Vite', 'PWA', 'Web-Sockets'],
+    stacks: ['HTML & SCSS', 'Javascript', 'Typescript', 'Vue 2', 'Vue 3', 'React', 'ThreeJS', 'Cypress', 'AstroJS', 'Grunt', 'Vite', 'PWA', 'Web-Sockets'],
     descriptions: [
       'Build and mainatain the front-end of various high-quality websites and web-applications of the company.',
       {

@@ -27,7 +27,9 @@ export default function Skills () {
 
         <div className='skills-and-demos-container'>
           <ul className='projects-grid'>
-            <ProjectCard data={projectData[0]} />
+            {
+              projectData.map(entry => <ProjectCard key={entry.id} data={entry} />)
+            }
           </ul>
         </div>
       </div>
