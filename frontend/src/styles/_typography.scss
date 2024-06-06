@@ -72,20 +72,35 @@ body {
 
 // link styles
 .is-link {
+  position: relative;
   display: inline-block;
   font-weight: 300;
-  color: var(--text-2);
+  color: var(--highlight-2_1);
   text-decoration: none;
   margin-left: 1px;
   margin-right: 1px;
-  line-height: 1.15;
-  border-bottom: 1px solid currentColor;
+  line-height: 1.2;
   outline: none;
   transition: color 200ms linear;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid currentColor;
+  }
 
   &:focus,
   &:hover {
     color: $background-0_2;
+
+    &::after {
+      animation: link-hover-ani 250ms linear forwards;
+    }
   }
 
   &:active {
@@ -102,6 +117,11 @@ body {
     text-rendering: auto;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+  }
+
+  @keyframes link-hover-ani  {
+    0% { width: 0%; }
+    100% { width: 100%; }
   }
 }
 
