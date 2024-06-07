@@ -64,7 +64,7 @@ export default function SortAndFilters ({
 
   return (
     <div className={cn('sort-and-filters', classes)}>
-      <span className='section-label'>Filters :</span>
+      <span className='section-label'>Skill filters :</span>
       <div className='filter-types'>
         <div className='list-block'>
           <span className='list-block-label'>- Frontend</span>

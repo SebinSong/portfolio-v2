@@ -18,7 +18,8 @@ const getProjectLinkIcon = (linkEntry: [string, string]) => {
   const isTypeApp = linkType === 'app'
   return (
     <a key={linkType} className='project-link-icon'
-      href={url} target='_blank'>
+      href={url} target='_blank'
+      onClick={e => e.stopPropagation()}>
       <span className='link-text'>{isTypeApp ? 'Demo' : 'Github'}</span>
       <i className='icon-share-alt'></i>
     </a>
