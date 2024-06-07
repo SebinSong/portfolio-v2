@@ -66,8 +66,7 @@ export default function Resume () {
   const onTabSelect = useCallback(setSelectedTabId, [])
   const onDowloadClick = async () => {
     try {
-      const resumeData = await downloadResume()
-      console.log('!@# resumeData: ', resumeData)
+      await downloadResume()
     } catch (err) {
       console.error('!@# error downloading the resume: ', err)
     }

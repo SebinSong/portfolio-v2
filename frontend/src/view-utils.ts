@@ -56,3 +56,7 @@ export function stringToKebabCase (str: string): string {
     ? splitted.map(seg => seg.toLowerCase()).join('-')
     : str.toLowerCase()
 }
+
+export function uniq (array: any[]): any[] {
+  return Array.from(new Set(array))
+}

@@ -9,3 +9,8 @@ export type CanvasArea = {
   width: number,
   height: number
 }
+
+export type DropdownItem = {
+  id: string,
+  name: string
+}

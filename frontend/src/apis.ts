@@ -16,7 +16,6 @@ export function downloadResume (): any {
     '/config/download?resource=resume',
     { responseType: 'blob' }
   ).then((response: any) => {
-    console.log('!@# received data: ', response.data)
     const blob = new Blob([response.data], { type: 'application/pdf' })
     const downloadFilename = 'Resume_SebinSong.pdf'
 
