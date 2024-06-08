@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 // child components
 import Checkbox from '~/components/checkbox/Checkbox'
 
 // utils
-import { classNames as cn } from '~/view-utils'
+import { classNames as cn, uniq } from '~/view-utils'
 
 // types
 import type { DropdownItem } from '~/types/common'
@@ -19,19 +19,18 @@ interface Props {
 }
 
 // helpers
-const allSkillItems: Array<string> = [
-  'HTML', 'SCSS', 'Design', 'Javascript', 'Typescript', 'React', 'Redux',
-  'MongoDB', 'Node', 'Express', 'Vite', 'Google API', 'Creative Animation', 'SVG',
-  'Vue 2', 'Vue 3', 'GSAP', 'Canvas', 'ThreeJS', 'Astro', 'Cypress',
-  'Grunt', 'PWA', 'WebSockets', 'Hapi', 'Webpack'
+const allTypeFilters: Array<{ name: string, id: string }> = [
+  { id: 'frontend', name: 'Frontend' },
+  { id: 'backend', name: 'Backend' },
+  { id: 'tooling', name: 'Tooling' }
 ]
-const frontendSkills: Array<string> = [
+const frontendSkills: string[] = [
   'HTML', 'SCSS', 'Design', 'Javascript', 'Typescript', 'React', 'Redux',
   'Creative Animation', 'SVG', 'Vue 2', 'Vue 3', 'GSAP', 'Canvas', 'ThreeJS', 'PWA'
 ]
-const backendSkills: Array<string> = ['Node', 'Express', 'Hapi', 'MongoDB', 'Google API', 'WebSockets']
-const toolingSkills: Array<string> = ['Vite', 'Webpack', 'Grunt', 'Astro', 'Cypress']
-
+const backendSkills: string[] = ['Node', 'Express', 'Hapi', 'MongoDB', 'Google API', 'WebSockets']
+const toolingSkills: string[] = ['Vite', 'Webpack', 'Grunt', 'Astro', 'Cypress']
+const allSkills: string[] = uniq([...frontendSkills, ...backendSkills, ...toolingSkills])
 const sortItems: Array<DropdownItem> = [
   { id: 'oldest', name: 'Oldest' },
   { id: 'latest', name: 'Most recent' }
@@ -43,8 +42,15 @@ export default function SortAndFilters ({
   sortInit,
   onUpdate
 }: Props) {
-  const [selectedFilters, setSelectedFilters] = useState<string[]>(filterInit || [])
+  // local-state
+  const [filterOpen, setFilterOpen] = useState(true)
+  const [selectedFilters, setSelectedFilters] = useState<string[]>(filterInit || allSkills)
   // const [sortBy, setSortBy] = useState<DropdownItem['id']>(sortInit || 'latest')
+
+  // computed state
+  const isAllFilterSelected = useMemo(() => {
+    return selectedFilters.length === allSkills.length
+  }, [selectedFilters])
 
   // methods
   const onFilterItemSelect = (item: string) => {
@@ -53,6 +59,31 @@ export default function SortAndFilters ({
         ? current.filter(v => v !== item)
         : [ ...current, item ]
     })
+  }
+
+  const toggleFilterSection = () => {
+    setFilterOpen(v => !v)
+  }
+
+  const onAllTypeBtnClick = (entryId: string) => {
+    const arrMap: { [key: string]: string[] } = {
+      'frontend': frontendSkills,
+      'backend': backendSkills,
+      'tooling': toolingSkills
+    }
+    switch (entryId) {
+      case 'all': {
+        setSelectedFilters(isAllFilterSelected ? [] : allSkills)
+        break
+      }
+      default: {
+        const arr: any = arrMap[entryId]
+
+        if (arr) {
+          setSelectedFilters(arr)
+        }
+      }
+    }
   }
 
   // effects
@@ -64,8 +95,33 @@ export default function SortAndFilters ({
 
   return (
     <div className={cn('sort-and-filters', classes)}>
-      <span className='section-label'>Skill filters :</span>
-      <div className='filter-types'>
+      <button className={cn('is-unstyled section-label skill-filter-label', filterOpen && 'is-open')}
+        onClick={toggleFilterSection}>
+        <span className='btn-text'>Skill filters</span>
+        <span className='btn-dir-text'>
+          <i className='icon-arrow-circle-down'></i>
+        </span>
+        <span className='line-thru'></span>
+      </button>
+
+      <div className={cn('filter-types', filterOpen && 'is-open')}>
+        <div className='all-type-ctas'>
+          <button key='all' className={cn('is-unstyled all-type-btn is-select-all', isAllFilterSelected && 'is-active')}
+            onClick={() => onAllTypeBtnClick('all')}>
+            {isAllFilterSelected
+              ? <span><i className='icon-check'></i>All</span>
+              : '+ All'
+            }
+          </button>
+
+          {
+            allTypeFilters.map(
+              entry => <button key={entry.id} className='is-unstyled all-type-btn'
+                onClick={() => onAllTypeBtnClick(entry.id)}>{entry.name}</button>
+            )
+          }
+        </div>
+  
         <div className='list-block'>
           <span className='list-block-label'>- Frontend</span>
 
@@ -111,6 +167,7 @@ export default function SortAndFilters ({
           </div>
         </div>
       </div>
+
     </div>
   )
 }
