@@ -54,6 +54,7 @@ export default function Skills () {
         <SortAndFilters classes='mb-30' onUpdate={onFilterOrSortUpdate} />
 
         <div className='display-item-count'>
+          <i className='icon-list'></i>
           <span className='has-text-bold'>
             {projectToDisplay.length} items
           </span>
