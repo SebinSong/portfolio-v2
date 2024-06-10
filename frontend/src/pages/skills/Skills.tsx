@@ -5,6 +5,7 @@ import PageTemplate from "../PageTemplate"
 import CustomCursor from '~/components/custom-cursor/CustomCursor'
 import ProjectCard from "./project-card/ProjectCard"
 import SortAndFilters from './sort-and-filters/SortAndFilters'
+import SkillsPageAnimation from "./skills-page-animation/SkillsPageAnimation"
 
 // utils 
 import projectData from '~/view-data/project-data'
@@ -26,6 +27,7 @@ export default function Skills () {
     const filterdBySkills = projectData.filter(project => {
       return project.skillset.some(skill => selectedSkills.includes(skill))
     })
+
     return filterdBySkills
   }, [selectedSkills])
 
@@ -40,6 +42,8 @@ export default function Skills () {
       <CustomCursor />
 
       <div className='page-content-wrapper'>
+        <SkillsPageAnimation />
+
         <div className='page-title-container'>
           <h1 className='page-title'>
             <span className='text'>Skills & Demos</span>

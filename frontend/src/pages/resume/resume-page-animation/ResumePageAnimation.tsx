@@ -11,9 +11,8 @@ import './ResumePageAnimation.scss'
 const svgAspectRatio = 1.78
 function ResumePageAnimation ({
   classes = ''
-}: ComponentProps) {
+}: { classes?: string }) {
   const svgEl = useRef<any>(null)
-  const dashOffset = useRef<number>(0)
 
   // methods
   const adjustCanvas = () => {
