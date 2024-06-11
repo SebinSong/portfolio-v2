@@ -16,7 +16,7 @@ const toolbarMenuList: Array<ToolbarMenu> = [
   { id: 'home', name: 'Home', routeTo: '/' },
   { id: 'resume', name: 'Resume', routeTo: '/resume' },
   { id: 'skills', name: 'Skills', routeTo: '/skills' },
-  { id: 'contact', name: 'Contact' }
+  { id: 'contact', name: 'Contact', routeTo: '/contact' }
 ]
 
 function Toolbar () {
