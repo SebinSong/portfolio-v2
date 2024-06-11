@@ -1,4 +1,4 @@
-import { memo, useRef, useEffect, useState, ReactNode } from 'react'
+import { memo, useRef, useEffect, useState } from 'react'
 
 // utils
 import { classNames as cn } from '~/view-utils'
@@ -10,59 +10,60 @@ import { classNames as cn } from '~/view-utils'
   - transformations in SVG: https://www.sarasoueidan.com/blog/svg-transformations/#transform-attribute-values
 */
 
+const PATTERN_LEN = 50
+let requestId: any = null
+
 function SkillsPageAnimation ({
   classes = '' 
 }: { classes?: string }) {
+  // local-state
+  const [patternPos, setPatternPos] = useState(0)
+  const [posOffset, setPosOffset] = useState(0)
   const svgEl = useRef<SVGSVGElement | null>(null)
-  const [lineEls, setLineEls] = useState<ReactNode>('')
-  const [isVertical, setIsVertical] = useState<boolean>(false)
+
+  // computed state
+  const halfLen = PATTERN_LEN / 2
 
   // methods
-  const paint = () => {
-    // paint the polyline svg elements to the canvas
-    const bbox = svgEl.current?.getBoundingClientRect()
+  const animate = () => {
+    setPatternPos(v => v + 0.1)
 
-    if (!bbox) { setLineEls('') }
-    else {
-      const canvasW = bbox.width
-      const canvasH = bbox.height
-      const isVertical = canvasH > canvasW
-      const ANIMATION_AMP = 100 // amplitude of the sine wave of the animation.
-      const LINE_GAP = ANIMATION_AMP * 0.5 // gap between the consecutive poly-line elements.
-      const els: any[] = []
-      setIsVertical(isVertical)
+    requestId = window.requestAnimationFrame(animate)
+  }
 
-      // Step-1: determine the number of elements to paint first.
-      const numEl = Math.ceil(
-        (isVertical ? canvasH : canvasW) / LINE_GAP
-      )
-
-      for (let i = 0; i < numEl; i++) {
-        const offset = i * LINE_GAP
-        const points = isVertical
-          ? `0,${offset} ${canvasW / 2},${offset + ANIMATION_AMP} ${canvasW},${offset}`
-          : `${offset},0 ${offset + ANIMATION_AMP},${canvasH / 2} ${offset},${canvasH}`
-
-        els.push(
-          <polyline key={`pl-${i}`} fill='none'
-            stroke='var(--background-0_2)' strokeWidth='1'
-            data-index={i} points={points}></polyline>
-        )
-      }
-      setLineEls(els)
-    }
+  const scrollHandler = () => {
+    const scrollTop = document.body.scrollTop
+    setPosOffset(scrollTop * 0.2)
   }
 
   // effects
   useEffect(() => {
-    paint()
+    animate()
+    document.body.addEventListener('scroll', scrollHandler)
+
+    return () => {
+      window.cancelAnimationFrame(requestId)
+      document.body.removeEventListener('scroll', scrollHandler)
+    }
   }, [])
   return (
     <div className={cn('skills-page-animation', classes)}>
       <svg className='svg' ref={svgEl}
         xmlns="http://www.w3.org/2000/svg" version="1.1"
         preserveAspectRatio='xMidYMid slice'>
-          {lineEls}
+        <defs>
+          <pattern id="circle-pattern" x={patternPos} y={patternPos - posOffset} patternUnits='userSpaceOnUse'
+            width={PATTERN_LEN} height={PATTERN_LEN}>
+            <line x1={halfLen} y1='0' x2={halfLen} y2={PATTERN_LEN}
+              stroke='currentColor' strokeWidth='1' strokeDasharray='4 8' />
+            <line x1='0' y1={halfLen} x2={PATTERN_LEN} y2={halfLen}
+              stroke='currentColor' strokeWidth='1' strokeDasharray='4 8' />
+            <circle r='4' cx={halfLen} cy={halfLen}
+              fill='var(--background-0)' stroke='currentColor' strokeWidth={1}></circle>
+          </pattern>
+        </defs>
+
+        <rect fill="url(#circle-pattern)" width="100%" height="100%" />
       </svg>
     </div>
   )
