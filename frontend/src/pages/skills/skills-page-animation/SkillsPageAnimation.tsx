@@ -10,7 +10,7 @@ import { classNames as cn } from '~/view-utils'
   - transformations in SVG: https://www.sarasoueidan.com/blog/svg-transformations/#transform-attribute-values
 */
 
-const PATTERN_LEN = 50
+const PATTERN_LEN = 120
 let requestId: any = null
 
 function SkillsPageAnimation ({
@@ -33,7 +33,7 @@ function SkillsPageAnimation ({
 
   const scrollHandler = () => {
     const scrollTop = document.body.scrollTop
-    setPosOffset(scrollTop * 0.2)
+    setPosOffset(scrollTop * 0.115)
   }
 
   // effects
@@ -52,7 +52,7 @@ function SkillsPageAnimation ({
         xmlns="http://www.w3.org/2000/svg" version="1.1"
         preserveAspectRatio='xMidYMid slice'>
         <defs>
-          <pattern id="circle-pattern" x={patternPos} y={patternPos - posOffset} patternUnits='userSpaceOnUse'
+          <pattern id="circle-pattern" x={patternPos - posOffset} y={patternPos - posOffset} patternUnits='userSpaceOnUse'
             width={PATTERN_LEN} height={PATTERN_LEN}>
             <line x1={halfLen} y1='0' x2={halfLen} y2={PATTERN_LEN}
               stroke='currentColor' strokeWidth='1' strokeDasharray='4 8' />

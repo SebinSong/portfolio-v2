@@ -1,3 +1,35 @@
 .page-contact {
   position: relative;
+
+  .page-content-wrapper {
+    max-width: 86rem;
+  }
+
+  .sender-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    column-gap: 2rem;
+
+    .mail-field {
+      margin-bottom: 3rem;
+    }
+
+    @include from ($large-phone) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2rem;
+
+    button.send-btn {
+      @include from ($small-phone) {
+        min-width: 16rem;
+      }
+    }
+  }
 }
