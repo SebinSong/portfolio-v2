@@ -24,10 +24,11 @@
   .button-container {
     display: flex;
     justify-content: flex-end;
-    padding-top: 2rem;
+    margin-bottom: 4rem;
 
     button.send-btn {
       @include from ($small-phone) {
+        padding-top: 2rem;
         min-width: 16rem;
       }
     }
