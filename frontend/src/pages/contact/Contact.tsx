@@ -1,15 +1,46 @@
 // child components
 import { FormEvent } from "react"
+import { useImmer } from "use-immer"
 import PageTemplate from "../PageTemplate"
 import ContactPageAnimation from "./contact-page-animation/ContactPageAnimation"
 
+// utils
+import useValidation from '~/hooks/useValidation'
+
 import './Contact.scss'
 
+type FormKeyUnion = 'name' | 'email' | 'title' | 'content'
+
 export default function Contact () {
+  // local-state
+  const [form, updateForm] = useImmer({
+    name: '',
+    email: '',
+    title: '',
+    content: ''
+  })
+  const {
+    isErrorActive,
+    clearFormError
+  } = useValidation(form, [])
 
   // methods
   const submitHandler = (e: FormEvent): void => {
     e.preventDefault()
+  }
+
+  const updateFactory = (key: FormKeyUnion) => {
+    return (e: any) => {
+      const val = e.target.value
+
+      updateForm(draft => {
+        draft[key] = val
+      })
+
+      if (isErrorActive(key)) {
+        clearFormError()
+      }
+    }
   }
 
   return (
@@ -30,18 +61,27 @@ export default function Contact () {
           <div className='sender-details'>
             <div className='form-field'>
               <label className='label-common'>Name :</label>
-              <input className='input' type='text' placeholder='Your name' />
+              <input className='input' type='text' placeholder='Your name'
+                onInput={updateFactory('name')} data-vkey='name' />
             </div>
 
             <div className='form-field mail-field'>
               <label className='label-common'>E-mail :</label>
-              <input className='input' type='text' placeholder='Your e-mail address' />
+              <input className='input' type='text' placeholder='Your e-mail address'
+                onInput={updateFactory('email')} data-vkey='email' />
             </div>
           </div>
 
           <div className='form-field'>
+            <label className='label-common'>Title :</label>
+            <input className='input' type='text' placeholder='Enter title'
+              onInput={updateFactory('title')} data-vkey='title' />
+          </div>
+
+          <div className='form-field'>
             <label className='label-common'>Message :</label>
-            <textarea className='textarea' placeholder='Message content' />
+            <textarea className='textarea' placeholder='Message content'
+              onInput={updateFactory('content')} data-vkey='content' />
           </div>
 
           <div className='button-container'>
