@@ -6,6 +6,7 @@
     "dev": "concurrently -g \"npm:dev-server\" \"npm:dev-client\"",
     "dev-client": "vite --open",
     "dev-server": "nodemon backend/server",
+    "dev-seed-data": "node backend/seeder.js",
     "start": "node backend/server",
     "build": "npm install && vite build --mode production --emptyOutDir",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
