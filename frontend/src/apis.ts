@@ -26,5 +26,5 @@ export function downloadResume (): any {
 }
 
 export function submitInquiry (payload: Inquiry): any {
-  return axiosInstance.post('/inquiry', { payload })
+  return axiosInstance.post('/inquiry', payload)
 }
