@@ -49,6 +49,7 @@ export default function useValidation (
     validateAll,
     clearFormError,
     isErrorActive,
+    setFormError,
     formError
   }
 }

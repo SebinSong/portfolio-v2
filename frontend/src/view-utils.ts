@@ -60,3 +60,8 @@ export function stringToKebabCase (str: string): string {
 export function uniq (array: any[]): any[] {
   return Array.from(new Set(array))
 }
+
+export function validateEmail (str: string): boolean {
+  const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+  return emailRegExp.test(str)
+}

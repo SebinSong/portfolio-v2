@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { saveAs } from 'file-saver'
 import { MINS_MILLIS } from '~/view-utils'
+import type { Inquiry } from './types/common'
 
 const currentBaseURL: string = new URL(window.location.href).origin
 const axiosInstance: any = axios.create({
@@ -22,4 +23,8 @@ export function downloadResume (): any {
     // Download the file
     saveAs(blob, downloadFilename)
   })
+}
+
+export function submitInquiry (payload: Inquiry): any {
+  return axiosInstance.post('/inquiry', { payload })
 }

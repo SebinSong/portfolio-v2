@@ -29,9 +29,38 @@ form {
   .helper {
     display: block;
     color: $text-2;
-    margin-top: 0.8rem;
+    margin: 0.4rem 0 0 0;
     font-size: $size-8;
     padding-left: 0.4rem;
+    width: 100%;
+
+    @include has-icon;
+    &::before {
+      content: "\e717";
+      display: inline-block;
+      font-size: 1.1em;
+      margin-right: 0.6rem;
+      transform: translateY(1px);
+    }
+  }
+}
+
+.form-error {
+  display: block;
+  margin: 0.4rem 0 0;
+  padding-left: 0.2rem;
+  font-size: $size-8;
+  color: $warning;
+  line-height: 1.2;
+  width: 100%;
+
+  @include has-icon;
+  &::before {
+    content: "\e717";
+    display: inline-block;
+    font-size: 1.1em;
+    margin-right: 0.6rem;
+    transform: translateY(1px);
   }
 }
 
@@ -42,6 +71,13 @@ form {
   color: $text-0;
   line-height: 1.4;
   margin-bottom: 0.8rem;
+
+  .optional {
+    display: inline-block;
+    margin-left: 0.4rem;
+    color: $text-2;
+    font-size: 0.925em;
+  }
 }
 
 /* custom-input */
