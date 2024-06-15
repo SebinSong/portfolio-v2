@@ -19,7 +19,7 @@
     height: auto;
     align-items: center;
     column-gap: 1.8rem;
-    font-size: var(--size-8);
+    font-size: 1.1rem;
 
     @include from ($small-phone) {
       column-gap: 3.2rem;

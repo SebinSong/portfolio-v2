@@ -1,9 +1,10 @@
 // child components
-import { FormEvent } from "react"
+import { FormEvent, useState } from "react"
 import { useImmer } from "use-immer"
 import PageTemplate from "../PageTemplate"
 import ContactPageAnimation from "./contact-page-animation/ContactPageAnimation"
 import FormErrorMessage from "~/components/FormErrorMessage"
+import LoaderAnimation from '~/components/loader-animation/LoaderAnimation'
 
 // utils
 import {
@@ -17,11 +18,13 @@ import './Contact.scss'
 
 import type { Inquiry } from '~/types/common'
 type FormKeyUnion = 'name' | 'email' | 'title' | 'content'
+type submitStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 // helpers
 
 export default function Contact () {
   // local-state
+  const [submitStatus, setSubmitStatus] = useState<submitStatus>('idle')
   const [form, updateForm] = useImmer<Inquiry>({
     name: '',
     email: '',
@@ -47,6 +50,9 @@ export default function Contact () {
     }
   ])
 
+  // computed-state
+  const isSubmitting = submitStatus === 'submitting'
+
   // methods
   const submitHandler = async (e: FormEvent): Promise<any> => {
     e.preventDefault()
@@ -64,11 +70,13 @@ export default function Contact () {
     }
 
     if (validateAll()) {
+      setSubmitStatus('submitting')
+
       try {
-        const result = await submitInquiry(form)
-        console.log('inquiry submitted successfully - ', result)
+        await submitInquiry(form)
+        setSubmitStatus('success')
       } catch (err) {
-        console.error('Contact.tsx caught: ', err)
+        setSubmitStatus('error')
       }
     }
   }
@@ -146,7 +154,8 @@ export default function Contact () {
           </div>
 
           <div className='button-container'>
-            <button className='is-custom-border send-btn' type='submit'>
+            <button className='is-custom-border send-btn' type='submit' disabled={isSubmitting}>
+              <LoaderAnimation show={isSubmitting} />
               <span className='text'>Send</span>
             </button>
           </div>
