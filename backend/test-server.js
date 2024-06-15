@@ -1,5 +1,4 @@
 // Sanity check of the DB
-const dotenv = require('dotenv')
 const { connectToDB } = require('./db.js')
 
 // models
