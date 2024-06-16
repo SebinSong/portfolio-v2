@@ -124,3 +124,22 @@ $side-spacing-nums: 0, 2, 4, 10;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.inline-svg-common {
+  --svg-feature-color: var(--text-2);
+
+  position: relative;
+  display: inline-block;
+  height: auto;
+  color: $text-1;
+
+  &.rocket-icon {
+    --svg-feature-color: #B6B6B6;
+    color: $text-0;
+
+    svg {
+      width: var(--svg-width);
+      height: var(--svg-width);
+    }
+  }
+}

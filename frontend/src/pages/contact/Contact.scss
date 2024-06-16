@@ -35,4 +35,49 @@
       }
     }
   }
+
+  .submit-success-container {
+    position: relative;
+    text-align: center;
+    color: $text-1;
+    font-size: $size-6;
+    width: 100%;
+    max-width: 54rem;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: contact-success-ani 600ms ease-out forwards 100ms;
+
+    .rocket-icon {
+      margin-bottom: 3rem;
+    }
+
+    p {
+      margin: 0;
+
+      &:first-of-type {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    .go-home-btn {
+      margin-top: 4rem;
+    }
+
+    @include until($small-phone) {
+      font-size: $size-7;
+    }
+  }
+
+  @keyframes contact-success-ani {
+    0% {
+      transform: translateY(1.2rem);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }
