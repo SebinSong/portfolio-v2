@@ -1,3 +1,61 @@
 .banner-feedback {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-start;
+  border-radius: 1.2rem;
+  padding: 1rem 1.4rem 1rem 1.8rem;
+  border: 1px solid $text-2;
+  overflow: hidden;
+  border-left: 0.8rem solid $text-2;
+
+  .banner-msg {
+    flex-grow: 1;
+    min-height: 2rem;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    font-size: $size-7;
+    color: $text-1;
+  }
+
+  .banner-close-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    color: $text-1;
+    font-weight: bold;
+    border: 1px solid currentColor;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    opacity: 0.75;
+    transition:
+      opacity 120ms ease-out,
+      transform 120ms ease-out;
+
+    &:focus,
+    &:hover {
+      opacity: 1;
+      border: 1px solid currentColor;
+      transform: scale(1.05);
+    }
+  }
+
+  &.is-type-error {
+    border-color: $warning;
+
+    .banner-msg {
+      color: $warning;
+    }
+
+    .banner-close-btn {
+      color: $warning;
+    }
+  }
 }

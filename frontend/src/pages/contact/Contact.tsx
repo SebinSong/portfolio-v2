@@ -7,6 +7,7 @@ import ContactPageAnimation from "./contact-page-animation/ContactPageAnimation"
 import FormErrorMessage from "~/components/FormErrorMessage"
 import LoaderAnimation from '~/components/loader-animation/LoaderAnimation'
 import RocketIcon from '~/components/svg-icons/RocketIcon'
+import FeedbackBanner from "~/components/feedback-banner/FeedbackBanner"
 
 // utils
 import {
@@ -59,6 +60,7 @@ export default function Contact () {
   // methods
   const submitHandler = async (e: FormEvent): Promise<any> => {
     e.preventDefault()
+    setSubmitStatus('idle')
 
     // Feild validations
     // Step - 1: required field check
@@ -143,6 +145,12 @@ export default function Contact () {
                 </div>
 
                 <form onSubmit={submitHandler}>
+                  {
+                    submitStatus === 'error' &&
+                    <FeedbackBanner classes='mb-30' type='error' show={true}
+                      message='Failed to send message. Please try again.' />
+                  }
+                  
                   <div className='sender-details'>
                     <div className='form-field'>
                       <label className='label-common'>Name:</label>

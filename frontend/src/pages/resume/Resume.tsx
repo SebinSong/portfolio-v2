@@ -68,7 +68,7 @@ export default function Resume () {
     try {
       await downloadResume()
     } catch (err) {
-      console.error('!@# error downloading the resume: ', err)
+      console.error('Error while downloading the resume: ', err)
     }
   }
 

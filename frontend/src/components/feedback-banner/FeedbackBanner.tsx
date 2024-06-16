@@ -1,4 +1,4 @@
-import { memo, useRef, useState, useEffect, ReactNode } from 'react'
+import { useRef, useState, useEffect, ReactNode } from 'react'
 
 // utils
 import { classNames as cn } from '~/view-utils'
@@ -8,7 +8,7 @@ import './FeedbackBanner.scss'
 interface Props {
   type?: 'info' | 'error',
   message: string,
-  showError?: boolean,
+  show?: boolean,
   hideCloseBtn?: boolean,
   scrollOnDisplay?: boolean,
   classes?: string,
@@ -20,7 +20,7 @@ function FeedbackBanner ({
   classes = '',
   type = 'info',
   message = '',
-  showError = false,
+  show = false,
   hideCloseBtn = false,
   scrollOnDisplay = true,
   onClose,
@@ -37,18 +37,22 @@ function FeedbackBanner ({
   }
 
   useEffect(() => {
-    if (showError && scrollOnDisplay) {
-      // scroll to the feedback-banner
-      setTimeout(() => {
-        rootEl.current && rootEl.current.scrollIntoView({
-          block: 'center',
-          inline: "nearest"
-        })
-      }, 50)
-    }
-  }, [showError])
+    if (show) {
+      if (!hideCloseBtn) { setClosed(false) }
 
-  if (closed || !showError) { return null }
+      if (scrollOnDisplay) {
+        // scroll to the feedback-banner
+        setTimeout(() => {
+          rootEl.current && rootEl.current.scrollIntoView({
+            block: 'center',
+            inline: "nearest"
+          })
+        }, 50)
+      }
+    }
+  }, [show])
+
+  if (closed || !show) { return null }
 
   return (
     <div ref={rootEl} className={cn('banner-feedback', `is-type-${type}`, classes)}>
@@ -65,4 +69,4 @@ function FeedbackBanner ({
   )
 }
 
-export default memo(FeedbackBanner)
+export default FeedbackBanner
