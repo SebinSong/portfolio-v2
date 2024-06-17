@@ -9,8 +9,8 @@ let cursorRequestId: any = null
 export default function usePointer (
   onCursorUpdate?: (a: Point) => any
 ): any {
-  const pointer = useRef<Point>({ x: 0, y: 0 })
-  const cursorPosition = useRef<Point>({ x: 0, y: 0 })
+  const pointer = useRef<Point>({ x: innerWidth / 2, y: -100 })
+  const cursorPosition = useRef<Point>({ x: innerWidth / 2, y: -100 })
 
   const updatePointer = (e: any) => {
     const isTouch = e.type.includes('touch')

@@ -1,0 +1,32 @@
+html {
+
+  // [ 1 ] - Scrollbar styling for webkit browsers (Chrome, Edge, Safari etc.)
+
+  // Styling the whole scrollbar.
+  ::-webkit-scrollbar {
+    width: 10px;  // The width of the vertical scrollbar
+    height: 10px; // The height of the horizontal scrollbar
+  }
+
+  // Styling the thumb.
+  ::-webkit-scrollbar-thumb {
+    background: #F2F2F2;
+    border: 1px solid #0D0D0D;
+    border-radius: 8px;
+    transition: all 200ms linear;
+
+    &:hover {
+      background: #E1E1E1;
+    }
+  }
+
+  // Styling the scrollbar track.
+  ::-webkit-scrollbar-track {
+    background: #F2F2F2;
+  }
+
+  // [ 2 ] - Mozila Firefox
+
+  scrollbar-width: thin;
+  scrollbar-color: #B6B6B6 #E1E1E1; // left: thumb-color , right: track-color
+}

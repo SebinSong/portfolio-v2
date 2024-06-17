@@ -141,7 +141,7 @@ export default function Contact () {
                     <span className='circle-deco'></span>
                   </h1>
 
-                  <p className='page-desc'>If you would like to talk about working with me or hiring me, please leave your enquiry below.</p>
+                  <p className='page-desc'>Feel free to start a chat with me :)<br/>Happy to discuss about a pontential work opportunity.</p>
                 </div>
 
                 <form onSubmit={submitHandler}>
