@@ -75,13 +75,14 @@ body {
   position: relative;
   display: inline-block;
   font-weight: 300;
-  color: var(--highlight-2_1);
+  color: var(--highlight-3);
   text-decoration: none;
   margin-left: 1px;
   margin-right: 1px;
   line-height: 1.2;
   outline: none;
-  transition: color 200ms linear;
+  transition:
+    color 200ms linear;
 
   &::after {
     content: '';
@@ -96,7 +97,7 @@ body {
 
   &:focus,
   &:hover {
-    color: $background-0_2;
+    color: $text-2;
 
     &::after {
       animation: link-hover-ani 250ms linear forwards;

@@ -18,6 +18,10 @@ export default function Home () {
 
         <ScrollIndicator classes='home-scroll-indicator' />
       </section>
+
+      <section className='home-introduce-myself'>
+
+      </section>
     </PageTemplate>
   )
 }

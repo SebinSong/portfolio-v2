@@ -2,9 +2,7 @@
   position: relative;
 
   .home-main-section {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,5 +127,11 @@
     bottom: 4rem;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .home-introduce-myself {
+    position: relative;
+    padding: 4rem 2rem;
+    padding-top: 6rem;
   }
 }
