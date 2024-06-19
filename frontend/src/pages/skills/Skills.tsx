@@ -1,4 +1,5 @@
-import { useState, useMemo } from "react"
+import { useState, useEffect, useMemo } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 // child components
 import PageTemplate from "../PageTemplate"
@@ -17,9 +18,11 @@ import './Skills.scss'
 
 // helpers
 const totalCount = projectData.length
+const filterQueryList = ['all', 'frontend', 'backend', 'tooling']
 
 export default function Skills () {
   // local-state
+  const [searchParams, setSearchParams] = useSearchParams()
   const [selectedSkills, setSelectedSkills] = useState<string[]>([])
 
   // computed state
@@ -30,6 +33,8 @@ export default function Skills () {
 
     return filterdBySkills
   }, [selectedSkills])
+
+  console.log('!@# search params: ', searchParams)
 
   // methods
   const onFilterOrSortUpdate = (updates: any) => {

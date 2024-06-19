@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 // child components
 import Checkbox from '~/components/checkbox/Checkbox'
@@ -19,6 +20,7 @@ interface Props {
 }
 
 // helpers
+const filterIdList: string[] = ['frontend', 'backend', 'tooling'] 
 const allTypeFilters: Array<{ name: string, id: string }> = [
   { id: 'frontend', name: 'Frontend' },
   { id: 'backend', name: 'Backend' },
@@ -43,6 +45,7 @@ export default function SortAndFilters ({
   onUpdate
 }: Props) {
   // local-state
+  const [searchParams, setSearchParams] = useSearchParams()
   const [filterOpen, setFilterOpen] = useState(true)
   const [selectedFilters, setSelectedFilters] = useState<string[]>(filterInit || allSkills)
   // const [sortBy, setSortBy] = useState<DropdownItem['id']>(sortInit || 'latest')
@@ -87,6 +90,13 @@ export default function SortAndFilters ({
   }
 
   // effects
+  useEffect(() => {
+    const filterQuery = searchParams.get('filter')
+    if (filterQuery && filterIdList.includes(filterQuery)) {
+      onAllTypeBtnClick(filterQuery)
+    }
+  }, [])
+
   useEffect(() => {
     onUpdate && onUpdate({
       filters: selectedFilters
