@@ -11,4 +11,4 @@ My name is Sebin Song, a web developer who has worked at several organizations s
 
 ### Outside the professional life
 
-I'm a big Martial art enthusiast. I go to Muay thai kickboxing trainning three times a week these days. It feels like I get to learn an important lesson about life from learning how to fight. To beat my opponent I have to constantly get into the danger zone where the opponent can hurt me. Sparring is pretty much facing and walking into this fear throughout the entire fight, and at the end of the day, it teaches me, to acheive something valuable involves enduring pain and overcoming the fear.
+I do martial art trainning on a regular basis. I go to Muay thai kickboxing gym 3 times every week on average. It feels like I get to learn an important lesson about life from learning how to fight. To beat my opponent I have to constantly get into the danger zone where the opponent can hurt me. Sparring is pretty much facing and walking into this fear throughout the entire fight, and at the end of the day, it teaches me, to acheive something valuable involves enduring pain and overcoming the fear.

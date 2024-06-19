@@ -30,7 +30,7 @@ export default function Home () {
       <section className='home-introduce-myself'>
         <div className='page-title-container'>
           <h1 className='page-title'>
-            <span className='text'>A bit about me..</span>
+            <span className='text'>A little about me..</span>
             <span className='circle-deco'></span>
           </h1>
         </div>
@@ -44,7 +44,7 @@ export default function Home () {
         <p className='bio-paragraph mb-80'>
           I have worked at <a className='is-link has-icon' href='/resume'>several organizations</a> since 2020 either as a web front-end engineer or a full-stack developer.<br/>
           During the early days of my career, creating interactive front-end animations on the browsers was my biggest passion, but it was not until later that I realised what truly makes a great web app is having a powerful server.<br/>
-          Becoming <span className='emphasis'>a versatile javascript full-stack developer</span> has been my long term career goal since then.
+          Becoming <span className='emphasis'>a versatile javascript full-stack developer</span> has been my main career focus since then, which means I'm always studying <span className='emphasis'>Node.js</span> when I don't work.
         </p>
 
         <div className='page-title-container'>
@@ -55,10 +55,10 @@ export default function Home () {
         </div>
 
         <p className='bio-paragraph mb-80'>
-          I do <span className='emphasis'>martial art trainning</span> on a regular basis. I go to Muay thai kickboxing gym 2 to 3 times every week.
-          To me, learning to fight means more than growing a self-defense skill. It gives me an important lesson about <span className='emphasis'>Life</span>.<br/>
-          To beat an opponent requires contantly stepping into the danger zone where the opponent keeps hurting me and can possibly knock me out in the worst scenario.<br/>
-          At the end of the day, it teaches me that achieving something valuable necessarily involves <span className='emphasis'>enduring pain</span> and <span className='emphasis'>overcoming the fear</span>.
+          I do <span className='emphasis'>martial art trainning</span> on a regular basis. I go to <span className='emphasis'>Muay thai kickboxing</span> gym 3 times a week on average.
+          To me, learning to fight means more than just growing a self-defense skill. It gives me an important lesson about <span className='emphasis'>Life</span>.<br/>
+          Beating an opponent during a fight requires contantly stepping into the danger zone where the opponent keeps hurting me and can possibly knock me out. It all starts from embracing the possibility of that worst outcome.<br/>
+          At the end of the day, what it teaches me is that, achieving something valuable will always involve <span className='emphasis'>enduring pain</span> and <span className='emphasis'>overcoming the fear</span>.
         </p>
       </section>
     </PageTemplate>
