@@ -152,5 +152,101 @@
     position: relative;
     padding: 4rem 2rem;
     padding-top: 6rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .about-me-title {
+      font-size: $size-2;
+      margin-bottom: 5rem;
+    }
+
+    .my-img-container {
+      position: relative;
+      filter: grayscale(20%);
+      opacity: 0.925;
+      width: max-content;
+      height: max-content;
+      margin-bottom: 8rem;
+
+      img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 20rem;
+        z-index: 2;
+        transition: transform 120ms ease-out;
+
+        @include from ($small-phone) {
+          max-width: 24rem;
+        }
+
+        @include from ($desktop-large) {
+          max-width: 30rem;
+        }
+      }
+
+      .frame-1,
+      .frame-2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid $text-2;
+        background-color: $background-0;
+        transition: transform 200ms ease-out;
+      }
+
+      .frame-1 {
+        top: 0.6rem;
+        left: 0.8rem;
+        z-index: 1;
+      }
+
+      .frame-2 {
+        top: 1.2rem;
+        left: 1.6rem;
+        z-index: 0;
+      }
+
+      &:hover {
+        img {
+          transform: translate(-3px, -1px);
+        }
+
+        .frame-1 {
+          transform: translate(2px, 0);
+        }
+
+        .frame-2 {
+          transform: translate(6px, 2px);
+        }
+      }
+    }
+
+    .bio-paragraph {
+      position: relative;
+      display: block;
+      padding-top: 3rem;
+      max-width: 72rem;
+      color: $text-1;
+      font-size: $size-6;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4rem;
+        height: 1px;
+        border-bottom: 1px solid $text-2;
+      }
+
+      .emphasis {
+        font-weight: 400;
+        color: $text-0;
+      }
+    }
   }
 }
