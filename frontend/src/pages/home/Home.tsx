@@ -58,7 +58,7 @@ export default function Home () {
           I do <span className='emphasis'>martial art trainning</span> on a regular basis. I go to Muay thai kickboxing gym 2 to 3 times every week.
           To me, learning to fight means more than growing a self-defense skill. It gives me an important lesson about <span className='emphasis'>Life</span>.<br/>
           To beat an opponent requires contantly stepping into the danger zone where the opponent keeps hurting me and can possibly knock me out in the worst scenario.<br/>
-          At the end of the day, it teaches me that achieving something valuable always involves <span className='emphasis'>enduring pain</span> and <span className='emphasis'>overcoming the fear</span>.
+          At the end of the day, it teaches me that achieving something valuable necessarily involves <span className='emphasis'>enduring pain</span> and <span className='emphasis'>overcoming the fear</span>.
         </p>
       </section>
     </PageTemplate>
