@@ -28,7 +28,12 @@ export default function Home () {
       </section>
 
       <section className='home-introduce-myself'>
-        <h3 className='about-me-title'>A bit about me..</h3>
+        <div className='page-title-container'>
+          <h1 className='page-title'>
+            <span className='text'>A bit about me..</span>
+            <span className='circle-deco'></span>
+          </h1>
+        </div>
 
         <div className='my-img-container'>
           <span className='frame-1'></span>
@@ -36,10 +41,24 @@ export default function Home () {
           <img src='/images/my-photo.jpg' alt='My bio image' />
         </div>
 
-        <p className='bio-paragraph'>
+        <p className='bio-paragraph mb-80'>
           I have worked at <a className='is-link has-icon' href='/resume'>several organizations</a> since 2020 either as a web front-end engineer or a full-stack developer.<br/>
           During the early days of my career, creating interactive front-end animations on the browsers was my biggest passion, but it was not until later that I realised what truly makes a great web app is having a powerful server.<br/>
           Becoming <span className='emphasis'>a versatile javascript full-stack developer</span> has been my long term career goal since then.
+        </p>
+
+        <div className='page-title-container'>
+          <h1 className='page-title'>
+            <span className='text'>Outside the work..</span>
+            <span className='circle-deco'></span>
+          </h1>
+        </div>
+
+        <p className='bio-paragraph mb-80'>
+          I do <span className='emphasis'>martial art trainning</span> on a regular basis. I go to Muay thai kickboxing gym 2 to 3 times every week.
+          To me, learning to fight means more than growing a self-defense skill. It gives me an important lesson about <span className='emphasis'>Life</span>.<br/>
+          To beat an opponent requires contantly stepping into the danger zone where the opponent keeps hurting me and can possibly knock me out in the worst scenario.<br/>
+          At the end of the day, it teaches me that achieving something valuable always involves <span className='emphasis'>enduring pain</span> and <span className='emphasis'>overcoming the fear</span>.
         </p>
       </section>
     </PageTemplate>
