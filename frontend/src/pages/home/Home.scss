@@ -102,22 +102,41 @@
     .intro-para {
       position: relative;
       padding-left: 1rem;
-      font-size: $size-5;
+      font-size: $size-6;
       color: var(--text-1);
       font-weight: lighter;
       line-height: 2;
 
-      .emphasis {
+      .to-skill-page {
+        position: relative;
         display: inline-block;
         line-height: 1;
-        color: $text-1;
+        color: $text-0;
         font-weight: 700;
-        padding: 0.2em;
+        padding: 0.3em;
         border: 1px solid var(--text-2);
+        background-color: $highlight;
+        transition: border-color 150ms linear;
+        cursor: pointer;
+
+        @include has-icon;
+        &::before {
+          padding: 0.3rem 0.3rem 0.2rem 0.2rem;
+          content: '\e65a';
+          font-size: 0.8em;
+          margin-right: 0.4rem;
+          background-color: $text-0;
+          color: $highlight;
+        }
+
+        &:focus,
+        &:hover {
+          border-color: currentColor;
+        }
       }
 
       @include from ($desktop) {
-        font-size: 1.35vw;
+        font-size: 1.1vw;
       }
     }
   }
