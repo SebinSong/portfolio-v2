@@ -44,7 +44,7 @@ export default function Home () {
         </div>
 
         <p className='bio-paragraph mb-80'>
-          I have worked at <a className='is-link has-icon' href='/resume'>several organizations</a> since 2020 either as a web front-end engineer or a full-stack developer.<br/>
+          I have worked at <a className='is-link has-icon' href='/resume'>a few organizations</a> since 2020 either as a web front-end engineer or a full-stack developer.<br/>
           During the early days of my career, creating interactive front-end animations on the browsers was my biggest passion, but it was not until later that I realised what truly makes a great web app is having a powerful server.<br/>
           Becoming <span className='emphasis'>a versatile javascript full-stack developer</span> has been my main career focus since then, which means I'm always studying <span className='emphasis'>Node.js</span> when I don't work.
         </p>
