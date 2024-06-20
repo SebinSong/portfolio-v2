@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import PageTemplate from '../PageTemplate'
 import CursorAnimation from '~/components/home-cursor-animation/HomeCursorAnimation.tsx'
 import ScrollIndicator from '~/components/scroll-indicator/ScrollIndicator.tsx'
+import MuayThaiImage from './MuayThaiImage'
+
 import './Home.scss'
 
 export default function Home () {
@@ -52,6 +54,10 @@ export default function Home () {
             <span className='text'>Outside the work..</span>
             <span className='circle-deco'></span>
           </h1>
+        </div>
+
+        <div className='muay-thai-img-container'>
+          <MuayThaiImage classes='muay-thai-svg' />
         </div>
 
         <p className='bio-paragraph mb-80'>

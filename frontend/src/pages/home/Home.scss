@@ -260,5 +260,23 @@
         color: $text-0;
       }
     }
+
+    .muay-thai-img-container {
+      position: relative;
+      width: max-content;
+      margin-bottom: 4rem;
+    }
+
+    .muay-thai-svg {
+      width: 24rem;
+      height: 24rem;
+      color: $text-0;
+      fill: $text-1;
+
+      @include from ($small-phone) {
+        width: 28rem;
+        height: 28rem;
+      }
+    }
   }
 }
