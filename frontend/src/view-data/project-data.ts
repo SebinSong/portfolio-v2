@@ -137,7 +137,7 @@ const projectData: Array<ProjectItem> = [
       app: 'https://groupincome.org/',
       github: 'https://github.com/okTurtles/group-income/pulls?q=is%3Apr+assignee%3A%40me'
     },
-    skillset: ['HTML', 'SCSS', 'Javascript', 'Flow Typer', 'Vue 2', 'Cypress', 'Grunt', 'PWA', 'WebSockets', 'Node', 'Hapi'],
+    skillset: ['HTML', 'SCSS', 'Javascript', 'Flow Typer', 'Vue 2', 'Pug', 'Cypress', 'Grunt', 'PWA', 'WebSockets', 'Node', 'Hapi'],
     isIndividuaWork: false
   },
   {

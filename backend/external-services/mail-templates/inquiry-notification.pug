@@ -1,0 +1,12 @@
+extends mail-boilerplate.pug
+
+block body
+  - const labelMap = { title: '제목', name: '이름', email: '메일 주소', content: '내용' }
+
+  h3(style={ 'font-size': '16px' }) 웹사이트 문의 접수
+  br
+  br
+  each val, key in data
+    p.list-item
+      label #{labelMap[key]}
+      span.value #{val}

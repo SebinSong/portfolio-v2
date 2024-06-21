@@ -1,8 +1,8 @@
 // Sanity check of the DB
-const { connectToDB } = require('./db.js')
+const { connectToDB } = require('../db.js')
 
 // models
-const Inquiry = require('./models/InquiryModel.js')
+const Inquiry = require('../models/InquiryModel.js')
 
 // importing .env file
 connectToDB(async (err) => {
