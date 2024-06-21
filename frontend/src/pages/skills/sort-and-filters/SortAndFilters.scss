@@ -115,6 +115,16 @@
       transform: translateY(1px);
     }
 
+    &.is-deselect-all {
+      background-color: $background-0_1;
+
+      i {
+        font-size: 0.825em;
+        font-weight: 700;
+        transform: translateY(1px);
+      }
+    }
+
     &.is-active {
       background-color: $text-0;
       color: $highlight;

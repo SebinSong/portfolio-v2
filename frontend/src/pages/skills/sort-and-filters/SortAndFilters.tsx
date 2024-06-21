@@ -27,8 +27,8 @@ const allTypeFilters: Array<{ name: string, id: string }> = [
   { id: 'tooling', name: 'Tooling' }
 ]
 const frontendSkills: string[] = [
-  'HTML', 'SCSS', 'Design', 'Javascript', 'Typescript', 'React', 'Redux',
-  'Creative Animation', 'SVG', 'Vue 2', 'Vue 3', 'GSAP', 'Canvas', 'ThreeJS', 'PWA'
+  'HTML', 'SCSS', 'Design', 'Javascript', 'Typescript', 'React', 'Redux', 'Creative Animation',
+  'SVG', 'Vue 2', 'Vue 3', 'GSAP', 'Canvas', 'ThreeJS', 'PWA', 'Pug'
 ]
 const backendSkills: string[] = ['Node', 'Express', 'Hapi', 'MongoDB', 'Google API', 'WebSockets']
 const toolingSkills: string[] = ['Vite', 'Webpack', 'Grunt', 'Astro', 'Cypress']
@@ -77,6 +77,10 @@ export default function SortAndFilters ({
     switch (entryId) {
       case 'all': {
         setSelectedFilters(isAllFilterSelected ? [] : allSkills)
+        break
+      }
+      case 'deselect': {
+        setSelectedFilters([])
         break
       }
       default: {
@@ -130,6 +134,12 @@ export default function SortAndFilters ({
                 onClick={() => onAllTypeBtnClick(entry.id)}>{entry.name}</button>
             )
           }
+
+          <button key='de-all' className='is-unstyled all-type-btn is-deselect-all'
+            onClick={() => onAllTypeBtnClick('deselect')}>
+            <i className='icon-close is-prefix'></i>
+            <span>Deselect all</span>
+          </button>
         </div>
   
         <div className='list-block'>
