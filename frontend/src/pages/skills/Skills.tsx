@@ -6,6 +6,7 @@ import CustomCursor from '~/components/custom-cursor/CustomCursor'
 import ProjectCard from "./project-card/ProjectCard"
 import SortAndFilters from './sort-and-filters/SortAndFilters'
 import SkillsPageAnimation from "./skills-page-animation/SkillsPageAnimation"
+import ScrollToTopButton from '~/components/scroll-to-top-button/ScrollToTopButton'
 
 // utils 
 import projectData from '~/view-data/project-data'
@@ -81,6 +82,8 @@ export default function Skills () {
           }
         </div>
       </div>
+
+      <ScrollToTopButton classes='skills-scroll-top-btn' />
     </PageTemplate>
   )
 }

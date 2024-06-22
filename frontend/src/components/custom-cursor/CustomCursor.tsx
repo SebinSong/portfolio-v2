@@ -20,19 +20,20 @@ export default function CustomCursor ({
   classes
 }: ComponentProps) {
   // local-state
-  usePointer(cursorUpdateHandler)
-
   const svgEl = useRef<any>(null)
   const bigCircleEl = useRef<any>(null)
   const tinyCircleEl = useRef<any>(null)
   const [canvasSize, setCanvasSize] = useState<CanvasArea>({ width: 0, height: 0 })
+  const { isTouchDevice } = usePointer(cursorUpdateHandler)
 
   // methods
   function cursorUpdateHandler (pos: Point): void {
     const els: any[] = [bigCircleEl, tinyCircleEl]
     els.forEach((el: any) => {
-      el.current.setAttributeNS(null, 'cx', pos.x)
-      el.current.setAttributeNS(null, 'cy', pos.y)
+      if (el.current) {
+        el.current.setAttributeNS(null, 'cx', pos.x)
+        el.current.setAttributeNS(null, 'cy', pos.y)
+      }
     })
 
     if (onCursorUpdate) {
@@ -56,6 +57,8 @@ export default function CustomCursor ({
       window.removeEventListener('resize', resizeHandler)
     }
   }, [])
+
+  if (isTouchDevice) { return null }
 
   return (
     <svg ref={svgEl} className={cn('custom-cursor-canvas', classes)}

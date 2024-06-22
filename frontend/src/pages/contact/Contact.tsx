@@ -197,7 +197,10 @@ export default function Contact () {
                   <div className='button-container'>
                     <button className='is-custom-border send-btn' type='submit' disabled={isSubmitting}>
                       <LoaderAnimation show={isSubmitting} />
-                      <span className='text'>Send</span>
+                      <span className='text'>
+                        <i className='icon-arrow-circle-right is-prefix'></i>
+                        Send
+                      </span>
                     </button>
                   </div>
                 </form>

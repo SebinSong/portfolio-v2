@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import { isTouchDevice } from '~/view-utils.ts'
 import type { Point } from '~/types/common'
@@ -11,6 +11,7 @@ export default function usePointer (
 ): any {
   const pointer = useRef<Point>({ x: innerWidth / 2, y: -100 })
   const cursorPosition = useRef<Point>({ x: innerWidth / 2, y: -100 })
+  const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false)
 
   const updatePointer = (e: any) => {
     const isTouch = e.type.includes('touch')
@@ -43,11 +44,19 @@ export default function usePointer (
   }
 
   useEffect(() => {
+    const mqChecker = window.matchMedia('(hover: hover)')
+
     window.addEventListener(pointerEventName, updatePointer)
     updateCursorPosition()
 
+    setIsTouchDevice(!mqChecker.matches)
+    mqChecker.onchange = (e: any) => {
+      setIsTouchDevice(!e.matches)
+    }
+
     return () => {
       window.removeEventListener(pointerEventName, updatePointer)
+      mqChecker.onchange = null
 
       if (cursorRequestId) {
         window.cancelAnimationFrame(cursorRequestId)
@@ -57,6 +66,7 @@ export default function usePointer (
 
   return {
     pointer,
-    cursorPosition
+    cursorPosition,
+    isTouchDevice
   }
 }

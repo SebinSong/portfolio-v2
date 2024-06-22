@@ -116,7 +116,12 @@
         padding: 0.3em;
         border: 1px solid var(--text-2);
         background-color: $highlight;
-        transition: border-color 150ms linear;
+        box-shadow: 0 0 0 0 $text-0;
+        transition:
+          border-color 100ms ease-out,
+          box-shadow 100ms ease-out,
+          transform 100ms ease-out;
+
         cursor: pointer;
 
         @include has-icon;
@@ -132,6 +137,14 @@
         &:focus,
         &:hover {
           border-color: currentColor;
+          transform: translate(-1px, -1px);
+          box-shadow: 2px 2px 0 0 $text-0;
+        }
+
+        &:active {
+          transition: none;
+          transform: translate(0, 0);
+          box-shadow: 0 0 0 0 $text-0;
         }
       }
 

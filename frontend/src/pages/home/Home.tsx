@@ -5,6 +5,7 @@ import PageTemplate from '../PageTemplate'
 import CursorAnimation from '~/components/home-cursor-animation/HomeCursorAnimation.tsx'
 import ScrollIndicator from '~/components/scroll-indicator/ScrollIndicator.tsx'
 import MuayThaiImage from './MuayThaiImage'
+import ScrollToTopButton from '~/components/scroll-to-top-button/ScrollToTopButton'
 
 import './Home.scss'
 
@@ -67,6 +68,8 @@ export default function Home () {
           At the end of the day, what it teaches me is that, achieving something valuable will always involve <span className='emphasis'>enduring pain</span> and <span className='emphasis'>overcoming the fear</span>.
         </p>
       </section>
+
+      <ScrollToTopButton classes='home-scroll-top-btn' />
     </PageTemplate>
   )
 }
