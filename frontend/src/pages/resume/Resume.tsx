@@ -3,6 +3,7 @@ import { useState, useMemo, useCallback, ReactNode } from "react"
 import PageTemplate from "../PageTemplate"
 import TabMenu from "~/components/tab-menu/TabMenu"
 import ResumePageAnimation from "./resume-page-animation/ResumePageAnimation"
+import ScrollToTopButton from '~/components/scroll-to-top-button/ScrollToTopButton'
 
 // utils
 import resumeData from '~/view-data/resume-data.ts'
@@ -149,6 +150,8 @@ export default function Resume () {
           }
         </div>
       </div>
+
+      <ScrollToTopButton classes='resume-page-scroll-top-btn' />
     </PageTemplate>
   )
 }

@@ -6,6 +6,7 @@ import CursorAnimation from '~/components/home-cursor-animation/HomeCursorAnimat
 import ScrollIndicator from '~/components/scroll-indicator/ScrollIndicator.tsx'
 import MuayThaiImage from './MuayThaiImage'
 import ScrollToTopButton from '~/components/scroll-to-top-button/ScrollToTopButton'
+import HomeTestimonials from './home-testimonials/HomeTestimonials'
 
 import './Home.scss'
 
@@ -67,6 +68,19 @@ export default function Home () {
           Beating an opponent during a fight requires contantly stepping into the danger zone where the opponent keeps hurting me and can possibly knock me out. It all starts from embracing the possibility of that worst outcome.<br/>
           At the end of the day, what it teaches me is that, achieving something valuable will always involve <span className='emphasis'>enduring pain</span> and <span className='emphasis'>overcoming the fear</span>.
         </p>
+
+        <div className='page-title-container mb-40'>
+          <h1 className='page-title'>
+            <span className='text'>Testimonials</span>
+            <span className='circle-deco'></span>
+          </h1>
+        </div>
+
+        <p className='bio-paragraph mb-50'>
+          Have a read of some words from the folks who have worked (or are working) with me about what their experiences have been like!
+        </p>
+
+        <HomeTestimonials />
       </section>
 
       <ScrollToTopButton classes='home-scroll-top-btn' />

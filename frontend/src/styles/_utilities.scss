@@ -166,9 +166,12 @@ button.scroll-to-top-btn {
     box-shadow 100ms ease-out,
     background-color 100ms ease-out,
     opacity 200ms ease-out;
-
   opacity: 0;
   pointer-events: none;
+
+  @include from ($large-phone) {
+    right: 2.5rem;
+  }
 
   &.is-active {
     opacity: 1;

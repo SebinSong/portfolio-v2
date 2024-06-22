@@ -255,14 +255,13 @@
       padding-top: 3rem;
       max-width: 72rem;
       color: $text-1;
-      font-size: $size-6;
+      font-size: $size-7;
 
       &::before {
         content: '';
         position: absolute;
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
         width: 4rem;
         height: 1px;
         border-bottom: 1px solid $text-2;
@@ -271,6 +270,15 @@
       .emphasis {
         font-weight: 400;
         color: $text-0;
+      }
+
+      @include from ($large-phone) {
+        font-size: 1.3rem;
+
+        &::before {
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
     }
 

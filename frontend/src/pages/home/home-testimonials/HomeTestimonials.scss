@@ -1,0 +1,103 @@
+.home-testimonials-list {
+  position: relative;
+  width: 100%;
+  max-width: 58rem;
+}
+
+.testimonial-card {
+  position: relative;
+  padding: 1.6rem;
+  border: 1px solid $text-2;
+  margin-bottom: 2rem;
+  background-color: $background-0;
+
+  @include from ($small-phone) {
+    padding: 2rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .testimonial-upper-section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 1rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid $background-0_2;
+
+    @include from ($small-phone) {
+      column-gap: 1.2rem;
+      align-items: center;
+    }
+
+    .icon-wrapper {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4.6rem;
+      height: 4.6rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-color: $text-0;
+
+      .testimonial-icon {
+        line-height: 1;
+        font-size: 1.8rem;
+        color: $highlight;
+        font-weight: 700;
+      }
+    }
+
+    .testimonial-details {
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      .testimonial-name {
+        font-size: $size-6;
+        color: $text-0;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .testimonial-role-and-company {
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 1.2;
+        column-gap: 0.6rem;
+        row-gap: 0.2rem;
+        font-size: 1rem;
+        color: $text-1;
+      }
+    }
+  }
+
+  .testimonial-content {
+    position: relative;
+    padding-top: 5.2rem;
+    font-size: $size-7;
+    color: $text-1;
+
+    .text {
+      position: relative;
+      z-index: 1;
+    }
+
+    @include has-icon;
+    &::before {
+      position: absolute;
+      display: inline-block;
+      content: '\e67f';
+      top: 1.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.8rem;
+      color: $background-0_2;
+      z-index: 0;
+    }
+  }
+}

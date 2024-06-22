@@ -65,3 +65,8 @@ export function validateEmail (str: string): boolean {
   const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
   return emailRegExp.test(str)
 }
+
+export function genId (): string {
+  const random = () => Math.random().toString(20).slice(2)
+  return `${random()}_${random()}`
+}
