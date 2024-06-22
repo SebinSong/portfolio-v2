@@ -12,10 +12,11 @@ dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 const {
   MAILSENDER_USERID,
   MAILSENDER_PASSWORD,
-  WEBSITE_NAME,
+  APP_HTTPS_HOSTNAME,
   NOTIFICATION_EMAIL_TO
 } = process.env
 const MAIL_FROM_ADDRESS = `${MAILSENDER_USERID}@naver.com`
+const WEBSITE_NAME = APP_HTTPS_HOSTNAME.split('https://')[1]
 
 const transporter = nodemailer.createTransport({
   service: 'naver',

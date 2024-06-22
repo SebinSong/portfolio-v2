@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 
 // utils
-import { isTouchDevice } from '~/view-utils.ts'
 import { paintSvg, moveComponents } from './animation-utils.ts'
 import type { Point, CanvasArea } from '~/types/common'
 
-const pointerEventName = isTouchDevice ? 'touchmove' : 'mousemove'
 const position: Point = { x: 0, y: 0 } // position of the custom cursor
 const pointer: Point = { x: 0, y: 0 } // position of the actual device pointer (e.g. mouse, touch-finger)
 let aniRequestId: any = null
@@ -16,7 +14,8 @@ import './HomeCursorAnimation.scss'
 export default function HomeCursorAnimation () {
   // local-state
   const [canvasArea, setCanvasArea] = useState<CanvasArea>({width: innerWidth, height: innerHeight })
-  const svgEl = useRef(null)
+  const svgEl = useRef<any>(null)
+  const isTouchDevice = useRef<boolean>(false)
 
   // methods
   const resizeHandler = () => {
@@ -29,15 +28,10 @@ export default function HomeCursorAnimation () {
   }
 
   const updateCoordinates = (e: any) => {
-    const isTouch = e.type.includes('touch')
+    if (isTouchDevice.current) {return }
 
-    if (isTouch) {
-      pointer.x = e.touches[0].clientX
-      pointer.y = e.touches[0].clientY
-    } else {
-      pointer.x = e.clientX
-      pointer.y = e.clientY
-    }
+    pointer.x = e.clientX
+    pointer.y = e.clientY
   }
 
   const initSvg = () => {
@@ -70,17 +64,44 @@ export default function HomeCursorAnimation () {
     }
   }
 
+  const scrollHandler = () => {
+    if (!isTouchDevice.current) { return }
+
+    const bodyEl = document.body
+    const scrollPercent = bodyEl.scrollTop / bodyEl.scrollHeight
+
+    pointer.x = -1 * (150 + 200 * scrollPercent)
+    pointer.y = (innerHeight * 1.2) * scrollPercent
+  }
+
   // effects
   useEffect(() => {
     window.addEventListener('resize', resizeHandler)
-    window.addEventListener(pointerEventName, updateCoordinates)
+    window.addEventListener('mousemove', updateCoordinates)
+    document.body.addEventListener('scroll', scrollHandler)
+
     initSvg()
     setTimeout(() => animate(), 20)
 
+    // setup touch-device checker
+    const mqChecker = window.matchMedia('(hover: hover)')
+    isTouchDevice.current = !mqChecker.matches
+    mqChecker.onchange = (e: any) => {
+      isTouchDevice.current = !e.matches
+
+      if (e.matches) {
+        scrollHandler()
+      }
+    }
+  
     return () => {
       // Free up the resources that the animation is using when no need.
       window.removeEventListener('resize', resizeHandler)
-      window.removeEventListener(pointerEventName, updateCoordinates)
+      window.removeEventListener('mousemove', updateCoordinates)
+      document.body.removeEventListener('scroll', scrollHandler)
+
+      mqChecker.onchange = null
+
       stopAnimation()
     }
   }, [])
