@@ -141,7 +141,11 @@ export default function Contact () {
                     <span className='circle-deco'></span>
                   </h1>
 
-                  <p className='page-desc'>Feel free to start a chat with me :)<br/>Happy to discuss about a pontential work opportunity.</p>
+                  <p className='page-desc'>
+                    Feel free to start a chat with me :)<br/>
+                    Happy to discuss about a pontential work opportunity.<br/>
+                    You can also reach out to me via my <a className='is-link has-icon has-text-bold' href='https://www.linkedin.com/in/sebinsong/' target='_blank'>LinkedIn</a>.
+                  </p>
                 </div>
 
                 <form onSubmit={submitHandler}>

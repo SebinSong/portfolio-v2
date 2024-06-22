@@ -1,6 +1,7 @@
 // utils
 import testimonialData from '~/view-data/testimonials-data'
 import type { TestimonialEntry } from '~/view-data/testimonials-data'
+import { classNames as cn } from '~/view-utils'
 
 import './HomeTestimonials.scss'
 
@@ -8,7 +9,7 @@ export default function HomeTestimonials ({
   classes = ''
 }: { classes?: string }) {
   return (
-    <ul className='home-testimonials-list'>
+    <ul className={cn('home-testimonials-list', classes)}>
       {
         testimonialData.map((entry: TestimonialEntry) => {
           const { id, name, role, organization, content } = entry

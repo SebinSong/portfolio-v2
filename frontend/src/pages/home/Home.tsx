@@ -80,7 +80,20 @@ export default function Home () {
           Have a read of some words from the folks who have worked (or are still working) with me about what their experiences have been like!
         </p>
 
-        <HomeTestimonials />
+        <HomeTestimonials classes='mb-80' />
+
+        <div className='page-title-container'>
+          <h1 className='page-title'>
+            <span className='text'>Your feedbacks on this website?</span>
+            <span className='circle-deco'></span>
+          </h1>
+        </div>
+
+        <p className='bio-paragraph mb-50'>
+          This website is a web-app built with <span className='has-text-bold'>ReactJS</span> and a bit of <span className='has-text-bold'>ExpressJS / MongoDB</span>.
+          Feel free to share how you feel about this website down below.<br/>
+          You can also reach out to me via Contact page <a className='is-link has-icon' href='/contact' target='_self'>here</a>.
+        </p>
       </section>
 
       <ScrollToTopButton classes='home-scroll-top-btn' />
