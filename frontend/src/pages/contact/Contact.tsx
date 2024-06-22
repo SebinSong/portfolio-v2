@@ -17,18 +17,16 @@ import {
 import { submitInquiry } from '~/apis'
 import useValidation from '~/hooks/useValidation'
 
-import './Contact.scss'
-
-import type { Inquiry } from '~/types/common'
+// types
+import type { Inquiry, APISubmitStatus } from '~/types/common'
 type FormKeyUnion = 'name' | 'email' | 'title' | 'content'
-type submitStatus = 'idle' | 'submitting' | 'success' | 'error'
 
-// helpers
+import './Contact.scss'
 
 export default function Contact () {
   const navigate = useNavigate()
   // local-state
-  const [submitStatus, setSubmitStatus] = useState<submitStatus>('idle')
+  const [submitStatus, setSubmitStatus] = useState<APISubmitStatus>('idle')
   const [form, updateForm] = useImmer<Inquiry>({
     name: '',
     email: '',
@@ -60,9 +58,11 @@ export default function Contact () {
   // methods
   const submitHandler = async (e: FormEvent): Promise<any> => {
     e.preventDefault()
+
+    // init the status first.
     setSubmitStatus('idle')
 
-    // Feild validations
+    // Form field validations
     // Step - 1: required field check
     const requiredFields: FormKeyUnion[] = ['name', 'email', 'content']
     for (const key of requiredFields) {
@@ -144,7 +144,7 @@ export default function Contact () {
                   <p className='page-desc'>
                     Feel free to start a chat with me :)<br/>
                     Happy to discuss about a pontential work opportunity.<br/>
-                    You can also reach out to me via my <a className='is-link has-icon has-text-bold' href='https://www.linkedin.com/in/sebinsong/' target='_blank'>LinkedIn</a>.
+                    You can also find me in <a className='is-link has-icon has-text-bold' href='https://www.linkedin.com/in/sebinsong/' target='_blank'>LinkedIn</a> too.
                   </p>
                 </div>
 
@@ -157,9 +157,12 @@ export default function Contact () {
                   
                   <div className='sender-details'>
                     <div className='form-field'>
-                      <label className='label-common'>Name:</label>
+                      <label className='label-common'>
+                        Name:
+                        <span className='required'>(Required)</span>
+                      </label>
                       <input className={cn('input', isErrorActive('name') && 'is-error')}
-                        type='text' placeholder='Your name'
+                        type='text' placeholder='Your name' autoComplete='off'
                         onInput={updateFactory('name')}
                         data-vkey='name' />
 
@@ -167,9 +170,12 @@ export default function Contact () {
                     </div>
 
                     <div className='form-field mail-field'>
-                      <label className='label-common'>E-mail:</label>
+                      <label className='label-common'>
+                        E-mail:
+                        <span className='required'>(Required)</span>
+                      </label>
                       <input className={cn('input', isErrorActive('email') && 'is-error')}
-                        type='text' placeholder='Your e-mail address'
+                        type='text' placeholder='Your e-mail address' autoComplete='off'
                         onInput={updateFactory('email')} data-vkey='email' />
                       
                       <FormErrorMessage formKey='email' formError={formError} />
@@ -181,12 +187,15 @@ export default function Contact () {
                       Title:
                       <span className='optional'>(Optional)</span>
                     </label>
-                    <input className='input' type='text' placeholder='Enter title'
+                    <input className='input' type='text' placeholder='Enter title' autoComplete='off'
                       onInput={updateFactory('title')} data-vkey='title' />
                   </div>
 
                   <div className='form-field'>
-                    <label className='label-common'>Message:</label>
+                    <label className='label-common'>
+                      Message:
+                      <span className='required'>(Required)</span>
+                    </label>
                     <textarea className={cn('textarea', isErrorActive('content') && 'is-error')}
                       placeholder='Message content'
                       onInput={updateFactory('content')} data-vkey='content' />

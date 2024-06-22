@@ -7,6 +7,7 @@ import ScrollIndicator from '~/components/scroll-indicator/ScrollIndicator.tsx'
 import MuayThaiImage from './MuayThaiImage'
 import ScrollToTopButton from '~/components/scroll-to-top-button/ScrollToTopButton'
 import HomeTestimonials from './home-testimonials/HomeTestimonials'
+import HomeFeedbackForm from './home-feedbacks/HomeFeedbackForm'
 
 import './Home.scss'
 
@@ -94,6 +95,8 @@ export default function Home () {
           Feel free to share how you feel about this website down below.<br/>
           You can also reach out to me via Contact page <a className='is-link has-icon' href='/contact' target='_self'>here</a>.
         </p>
+
+        <HomeFeedbackForm />
       </section>
 
       <ScrollToTopButton classes='home-scroll-top-btn' />

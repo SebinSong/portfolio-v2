@@ -1,0 +1,38 @@
+.home-feedback-form {
+  position: relative;
+  width: 100%;
+  max-width: 72rem;
+
+  .name-and-pw-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    column-gap: 2rem;
+
+    .mail-field {
+      margin-bottom: 3rem;
+    }
+
+    @include from ($large-phone) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .form-field.password-field {
+    margin-bottom: 3rem;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4rem;
+
+    button.send-btn {
+      @include from ($small-phone) {
+        padding-top: 2rem;
+        min-width: 16rem;
+      }
+    }
+  }
+}

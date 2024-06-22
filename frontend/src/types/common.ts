@@ -1,4 +1,5 @@
 export type Theme = 'light' | 'dark'
+export type APISubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 export interface Point {
   x: number,
@@ -20,5 +21,11 @@ export interface Inquiry {
   name: string,
   email: string,
   title?: string,
+  content: string
+}
+
+export interface Feedback {
+  name: string,
+  password: string,
   content: string
 }

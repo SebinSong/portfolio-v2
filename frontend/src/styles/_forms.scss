@@ -72,11 +72,19 @@ form {
   line-height: 1.4;
   margin-bottom: 0.8rem;
 
-  .optional {
+  .optional,
+  .required {
     display: inline-block;
     margin-left: 0.4rem;
+    font-size: 0.8em;
+  }
+
+  .optional {
     color: $text-2;
-    font-size: 0.925em;
+  }
+
+  .required {
+    color: $warning;
   }
 }
 

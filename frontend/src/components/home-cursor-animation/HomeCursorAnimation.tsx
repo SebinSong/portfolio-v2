@@ -71,7 +71,7 @@ export default function HomeCursorAnimation () {
     const scrollPercent = bodyEl.scrollTop / bodyEl.scrollHeight
 
     pointer.x = -1 * (150 + 200 * scrollPercent)
-    pointer.y = (innerHeight * 1.2) * scrollPercent
+    pointer.y = -400 + (innerHeight + 800) * scrollPercent
   }
 
   // effects
