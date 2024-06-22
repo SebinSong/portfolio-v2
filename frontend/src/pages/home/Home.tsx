@@ -77,7 +77,7 @@ export default function Home () {
         </div>
 
         <p className='bio-paragraph mb-50'>
-          Have a read of some words from the folks who have worked (or are working) with me about what their experiences have been like!
+          Have a read of some words from the folks who have worked (or are still working) with me about what their experiences have been like!
         </p>
 
         <HomeTestimonials />
