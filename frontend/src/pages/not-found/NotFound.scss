@@ -1,0 +1,71 @@
+.not-found-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: $background-0;
+  color: $text-0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  .not-found-content-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 56rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .page-title-container {
+      margin-top: -3rem;
+      margin-bottom: 2rem;
+      width: max-content;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .page-title {
+        font-size: 2.4rem;
+
+        @include from ($small-phone) {
+          font-size: 2.8rem;
+        }
+      }
+    }
+
+    .error-desc {
+      position: relative;
+      text-align: center;
+      font-size: $size-7;
+      color: $text-1;
+    }
+  }
+
+  .skills-page-animation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+
+    .svg {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: var(--background-0_2);
+      opacity: 0.85;
+    }
+  }
+}
