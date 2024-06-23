@@ -7,6 +7,7 @@ const getTemplatePath = filename => path.resolve(__dirname, `mail-templates/${fi
 // mail-html-renderers
 const renderInquiryNotification = pug.compileFile(getTemplatePath('inquiry-notification'))
 const renderInquiryConfirmation = pug.compileFile(getTemplatePath('inquiry-confirmation'))
+const renderFeedbackNotification = pug.compileFile(getTemplatePath('feedback-notification'))
 
 dotenv.config({ path: path.resolve(__dirname, '../../.env') })
 const {
@@ -54,7 +55,7 @@ function sendMail ({
 function sendInquiryNotification (message) {
   const { title, name, email, content } = message
   const params = {
-    title: `[${WEBSITE_NAME}]: Inquiry sent`,
+    title: `[${WEBSITE_NAME}] Inquiry sent`,
     to: NOTIFICATION_EMAIL_TO,
     isHTML: true,
     content: renderInquiryNotification({
@@ -83,8 +84,23 @@ function confirmInquiryReceipt ({
   return sendMail(params)
 }
 
+function sendFeedbackNotification (newFeedback) {
+  const { name, content, _id } = newFeedback
+  const params = {
+    title: `[${WEBSITE_NAME}] Feedback created`,
+    to: NOTIFICATION_EMAIL_TO,
+    isHTML: true,
+    content: renderFeedbackNotification({
+      data: { name, content, id: _id }
+    })
+  }
+
+  return sendMail(params)
+}
+
 module.exports = {
   sendMail,
   confirmInquiryReceipt,
-  sendInquiryNotification
+  sendInquiryNotification,
+  sendFeedbackNotification
 }

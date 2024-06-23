@@ -10,6 +10,7 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') })
 // routers
 const configRouter = require('./routes/configRoutes')
 const inquiryRouter = require('./routes/inquiryRoutes.js')
+const feedbackRouter = require('./routes/feedbackRoutes.js')
 
 // middlewares
 const { globalErrorHandler, notFound } = require('./middlewares/errorMiddlewares')
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: true }))
 // attach routes
 app.use('/api/config', configRouter)
 app.use('/api/inquiry', inquiryRouter)
+app.use('/api/feedbacks', feedbackRouter)
 
 // static server setup
 app.use(express.static(API_CLIENT_PATH))

@@ -9,6 +9,8 @@ import LoaderAnimation from '~/components/loader-animation/LoaderAnimation'
 // utils
 import useValidation from '~/hooks/useValidation'
 import { classNames as cn } from '~/view-utils'
+import { submitFeedback } from '~/apis'
+
 // types
 import type { Feedback, APISubmitStatus } from '~/types/common'
 type FormKeyUnion = 'name' | 'password' | 'content'
@@ -54,14 +56,21 @@ function HomeFeedbackForm ({
   ])
 
   // methods
-  const submitHandler = (e: FormEvent) => {
+  const submitHandler = async (e: FormEvent) => {
     e.preventDefault()
 
     // init the status first.
     setSubmitStatus('idle')
 
     if (validateAll()) {
-      console.log('TODO: API integration here!')
+      setSubmitStatus('submitting')
+
+      try {
+        await submitFeedback(form)
+        setSubmitStatus('success')
+      } catch (err) {
+        setSubmitStatus('error')
+      }
     }
 
     // Form field valiations

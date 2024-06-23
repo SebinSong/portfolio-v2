@@ -6,6 +6,31 @@ const checkFileExists = async (filePath) => {
     .catch(() => false)
 }
 
+const sendBadRequestErr = (res, msg, errData = null) => {
+  res.status(400)
+  if (errData) {
+    res.errData = errData
+  }
+
+  throw new Error(msg)
+}
+
+const checkRequiredFieldsAndThrow = (req, res, keys = []) => {
+  for (const key of keys) {
+    const val = req.body[key]
+
+    if (!val) {
+      sendBadRequestErr(
+        res,
+        `[${key}] field is missing in the request payload`,
+        { errType: 'missing-field', fieldName: key }
+      )
+    }
+  }
+}
+
 module.exports = {
-  checkFileExists
+  checkFileExists,
+  sendBadRequestErr,
+  checkRequiredFieldsAndThrow
 }

@@ -1,6 +1,7 @@
 const express = require('express')
 const {
-  getAllInquiries, postInquiry
+  getAllInquiries,
+  postInquiry
 } = require('../controllers/inquiryControllers')
 const router = express.Router()
 

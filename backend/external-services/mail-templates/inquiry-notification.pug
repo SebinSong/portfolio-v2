@@ -1,9 +1,9 @@
 extends mail-boilerplate.pug
 
 block body
-  - const labelMap = { title: '제목', name: '이름', email: '메일 주소', content: '내용' }
+  - const labelMap = { title: '제목', id: 'ID', content: '내용' }
 
-  h3(style={ 'font-size': '16px' }) 웹사이트 문의 접수
+  h3(style={ 'font-size': '16px' }) 새로운 피드백 생성
   br
   br
   each val, key in data
