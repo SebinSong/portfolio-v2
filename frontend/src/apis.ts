@@ -12,6 +12,7 @@ const axiosInstance: any = axios.create({
   }
 })
 
+// 'api/config' route
 export function downloadResume (): any {
   return axiosInstance.get(
     '/config/download?resource=resume',
@@ -25,14 +26,22 @@ export function downloadResume (): any {
   })
 }
 
+// 'api/inquiry' route
 export function submitInquiry (payload: Inquiry): any {
   return axiosInstance.post('/inquiry', payload)
 }
 
+// 'api/feedbacks' route
 export function submitFeedback (payload: Feedback): any {
   return axiosInstance.post('/feedbacks', payload)
 }
 
 export function getAllFeedbacks (): any {
   return axiosInstance.get('/feedbacks')
+}
+
+export function deleteFeedback ({
+  id, password
+}: { id: string, password: string }) {
+  return axiosInstance.put(`/feedbacks/${id}`, { password })
 }
