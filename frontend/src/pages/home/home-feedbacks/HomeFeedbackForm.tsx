@@ -1,10 +1,10 @@
-
-import { useState, FormEvent } from 'react'
+import { useState, FormEvent, memo } from 'react'
 import { useImmer } from "use-immer"
 
 // components
 import FormErrorMessage from "~/components/FormErrorMessage"
 import LoaderAnimation from '~/components/loader-animation/LoaderAnimation'
+import FeedbackBanner from "~/components/feedback-banner/FeedbackBanner"
 
 // utils
 import useValidation from '~/hooks/useValidation'
@@ -14,14 +14,26 @@ import { submitFeedback } from '~/apis'
 // types
 import type { Feedback, APISubmitStatus } from '~/types/common'
 type FormKeyUnion = 'name' | 'password' | 'content'
+type ComponentProps = {
+  classes?: string,
+  onFormSubmit?: () => any
+}
+
+// helpers
+const feedbacks = {
+  'success': 'Successfully submitted! Thanks for your feedback.',
+  'error': 'Something went wrong while submitting the feedback. please try again.'
+}
 
 import './HomeFeedbackForm.scss'
 
 function HomeFeedbackForm ({
-  classes = ''
-}: { classes?: string }) {
+  classes = '',
+  onFormSubmit
+}:ComponentProps) {
   // local-state
   const [submitStatus, setSubmitStatus] = useState<APISubmitStatus>('idle')
+  const [feedbackMsg, setFeedbackMsg] = useState<strinb>('')
   const [form, updateForm] = useImmer<Feedback>({
     name: '',
     password: '',
@@ -61,6 +73,7 @@ function HomeFeedbackForm ({
 
     // init the status first.
     setSubmitStatus('idle')
+    setFeedbackMsg('')
 
     if (validateAll()) {
       setSubmitStatus('submitting')
@@ -68,8 +81,19 @@ function HomeFeedbackForm ({
       try {
         await submitFeedback(form)
         setSubmitStatus('success')
+        setFeedbackMsg(feedbacks.success)
+
+        // reset form state
+        updateForm(draft => {
+          draft.name = ''
+          draft.password = ''
+          draft.content = ''
+        })
+
+        onFormSubmit && onFormSubmit()
       } catch (err) {
         setSubmitStatus('error')
+        setFeedbackMsg(feedbacks.error)
       }
     }
 
@@ -105,6 +129,7 @@ function HomeFeedbackForm ({
           <input className={cn('input', isErrorActive('name') && 'is-error')}
             type='text' placeholder='Your name' autoComplete='off'
             onInput={updateFactory('name')}
+            value={form.name}
             data-vkey='name' />
 
           <FormErrorMessage formKey='name' formError={formError} />
@@ -119,6 +144,7 @@ function HomeFeedbackForm ({
             type='text' placeholder='Your password'
             autoComplete='off'
             onInput={updateFactory('password')}
+            value={form.password}
             data-vkey='password' />
 
           {
@@ -137,6 +163,7 @@ function HomeFeedbackForm ({
         </label>
         <textarea className={cn('textarea', isErrorActive('content') && 'is-error')}
           placeholder='Enter your feedback'
+          value={form.content}
           onInput={updateFactory('content')} data-vkey='content' />
         {
           !isErrorActive('content') &&
@@ -145,6 +172,13 @@ function HomeFeedbackForm ({
 
         <FormErrorMessage formKey='content' formError={formError} />
       </div>
+
+      {
+        feedbackMsg !== '' &&
+        <FeedbackBanner classes='mb-30' show={true}
+          type={submitStatus === 'error' ? 'error' : 'success'}
+          message={feedbackMsg} />
+      }
 
       <div className='button-container'>
         <button className='is-custom-border send-btn' type='submit' disabled={isSubmitting}>
@@ -159,4 +193,4 @@ function HomeFeedbackForm ({
   )
 }
 
-export default HomeFeedbackForm
+export default memo(HomeFeedbackForm)

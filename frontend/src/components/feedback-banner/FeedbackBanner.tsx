@@ -6,7 +6,7 @@ import { classNames as cn } from '~/view-utils'
 import './FeedbackBanner.scss'
 
 interface Props {
-  type?: 'info' | 'error',
+  type?: 'info' | 'error' | 'success',
   message: string,
   show?: boolean,
   hideCloseBtn?: boolean,

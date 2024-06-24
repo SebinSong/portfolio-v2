@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // child components
@@ -8,14 +9,25 @@ import MuayThaiImage from './MuayThaiImage'
 import ScrollToTopButton from '~/components/scroll-to-top-button/ScrollToTopButton'
 import HomeTestimonials from './home-testimonials/HomeTestimonials'
 import HomeFeedbackForm from './home-feedbacks/HomeFeedbackForm'
+import HomeFeedbackList from './home-feedback-list/HomeFeedbackList'
+
+// utils
+import { genId } from '~/view-utils'
 
 import './Home.scss'
 
 export default function Home () {
   const navigate = useNavigate()
 
+  // local-state
+  const [childKey, setChildKey] = useState(genId())
+
+  // methods
   const navigateTo = (filter: 'frontend' | 'backend') => {
     navigate(`/skills?filter=${filter}`)
+  }
+  const onFeedbackSubmit = () => {
+    setChildKey(genId())
   }
 
   return (
@@ -85,7 +97,7 @@ export default function Home () {
 
         <div className='page-title-container'>
           <h1 className='page-title'>
-            <span className='text'>Your feedbacks on this website?</span>
+            <span className='text'>Feedbacks on this website</span>
             <span className='circle-deco'></span>
           </h1>
         </div>
@@ -96,7 +108,11 @@ export default function Home () {
           You can also reach out to me via Contact page <a className='is-link has-icon' href='/contact' target='_self'>here</a>.
         </p>
 
-        <HomeFeedbackForm />
+        <HomeFeedbackForm onFormSubmit={onFeedbackSubmit} />
+
+        <div className='home-feedback-list-container'>
+          <HomeFeedbackList key={childKey} />
+        </div>
       </section>
 
       <ScrollToTopButton classes='home-scroll-top-btn' />

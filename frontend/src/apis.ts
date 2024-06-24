@@ -12,6 +12,18 @@ const axiosInstance: any = axios.create({
   }
 })
 
+// helper
+function parseAxiosErr (err: any): void {
+  const { response, message, code } = err
+  const data = response?.data?.data
+  const newErr: any = new Error(message)
+  newErr.code = code
+  newErr.data = data || {}
+  newErr.status = response?.status || null
+
+  throw newErr
+}
+
 // 'api/config' route
 export function downloadResume (): any {
   return axiosInstance.get(
@@ -23,25 +35,29 @@ export function downloadResume (): any {
 
     // Download the file
     saveAs(blob, downloadFilename)
-  })
+  }).catch(parseAxiosErr)
 }
 
 // 'api/inquiry' route
 export function submitInquiry (payload: Inquiry): any {
   return axiosInstance.post('/inquiry', payload)
+    .catch(parseAxiosErr)
 }
 
 // 'api/feedbacks' route
 export function submitFeedback (payload: Feedback): any {
   return axiosInstance.post('/feedbacks', payload)
+    .catch(parseAxiosErr)
 }
 
 export function getAllFeedbacks (): any {
   return axiosInstance.get('/feedbacks')
+    .catch(parseAxiosErr)
 }
 
 export function deleteFeedback ({
   id, password
 }: { id: string, password: string }) {
-  return axiosInstance.put(`/feedbacks/${id}`, { password })
+  return axiosInstance.put(`/feedbacks/delete/${id}`, { password })
+    .catch(parseAxiosErr)
 }

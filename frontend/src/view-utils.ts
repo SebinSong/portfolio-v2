@@ -70,3 +70,10 @@ export function genId (): string {
   const random = () => Math.random().toString(20).slice(2)
   return `${random()}_${random()}`
 }
+
+export function humanDate (
+  date: number | Date | string,
+  opts: { [index: string]: string } = { year: 'numeric', month: 'short', day: 'numeric' }
+): string {
+  return new Date(date).toLocaleDateString('en-US', opts)
+}

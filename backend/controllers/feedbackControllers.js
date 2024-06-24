@@ -6,7 +6,17 @@ const { sendFeedbackNotification } = require('../external-services/mail-sender')
 // Get all feedback items from the DB
 const getAllFeedbacks = asyncHandler(async (req, res, next) => {
   const feedbacks = await Feedback.find({}).sort({ createdAt: -1 })
-  res.status(200).json(feedbacks)
+  const data = feedbacks.map(feedback => {
+    const { _id, name, content, password, updatedAt } = feedback
+    return {
+      _id,
+      name,
+      content,
+      updatedAt,
+      sk: password
+    }
+  })
+  res.status(200).json(data)
 })
 
 // create a feedback item to DB

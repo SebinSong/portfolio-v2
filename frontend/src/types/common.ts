@@ -1,5 +1,6 @@
 export type Theme = 'light' | 'dark'
 export type APISubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
+export type APILoadStatus = 'idle' | 'loading' | 'loaded' | 'error'
 
 export interface Point {
   x: number,

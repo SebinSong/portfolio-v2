@@ -33,11 +33,15 @@
     border: 1px solid currentColor;
     font-size: 1rem;
     flex-shrink: 0;
-    margin-left: 1rem;
+    margin-left: 2rem;
     opacity: 0.75;
     transition:
       opacity 120ms ease-out,
       transform 120ms ease-out;
+
+    i {
+      transform: translateY(1px);
+    }
 
     &:focus,
     &:hover {
@@ -56,6 +60,18 @@
 
     .banner-close-btn {
       color: $warning;
+    }
+  }
+
+  &.is-type-success {
+    border-color: $highlight-3;
+
+    .banner-msg {
+      color: $highlight-3;
+    }
+
+    .banner-close-btn {
+      color: $highlight-3;
     }
   }
 }

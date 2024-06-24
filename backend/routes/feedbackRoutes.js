@@ -8,6 +8,6 @@ const router = express.Router()
 
 router.get('/', getAllFeedbacks)
 router.post('/', postFeedback)
-router.put('delete/:id', deleteFeedback)
+router.put('/delete/:id', deleteFeedback)
 
 module.exports = router
