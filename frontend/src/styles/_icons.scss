@@ -1,5 +1,4 @@
 $icons: (
-  wand: "\e600",
   volume: "\e601",
   user: "\e602",
   unlock: "\e603",
@@ -274,6 +273,7 @@ $icons: (
   font-family: "Project Icons";
   src: url("/fonts/themify.woff") format("woff");
   font-style: normal;
+  font-weight: 700;
 }
 
 [class^="icon-"] {

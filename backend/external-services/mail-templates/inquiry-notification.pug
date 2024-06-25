@@ -1,12 +1,12 @@
 extends mail-boilerplate.pug
 
 block body
-  - const labelMap = { title: '제목', id: 'ID', content: '내용' }
+  - const labelMap = { title: '제목', name: '이름', email: '이메일', content: '내용' }
+  - const { contentContainer, titleHeading, label } = styles 
 
-  h3(style={ 'font-size': '16px' }) 새로운 피드백 생성
-  br
-  br
-  each val, key in data
-    p.list-item
-      label #{labelMap[key]}
-      span.value #{val}
+  h3(style=titleHeading) 고객 메세지 알림
+  div(style=contentContainer)
+    each val, key in data
+      p(style={ padding: '0px' })
+        label(style=label) #{labelMap[key]}
+        span.value #{val}

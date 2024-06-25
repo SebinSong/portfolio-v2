@@ -1,5 +1,5 @@
 ## Frontend
-- add feedbacks UI to home page.
+- add feedbacks UI to home page. (O)
 - create logo image of the website
 - Some SEO stuff to the index.html
 

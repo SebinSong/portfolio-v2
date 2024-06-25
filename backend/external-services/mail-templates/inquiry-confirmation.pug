@@ -1,15 +1,17 @@
 extends mail-boilerplate.pug
 
 block body
-  h3(style={ 'font-size': '18px' }) Thanks #{name}, for sending a message!
-  br
-  br
-  p(style={ color: 'var(--text-1)', 'font-size': '14px' })
-    | I appreciate your interest. I will come back to you via the email you have given soon after I read it.
-    br
-    | I normally takes up to 1 or 2 days.
-    br
-    br
-    | Regards,
-    br
-    | Sebin
+  - const { contentContainer, titleHeading } = styles 
+
+  h3(style=titleHeading) Thanks #{data.name}, for sending a message!
+
+  div(style=contentContainer)
+    p(style={ padding: '0px' })
+      | I appreciate your interest. I will come back and reply to it as soon as I read it, which may take up to a few days.
+      br
+      | Looking forwards to talking to you!
+      br
+      br
+      | Regards,
+      br
+      | Sebin

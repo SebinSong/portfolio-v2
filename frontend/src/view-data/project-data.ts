@@ -36,7 +36,7 @@ const projectData: Array<ProjectItem> = [
     links: {
       github: 'https://github.com/SebinSong/portfolio-v2'
     },
-    skillset: ['HTML', 'SCSS', 'Design', 'Javascript', 'Typescript', 'React', 'Pug', 'Express', 'Vite', 'Creative Animation', 'SVG'],
+    skillset: ['HTML', 'SCSS', 'Design', 'Javascript', 'Typescript', 'React', 'Pug', 'Node', 'MongoDB', 'Express', 'Vite', 'Creative Animation', 'SVG'],
     isIndividuaWork: true
   },
   {
