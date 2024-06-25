@@ -104,14 +104,15 @@ export default function Home () {
 
         <p className='bio-paragraph mb-50'>
           This website is a web-app built with <span className='has-text-bold'>ReactJS</span> and a bit of <span className='has-text-bold'>ExpressJS / MongoDB</span>.
-          Feel free to share how you feel about this website down below.<br/>
-          You can also reach out to me via Contact page <a className='is-link has-icon' href='/contact' target='_self'>here</a>.
+          See feedbacks from others and also share yours down below.
         </p>
 
-        <HomeFeedbackForm onFormSubmit={onFeedbackSubmit} />
+        <div className='home-feedback-section'>
+          <div className='home-feedback-list-container'>
+            <HomeFeedbackList key={childKey} />
+          </div>
 
-        <div className='home-feedback-list-container'>
-          <HomeFeedbackList key={childKey} />
+          <HomeFeedbackForm onFormSubmit={onFeedbackSubmit} />
         </div>
       </section>
 

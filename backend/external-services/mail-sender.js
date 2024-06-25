@@ -2,6 +2,7 @@ const path = require('node:path')
 const dotenv = require('dotenv')
 const nodemailer = require('nodemailer')
 const pug = require('pug')
+const templateStyles = require('./style-objects')
 const getTemplatePath = filename => path.resolve(__dirname, `mail-templates/${filename}.pug`)
 
 // mail-html-renderers
@@ -62,7 +63,8 @@ function sendInquiryNotification (message) {
       data: {
         name, email, content,
         title: title || 'no-title'
-      }
+      },
+      styles: templateStyles
     })
   }
 
@@ -78,7 +80,10 @@ function confirmInquiryReceipt ({
     title: `[${WEBSITE_NAME}]: Message received`,
     to,
     isHTML: true,
-    content: renderInquiryConfirmation({ name })
+    content: renderInquiryConfirmation({
+      data: { name },
+      styles: templateStyles
+    })
   }
 
   return sendMail(params)
@@ -91,7 +96,8 @@ function sendFeedbackNotification (newFeedback) {
     to: NOTIFICATION_EMAIL_TO,
     isHTML: true,
     content: renderFeedbackNotification({
-      data: { name, content, id: _id }
+      data: { name, content, id: _id },
+      styles: templateStyles
     })
   }
 

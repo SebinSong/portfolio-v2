@@ -1,8 +1,13 @@
-.home-feedback-list-container {
+.home-feedback-section {
   position: relative;
   display: block;
   width: 100%;
-  max-width: 58rem;
+  max-width: 62rem;
+}
+
+.home-feedback-list-container {
+  position: relative;
+  width: 100%;
 
   .home-feedback-loader-container {
     display: flex;
@@ -24,6 +29,7 @@
 
   .feedbacks-list {
     position: relative;
+    margin-bottom: 5rem;
   }
 
   .feedback-list-item {
