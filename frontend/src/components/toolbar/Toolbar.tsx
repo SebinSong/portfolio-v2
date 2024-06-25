@@ -52,6 +52,10 @@ function Toolbar () {
     }
   }, [])
 
+  useEffect(() => {
+    document.body.scrollTop = 0
+  }, [location])
+
   return (
     <div className={cn('l-toolbar toolbar-container', hasBg && 'has-bg')}>
       <div className='toolbar-nav-list'>

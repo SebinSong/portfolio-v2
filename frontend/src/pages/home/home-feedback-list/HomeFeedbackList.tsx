@@ -44,7 +44,7 @@ function HomeFeedbackList () {
     <div className='home-feedback-list-container'>
       {
         loadStatus === 'error' &&
-        <FeedbackBanner classes='mb-30' show={true} type='error'
+        <FeedbackBanner classes='mb-30' show={true} scrollOnDisplay={false} type='error'
           message='Failed to load feedback data. Please refresh the page.' />
       }
       {
