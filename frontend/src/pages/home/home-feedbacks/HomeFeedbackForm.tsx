@@ -150,7 +150,7 @@ function HomeFeedbackForm ({
           {
             isErrorActive('password')
               ? <FormErrorMessage formKey='password' formError={formError} />
-              : <p className='helper'>You will need this to update later</p>
+              : <p className='helper'>You will need this to delete it later</p>
           }
 
         </div>

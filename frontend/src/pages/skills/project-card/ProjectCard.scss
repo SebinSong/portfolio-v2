@@ -23,7 +23,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: $size-5;
+      font-size: $size-4;
       color: $text-0;
       width: 4.2rem;
       height: 4.2rem;
@@ -53,6 +53,7 @@
       flex-direction: column;
       align-items: flex-end;
       justify-content: center;
+      row-gap: 0.6rem;
       width: 8.6rem;
       border-left: 1px solid $background-0_2;
 
@@ -60,7 +61,7 @@
         display: inline-flex;
         align-items: flex-end;
         column-gap: 0.6rem;
-        font-size: $size-8;
+        font-size: $size-7;
         color: $text-0;
 
         i {
@@ -113,7 +114,7 @@
 
     label {
       display: inline-block;
-      font-size: $size-8;
+      font-size: $size-7;
       font-weight: 700;
       letter-spacing: 0.5px;
       width: 7.2rem;
@@ -124,7 +125,7 @@
     .details-value {
       display: inline-block;
       flex-grow: 1;
-      font-size: $size-7;
+      font-size: $size-6;
       color: $text-1;
     }
   }
@@ -138,10 +139,10 @@
 
     .work-type-tag,
     .is-collab {
-      font-weight: 400;
+      font-weight: 600;
       flex-shrink: 0;
       padding: 0.2em 0.6em;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       padding: 0.2em 0.6em;
       border: 1px solid $text-1;
       display: inline-block;
@@ -160,7 +161,7 @@
 
   .project-desc {
     position: relative;
-    font-size: $size-7;
+    font-size: $size-5;
     color: $text-1;
 
     p {
@@ -177,7 +178,7 @@
 
     .skill-item {
       display: inline-block;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       padding: 0.2em 0.8em;
       border-radius: 0.8em;
       background-color: $text-0;

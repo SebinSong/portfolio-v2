@@ -8,6 +8,7 @@ button,
   cursor: pointer;
   white-space: nowrap;
   outline: none;
+  font-family: "montserrat", "Helvetica Neue", "sans-serif";
 
   &[disabled] {
     pointer-events: none;
@@ -17,8 +18,8 @@ button,
   &.is-custom-border {
     padding: 1.6rem 2.6rem;
     color: $text-0;
-    font-weight: 400;
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 1.4rem;
 
     &[disabled]::after {
       border-color: $text-2;
@@ -26,12 +27,12 @@ button,
 
     &.is-small {
       padding: 1.2rem 1.8rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     &.is-extra-small {
       padding: 1rem 1.4rem;
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
 
     .loader-animation {

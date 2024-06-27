@@ -30,6 +30,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'montserrat';
+  src: url('/fonts/montserrat.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -50,23 +57,36 @@ html {
 }
 
 body {
-  font-family: "monument_extended", "Helvetica Neue", "sans-serif";
+  font-family: "montserrat", "Helvetica Neue", "sans-serif";
   font-style: normal;
-  font-weight: lighter;
+  font-weight: 500;
   line-height: 1.5;
   color: $text-0;
-  font-size: $size-6;
+  font-size: $size-5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.is-title-style {
+  font-family: "monument_extended", "Helvetica Neue", "sans-serif";
+  font-style: normal;
+  font-weight: 700;
+  color: $text-0;
 }
 
 // Text selection highlight styles
 
 ::-moz-selection { /* Code for Firefox */
-  color: var(--highlight-3);
+  color: var(--highlight-2);
   background: $text-0;
 }
 
 ::selection {
-  color: var(--highlight-3);
+  color: var(--highlight-2);
   background: $text-0;
 }
 
@@ -74,7 +94,7 @@ body {
 .is-link {
   position: relative;
   display: inline-block;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--highlight-3);
   text-decoration: none;
   margin-left: 1px;
@@ -144,4 +164,8 @@ body {
 
 .has-text-bold {
   font-weight: 700;
+}
+
+.has-body-text-bold {
+  font-weight: 600;
 }

@@ -21,7 +21,7 @@ export default function HomeTestimonials ({
                 </span>
 
                 <div className='testimonial-details'>
-                  <span className='testimonial-name'>{name}</span>
+                  <span className='testimonial-name is-title-style'>{name}</span>
                   <span className='testimonial-role-and-company'>
                     <span className='role'>{role}</span>
                     <span>/</span>

@@ -58,7 +58,7 @@ function TabMenu ({
       style={styleObj}>
       {
         list.map((entry) => (
-          <div className={cn('tab-menu-item', selectedId === entry.id && 'is-active')}
+          <div className={cn('tab-menu-item is-title-style', selectedId === entry.id && 'is-active')}
             tabIndex={0}
             key={entry.id}
             onClick={(e) => clickHandler(e, entry.id)}
