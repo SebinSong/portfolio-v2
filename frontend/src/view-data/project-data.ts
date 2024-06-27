@@ -32,7 +32,7 @@ const projectData: Array<ProjectItem> = [
     name: 'Personal website V2.0',
     years: 2024,
     projectType: 'personal',
-    description: "Brand-new personal website of mine that is built with React, Typescript and ExpressJS. hosted via Render. It performs CRUD operations to MongoDB in some pages and sends email-notification usin a 'node-mailer' npm package.",
+    description: "Brand-new personal website of mine that is built with React, Typescript and ExpressJS. hosted via Render. It performs CRUD operations to MongoDB in some pages and sends email-notification using 'node-mailer' npm pkg.",
     links: {
       github: 'https://github.com/SebinSong/portfolio-v2'
     },
