@@ -142,7 +142,7 @@ export default function Contact () {
                   </h1>
 
                   <p className='page-desc'>
-                    Let's have a chat:)<br/> Happy to discuss about a pontential work opportunity too!<br/>
+                    Let's have a chat! Happy to discuss about a pontential work opportunity too.<br/>
                     You can also find me in <a className='is-link has-icon has-text-bold' href='https://www.linkedin.com/in/sebinsong/' target='_blank'>LinkedIn</a>.
                   </p>
                 </div>

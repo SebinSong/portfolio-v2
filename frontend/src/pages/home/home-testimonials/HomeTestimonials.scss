@@ -58,7 +58,7 @@
       flex-direction: column;
 
       .testimonial-name {
-        font-size: $size-6;
+        font-size: $size-5;
         color: $text-0;
         font-weight: 600;
         margin-bottom: 2px;
@@ -70,7 +70,7 @@
         line-height: 1.2;
         column-gap: 0.6rem;
         row-gap: 0.2rem;
-        font-size: 1rem;
+        font-size: 1.2rem;
         color: $text-1;
       }
     }
@@ -79,7 +79,7 @@
   .testimonial-content {
     position: relative;
     padding-top: 5.2rem;
-    font-size: $size-7;
+    font-size: $size-6;
     color: $text-1;
 
     .text {

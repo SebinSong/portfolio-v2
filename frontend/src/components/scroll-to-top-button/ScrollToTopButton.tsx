@@ -32,7 +32,7 @@ function ScrollToTopButton ({
   }, [])
 
   return (
-    <button className={cn('is-unstyled scroll-to-top-btn', showBtn && 'is-active', classes)}
+    <button className={cn('is-unstyled scroll-to-top-btn is-title-style', showBtn && 'is-active', classes)}
       onClick={clickHandler}>
       <i className='icon-arrow-up'></i>
       <span>Top</span>

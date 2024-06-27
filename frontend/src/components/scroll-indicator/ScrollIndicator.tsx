@@ -20,7 +20,7 @@ function ScrollIndicator ({
         <span className='indicator-mover'></span>
       </span>
 
-      <span className={cn('indicator-text', verticalText && 'is-vertical')}>Scroll</span>
+      <span className={cn('indicator-text is-title-style', verticalText && 'is-vertical')}>Scroll</span>
     </div>
   )
 }

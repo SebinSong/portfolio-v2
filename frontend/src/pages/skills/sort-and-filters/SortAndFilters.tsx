@@ -124,7 +124,7 @@ export default function SortAndFilters ({
             onClick={() => onAllTypeBtnClick('all')}>
             {isAllFilterSelected
               ? <span><i className='icon-check'></i>All</span>
-              : '+ All'
+              : <span><i className='icon-plus'></i>All</span>
             }
           </button>
 
@@ -143,7 +143,7 @@ export default function SortAndFilters ({
         </div>
   
         <div className='list-block'>
-          <span className='list-block-label'>- Frontend</span>
+          <span className='list-block-label is-title-style'>- Frontend</span>
 
           <div className='filter-list'>
             {
@@ -158,7 +158,7 @@ export default function SortAndFilters ({
         </div>
 
         <div className='list-block'>
-          <span className='list-block-label'>- Backend</span>
+          <span className='list-block-label is-title-style'>- Backend</span>
 
           <div className='filter-list'>
             {
@@ -173,7 +173,7 @@ export default function SortAndFilters ({
         </div>
 
         <div className='list-block'>
-          <span className='list-block-label'>- Tooling</span>
+          <span className='list-block-label is-title-style'>- Tooling</span>
 
           <div className='filter-list'>
             {

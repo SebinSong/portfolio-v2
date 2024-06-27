@@ -61,7 +61,7 @@ function Toolbar () {
       <div className='toolbar-nav-list'>
         {
           toolbarMenuList.map(entry => (
-            <button className={cn('toolbar-nav-btn', { 'is-active': location.pathname === entry.routeTo })}
+            <button className={cn('toolbar-nav-btn is-title-style', { 'is-active': location.pathname === entry.routeTo })}
               key={entry.id}
               onClick={() => onMenuClick(entry)}>
               <span className='text'>{ entry.name }</span>

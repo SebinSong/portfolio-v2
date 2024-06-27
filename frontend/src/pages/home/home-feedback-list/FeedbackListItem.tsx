@@ -83,7 +83,7 @@ function FeedbackListItem ({
 
       <div className='feedback-details'>
         <div className='metadata'>
-          <span className='name-val'>{name}</span>
+          <span className='name-val is-title-style'>{name}</span>
           <span className='updated-at'>{humanDate(updatedAt)}</span>
         </div>
 

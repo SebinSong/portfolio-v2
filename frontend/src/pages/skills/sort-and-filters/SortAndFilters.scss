@@ -4,7 +4,7 @@
 
   .section-label {
     display: block;
-    font-size: $size-7;
+    font-size: $size-6;
     font-weight: 700;
     margin-bottom: 2rem;
   }
@@ -41,7 +41,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.8em;
+      font-size: 0.85em;
       padding: 0.2rem 0.6rem;
       border-radius: 0.4rem;
       border: 1px solid $text-2;
@@ -52,7 +52,7 @@
       &::before {
         display: inline-block;
         content: 'Open';
-        font-weight: 300;
+        font-weight: 600;
       }
     }
 
@@ -98,8 +98,8 @@
   }
 
   button.all-type-btn {
-    font-size: $size-8;
-    padding: 0.2rem 0.8rem;
+    font-size: 1.3rem;
+    padding: 0.2rem 1rem;
     border-radius: 0.8rem;
     border: 1px solid $text-2;
     transition: all 150ms;
@@ -111,7 +111,8 @@
     }
 
     &.is-select-all i {
-      margin-right: 0.5rem;
+      margin-right: 0.4rem;
+      font-size: 0.8em;
       transform: translateY(1px);
     }
 
@@ -119,7 +120,7 @@
       background-color: $background-0_1;
 
       i {
-        font-size: 0.825em;
+        font-size: 0.785em;
         font-weight: 700;
         transform: translateY(1px);
       }

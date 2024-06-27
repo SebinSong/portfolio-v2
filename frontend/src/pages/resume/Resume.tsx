@@ -111,7 +111,7 @@ export default function Resume () {
           {
             content
               ? <>
-                  <div className='resume-content-line is-align-center mb-10'>
+                  <div className='resume-content-line is-align-center has-text-bold mb-10'>
                     <i className='icon-location-pin map-icon'></i>
                     <span className='resume-location'>{content.location}</span>
                   </div>
