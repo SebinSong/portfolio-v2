@@ -61,12 +61,12 @@ body {
 // Text selection highlight styles
 
 ::-moz-selection { /* Code for Firefox */
-  color: $highlight;
+  color: var(--highlight-3);
   background: $text-0;
 }
 
 ::selection {
-  color: $highlight;
+  color: var(--highlight-3);
   background: $text-0;
 }
 

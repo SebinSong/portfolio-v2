@@ -4,8 +4,8 @@ html {
 
   // Styling the whole scrollbar.
   ::-webkit-scrollbar {
-    width: 10px;  // The width of the vertical scrollbar
-    height: 10px; // The height of the horizontal scrollbar
+    width: 8px;  // The width of the vertical scrollbar
+    height: 8px; // The height of the horizontal scrollbar
   }
 
   // Styling the thumb.
@@ -22,7 +22,7 @@ html {
 
   // Styling the scrollbar track.
   ::-webkit-scrollbar-track {
-    background: #F2F2F2;
+    background: #E1E1E1;
   }
 
   // [ 2 ] - Mozila Firefox
