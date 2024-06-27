@@ -34,6 +34,7 @@ const projectData: Array<ProjectItem> = [
     projectType: 'personal',
     description: "Brand-new personal website of mine that is built with React, Typescript and ExpressJS. hosted via Render. It performs CRUD operations to MongoDB in some pages and sends email-notification using 'node-mailer' npm pkg.",
     links: {
+      app: 'https://sebinsong.com',
       github: 'https://github.com/SebinSong/portfolio-v2'
     },
     skillset: ['HTML', 'SCSS', 'Design', 'Javascript', 'Typescript', 'React', 'Pug', 'Node', 'MongoDB', 'Express', 'Vite', 'Creative Animation', 'SVG'],
