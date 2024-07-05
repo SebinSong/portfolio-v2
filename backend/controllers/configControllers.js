@@ -3,7 +3,7 @@ const asyncHandler = require('../middlewares/asyncHandler')
 const { checkFileExists } = require('../utils')
 
 const relToFixtures = filename => path.resolve(__dirname, `../fixtures/${filename}`)
-const RESUME_ABS_PATH = relToFixtures('resume.pdf')
+const RESUME_ABS_PATH = relToFixtures('resume_sebinsong.pdf')
 
 const downloadHandler = asyncHandler(async (req, res, next) => {
   const { resource } = req.query
