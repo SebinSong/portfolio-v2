@@ -37,7 +37,7 @@ export default function Home () {
       <section className='home-main-section'>
         <div className='intro-block'>
           <span className='iam'><span className='text'>I'm</span></span>
-          <h1 className='my-name'>Sebin Song</h1>
+          <h1 className='my-name' data-test='home-my-name'>Sebin Song</h1>
           <p className='intro-para'>A <span className='to-skill-page' role='button' tabIndex={0} onClick={() => navigateTo('frontend')}>frontend</span> developer with the <span className='to-skill-page' role='button' tabIndex={0} onClick={() => navigateTo('backend')}>backend</span> capability.</p>
         </div>
 
