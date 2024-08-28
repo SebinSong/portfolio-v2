@@ -34,7 +34,7 @@ export default function Home () {
     <PageTemplate classes='page-home'>
       <CursorAnimation />
 
-      <section className='home-main-section'>
+      <section className='home-main-section' data-test='home-main-section'>
         <div className='intro-block'>
           <span className='iam'><span className='text'>I'm</span></span>
           <h1 className='my-name' data-test='home-my-name'>Sebin Song</h1>
@@ -46,7 +46,7 @@ export default function Home () {
 
       <section className='home-introduce-myself'>
         <div className='page-title-container'>
-          <h1 className='page-title'>
+          <h1 className='page-title' data-test='home-section-title'>
             <span className='text'>A little about me..</span>
             <span className='circle-deco'></span>
           </h1>
@@ -65,7 +65,7 @@ export default function Home () {
         </p>
 
         <div className='page-title-container'>
-          <h1 className='page-title'>
+          <h1 className='page-title' data-test='home-section-title'>
             <span className='text'>Outside the work..</span>
             <span className='circle-deco'></span>
           </h1>
@@ -83,7 +83,7 @@ export default function Home () {
         </p>
 
         <div className='page-title-container mb-40'>
-          <h1 className='page-title'>
+          <h1 className='page-title' data-test='home-section-title'>
             <span className='text'>Testimonials</span>
             <span className='circle-deco'></span>
           </h1>
@@ -96,7 +96,7 @@ export default function Home () {
         <HomeTestimonials classes='mb-80' />
 
         <div className='page-title-container'>
-          <h1 className='page-title'>
+          <h1 className='page-title' data-test='home-section-title'>
             <span className='text'>Feedbacks on this website</span>
             <span className='circle-deco'></span>
           </h1>
