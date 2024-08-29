@@ -14,7 +14,7 @@ export default function HomeTestimonials ({
         testimonialData.map((entry: TestimonialEntry) => {
           const { id, name, role, organization, content } = entry
           return (
-            <li className='testimonial-card' key={id} data-test='testimonial-item'>
+            <li className='testimonial-card' key={id} data-test='testimonial-item' data-id={id}>
               <div className='testimonial-upper-section'>
                 <span className='icon-wrapper'>
                   <i className='icon-user testimonial-icon'></i>

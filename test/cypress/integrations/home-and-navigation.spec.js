@@ -3,6 +3,7 @@ import testimonialData from '../../../frontend/src/view-data/testimonials-data'
 
 const baseUrl = Cypress.config('baseUrl')
 const toDT = str => `[data-test="${str}"]`
+const getTestimonial = id => testimonialData.find(x => x.id === id)
 
 describe('1. Verify general features in Home page.', () => {
   it('1-1. Main section should contain all essential content.', () => {
@@ -35,6 +36,14 @@ describe('1. Verify general features in Home page.', () => {
   it('1-3. The testimonial list must have all items', () => {
     cy.getByDT('home-testimonial-list').within(() => {
       cy.get(toDT('testimonial-item')).should('have.length', testimonialData.length)
+        .each(($el, index) => {
+          cy.wrap($el).invoke('attr', 'data-id').then(entryId => {
+            const data = getTestimonial(entryId)
+
+            cy.wrap($el).find('span.testimonial-name').should('include.text', data.name)
+            cy.wrap($el).find('span.company').should('include.text', data.organization)
+          })
+        })
     })
   })
 })
