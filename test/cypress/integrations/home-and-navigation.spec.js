@@ -47,7 +47,27 @@ describe('1. Verify general features in Home page.', () => {
     })
   })
 
-  it('1-4. The navigation menu must work as expected.', () => {
+  // TODO: Add test here that verifies feedback section of the page.
+  it('1-4. The feedback section must have all items and the CRUD operation must work as expected', () => {
+    cy.request({
+      url: 'api/feedbacks',
+      method: 'GET'
+    }).then(response => {
+      expect(response.body).to.be.an('array')
+      
+      const feedbackItems = response.body
+      cy.getByDT('home-feedback-list').within(() => {
+        feedbackItems.forEach(entry => {
+          const { _id: id, name } = entry
+          cy.getByDT(`home-feedback-item-${id}`).as(`feedback-${id}`)
+
+          cy.get(`@feedback-${id}`).find('.feedback-details .name-val').should('include.text', name)
+        })
+      })
+    })
+  })
+
+  it('1-5. The navigation menu must work as expected.', () => {
     const routeIdArr = ['resume', 'skills', 'contact', 'home']
 
     routeIdArr.forEach(routeId => {
