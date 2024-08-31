@@ -8,6 +8,7 @@ const { API_PORT } = process.env
 
 module.exports = defineConfig({
   e2e: {
+    video: true,
     testIsolation: false,
     baseUrl: `http://localhost:${API_PORT}`,
     setupNodeEvents (on, config) {
