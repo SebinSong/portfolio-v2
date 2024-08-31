@@ -1,5 +1,15 @@
 name: APP E2E test
 
+env:
+  API_PORT: ${{ secrets.API_PORT }}
+  APP_DB_NAME: ${{ secrets.APP_DB_NAME }}
+  APP_HTTPS_HOSTNAME: ${{ secrets.APP_HTTPS_HOSTNAME }}
+  DB_URI: ${{ secrets.DB_URI }}
+  MAILSENDER_PASSWORD: ${{ secrets.MAILSENDER_PASSWORD }}
+  MAILSENDER_USERID: ${{ secrets.MAILSENDER_USERID }}
+  NOTIFICATION_EMAIL_TO: ${{ secrets.NOTIFICATION_EMAIL_TO }}
+  VITE_API_PORT: ${{ secrets.VITE_API_PORT }}
+
 on:
   push:
     branches: [ "main" ]
