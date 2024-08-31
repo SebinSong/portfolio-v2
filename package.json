@@ -8,7 +8,7 @@
     "dev-server": "nodemon backend/server",
     "dev-seed-data": "node backend/seeder.js",
     "start": "node backend/server",
-    "build": "npm install && vite build --mode production --emptyOutDir",
+    "build": "npm ci && vite build --mode production --emptyOutDir",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build:start": "npm run build && npm run start",

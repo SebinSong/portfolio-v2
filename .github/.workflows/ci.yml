@@ -1,0 +1,15 @@
+name: APP E2E test
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  e2e-test:
+    runs-on: ubuntu-latest
+
+  steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+    - run: npm build
+    - run: npm e2e-test
