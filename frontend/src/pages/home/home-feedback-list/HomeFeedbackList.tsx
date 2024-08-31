@@ -57,7 +57,7 @@ function HomeFeedbackList () {
 
       {
         (loadStatus === 'loaded' && Boolean(feedbacks?.length)) &&
-        <ul className='feedbacks-list'>
+        <ul className='feedbacks-list' data-test='home-feedback-list'>
           {
             feedbacks!.map(
               (entry: any) => <FeedbackListItem key={entry._id} data={entry} onDeleteSuccess={loadFeedbacks}/>

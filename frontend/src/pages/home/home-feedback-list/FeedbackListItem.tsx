@@ -76,7 +76,7 @@ function FeedbackListItem ({
   }
 
   return (
-    <li className='feedback-list-item'>
+    <li className='feedback-list-item' data-test={`home-feedback-item-${data._id}`}>
       <span className='feedback-item-icon-wrapper'>
         <i className='icon-comment-alt'></i>
       </span>

@@ -10,15 +10,18 @@
     "start": "node backend/server",
     "build": "npm install && vite build --mode production --emptyOutDir",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:start": "npm run build && npm run start",
+    "cy:open": "cypress open"
   },
   "imports": {
     "~/*": "./frontend/src/*"
   },
   "dependencies": {
-    "axios": "^1.7.2",
+    "axios": "^1.7.5",
     "bcrypt": "^5.1.1",
     "colors": "^1.4.0",
+    "cypress": "^13.14.0",
     "detect-browser": "^5.3.0",
     "express": "^4.19.2",
     "file-saver": "^2.0.5",

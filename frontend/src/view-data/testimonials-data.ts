@@ -1,5 +1,3 @@
-import { genId } from '~/view-utils'
-
 export interface TestimonialEntry {
   id: string,
   name: string,
@@ -10,7 +8,7 @@ export interface TestimonialEntry {
 
 const testimonialData: Array<TestimonialEntry> = [
   {
-    id: genId(),
+    id: 'ilwol-haedalbyul-eunsook',
     name: 'Eunsook Kim',
     role: 'Owner',
     organization: 'Ilwol Haedalbyul',
@@ -20,7 +18,7 @@ const testimonialData: Array<TestimonialEntry> = [
       "I will continue to have him as an engineer of my business for a long term."
   },
   {
-    id: genId(),
+    id: 'okturtles-greg',
     name: 'Greg Slepak',
     role: 'President',
     organization: 'okTurtles Foundation',
@@ -28,7 +26,7 @@ const testimonialData: Array<TestimonialEntry> = [
       "His contributions were (and continue to be) highly appreciated and valued."
   },
   {
-    id: genId(),
+    id: 'heartland-daniel',
     name: 'Daniel Taylor',
     role: 'Web Developer Manager',
     organization: 'Heartland Bank Ltd',
@@ -36,7 +34,7 @@ const testimonialData: Array<TestimonialEntry> = [
       "making him the right fit for the role and has the potential to grow further."
   },
   {
-    id: genId(),
+    id: 'heartland-sriram',
     name: 'Sriram Annayan',
     role: 'Delivery Manager',
     organization: 'Heartland Bank Ltd',
