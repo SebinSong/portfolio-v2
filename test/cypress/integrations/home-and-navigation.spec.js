@@ -46,4 +46,12 @@ describe('1. Verify general features in Home page.', () => {
         })
     })
   })
+
+  it('1-4. The navigation menu must work as expected.', () => {
+    const routeIdArr = ['resume', 'skills', 'contact', 'home']
+
+    routeIdArr.forEach(routeId => {
+      cy.navigateTo(routeId)
+    })
+  })
 })

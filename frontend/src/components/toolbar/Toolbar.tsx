@@ -4,7 +4,8 @@ import { useNavigate, useLocation } from 'react-router-dom'
 interface ToolbarMenu {
   id: string,
   name: string,
-  routeTo?: string
+  dataTest: string,
+  routeTo: string
 }
 
 // utils
@@ -12,11 +13,11 @@ import { classNames as cn } from '~/view-utils'
 
 import './Toolbar.scss'
 
-const toolbarMenuList: Array<ToolbarMenu> = [
-  { id: 'home', name: 'Home', routeTo: '/' },
-  { id: 'resume', name: 'Resume', routeTo: '/resume' },
-  { id: 'skills', name: 'Skills', routeTo: '/skills' },
-  { id: 'contact', name: 'Contact', routeTo: '/contact' }
+export const toolbarMenuList: Array<ToolbarMenu> = [
+  { id: 'home', name: 'Home', routeTo: '/', dataTest: 'nav-home' },
+  { id: 'resume', name: 'Resume', routeTo: '/resume', dataTest: 'nav-resume' },
+  { id: 'skills', name: 'Skills', routeTo: '/skills', dataTest: 'nav-skills' },
+  { id: 'contact', name: 'Contact', routeTo: '/contact', dataTest: 'nav-contact' }
 ]
 
 function Toolbar () {
@@ -57,13 +58,14 @@ function Toolbar () {
   }, [location])
 
   return (
-    <div className={cn('l-toolbar toolbar-container', hasBg && 'has-bg')}>
+    <div className={cn('l-toolbar toolbar-container', hasBg && 'has-bg')} data-test='navigation-menu'>
       <div className='toolbar-nav-list'>
         {
           toolbarMenuList.map(entry => (
             <button className={cn('toolbar-nav-btn is-title-style', { 'is-active': location.pathname === entry.routeTo })}
               key={entry.id}
-              onClick={() => onMenuClick(entry)}>
+              onClick={() => onMenuClick(entry)}
+              data-test={entry.dataTest}>
               <span className='text'>{ entry.name }</span>
             </button>
           ))
