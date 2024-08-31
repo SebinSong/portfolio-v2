@@ -2,7 +2,10 @@ const path = require('path')
 const dotenv = require('dotenv')
 const colors = require('colors')
 const express = require('express')
+const EventEmitter = require('node:events');
 const { connectToDB } = require('./db.js')
+
+const serverEvents = new EventEmitter()
 
 // importing .env file
 dotenv.config({ path: path.resolve(__dirname, '../.env') })
@@ -52,5 +55,10 @@ connectToDB((err) => {
   console.log('\n\n- Successfully connected to DB:'.brightGreen.bold.underline, `${APP_DB_NAME}`.brightCyan.bold)
   app.listen(API_PORT, () => {
     console.log(`Server running in ${NODE_ENV} mode on port ${API_PORT}`.bold.magenta.underline)
+    serverEvents.emit('ready')
   })
 })
+
+module.exports = {
+  serverEvents
+}

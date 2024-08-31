@@ -12,7 +12,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build:start": "npm run build && npm run start",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "e2e-test": "node test/e2e.test.js"
   },
   "imports": {
     "~/*": "./frontend/src/*"
