@@ -106,7 +106,7 @@ const projectData: Array<ProjectItem> = [
     description: "Worked on building a re-designed website for the company's web-app named 'Group Income'.",
     links: {
       app: 'https://okturtles.github.io/groupincome.org/',
-      github: 'https://github.com/okTurtles/groupincome.org/pulls?q=is%3Apr+assignee%3A%40me'
+      github: 'https://github.com/okTurtles/groupincome.org/pulls?q=is%3Apr+assignee%3ASebinSong+'
     },
     skillset: ['HTML', 'SCSS', 'Javascript', 'Typescript', 'Vue 3', 'Astro', 'Vite'],
     isIndividuaWork: false
@@ -136,7 +136,7 @@ const projectData: Array<ProjectItem> = [
       "Wrote and updated the cypress end-to-end test-suites.",
     links: {
       app: 'https://groupincome.org/',
-      github: 'https://github.com/okTurtles/group-income/pulls?q=is%3Apr+assignee%3A%40me'
+      github: 'https://github.com/okTurtles/group-income/pulls?q=is%3Aclosed+is%3Apr+assignee%3ASebinSong+'
     },
     skillset: ['HTML', 'SCSS', 'Javascript', 'Flow Typer', 'Vue 2', 'Pug', 'Cypress', 'Grunt', 'PWA', 'WebSockets', 'Node', 'Hapi'],
     isIndividuaWork: false
@@ -150,7 +150,7 @@ const projectData: Array<ProjectItem> = [
       "Worked on converting the outdated static website to a modern AstroJS driven multi-page application.",
     links: {
       app: 'https://okturtles.org/',
-      github: 'https://github.com/okTurtles/okturtles.org/pulls?q=is%3Apr+assignee%3A%40me'
+      github: 'https://github.com/okTurtles/okturtles.org/pulls?q=is%3Apr+assignee%3ASebinSong+'
     },
     skillset: ['HTML', 'SCSS', 'Javascript', 'Astro', 'Vite'],
     isIndividuaWork: false
