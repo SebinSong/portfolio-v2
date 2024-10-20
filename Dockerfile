@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN vite build --mode production
+RUN npx vite build --mode production
 
 USER node
 
