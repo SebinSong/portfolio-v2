@@ -18,8 +18,7 @@ export default defineConfig(({ mode }) => {
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern-compiler',
-          loadPaths: [ resolvePath('styles') ],
+          includePaths: [ resolvePath('styles') ],
           additionalData: '@import "variables";'
         }
       }
